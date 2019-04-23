@@ -1,1 +1,4 @@
-Project/.project
+.project
+.gitignore
+Project/UFSHotel/.classpath
+Project/bin/

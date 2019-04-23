@@ -9,7 +9,7 @@ package Framework;
  *
  * @author 743554
  */
-class Telefone {
+public abstract class Telefone {
     
     String ddd;
     String numero;

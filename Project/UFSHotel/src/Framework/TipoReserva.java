@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author 743554
  */
-public class TipoReserva {
+public abstract class TipoReserva {
     
     TipoData dataIn;
     TipoData dataOut;

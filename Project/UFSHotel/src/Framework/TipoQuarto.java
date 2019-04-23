@@ -9,7 +9,7 @@ package Framework;
  *
  * @author 743554
  */
-public class TipoQuarto {
+public abstract class TipoQuarto {
     
     String classificacao;
     int capacidade;

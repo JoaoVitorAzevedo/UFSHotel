@@ -9,7 +9,7 @@ package Framework;
  *
  * @author 743554
  */
-class Endereco {
+public abstract class Endereco {
     
     
     String cep;

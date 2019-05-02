@@ -12,8 +12,12 @@ package Sistema;
 public class Controller {
     
     
-         public static void cadastrarQuarto(int id){
-             
+    
+    
+    
+    
+    
+    public static void cadastrarQuarto(int id){
              
              our_Quarto our = new our_Quarto(id);
              System.out.println("o andar é: " + our.getIdQuarto());
@@ -23,6 +27,18 @@ public class Controller {
              
              
          }
+    public static void cadastrarHospede(our_Hospede novoHospede){
+        //BancoDeHospedes.add(novoHospede);
+        System.out.println("Novo Hospede cadastrado com sucesso! ID:" + novoHospede.getIdHospede()+", Nome: "+novoHospede.getNome());
+        
+    }
+    public static void cadastrarFuncionario(){
+    
+    }
+    
+        
+    
+    
     
     
     

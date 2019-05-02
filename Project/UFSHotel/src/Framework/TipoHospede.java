@@ -19,10 +19,10 @@ public class TipoHospede extends Pessoa {
     }
     
 
+    
     public int getIdHospede() {
         return idHospede;
     }
-
     public void setIdHospede(int idHospede) {
         this.idHospede = idHospede;
     }

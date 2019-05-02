@@ -18,7 +18,6 @@ public abstract class Pessoa {
     String cpf;
     String nome;
     String email;
-    
     List<TipoEndereco> enderecos;
     List<Telefone> listaTel;
 

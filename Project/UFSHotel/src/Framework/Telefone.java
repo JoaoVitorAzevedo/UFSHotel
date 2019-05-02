@@ -24,10 +24,12 @@ public class Telefone {
     public String getDdd() {
         return ddd;
     }
+    
     public String getNumComplete(){
     return ddd + numero;
     
     }
+    
     public void setNumero(String numero) {
         this.numero = numero;
     }

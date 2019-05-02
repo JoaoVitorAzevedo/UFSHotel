@@ -13,11 +13,11 @@ public abstract class TipoQuarto {
     
     int idQuarto;
     int andar;
-    TipoDeQuarto tipo;
+    TipoCategoriaDeQuarto tipo;
     StatusQuarto status;
     
 
-    public TipoQuarto(int idQuarto, int andar, TipoDeQuarto tipo) {
+    public TipoQuarto(int idQuarto, int andar, TipoCategoriaDeQuarto tipo) {
         this.idQuarto = idQuarto;
         this.andar = andar;
         this.tipo = tipo;
@@ -33,11 +33,11 @@ public abstract class TipoQuarto {
         return idQuarto;
     }
 
-    public TipoDeQuarto getTipo() {
+    public TipoCategoriaDeQuarto getTipo() {
         return tipo;
     }
 
-    public void setTipo(TipoDeQuarto tipo) {
+    public void setTipo(TipoCategoriaDeQuarto tipo) {
         this.tipo = tipo;
     }
 

@@ -13,7 +13,7 @@ public class TipoHospede extends Pessoa {
     
     int idHospede;
 
-    public TipoHospede(int idHospede, String cpf, String nome, String email, Endereco end, Telefone tel) {
+    public TipoHospede(int idHospede, String cpf, String nome, String email, TipoEndereco end, Telefone tel) {
         super(cpf, nome, email, end, tel);
         this.idHospede = idHospede;
     }

@@ -16,7 +16,7 @@ public abstract class TipoFuncionario extends Pessoa {
     String turno;
     
 
-    public TipoFuncionario(String setor, int idFuncionario, String turno, String cpf, String nome, String email, Endereco end, Telefone tel) {
+    public TipoFuncionario(String setor, int idFuncionario, String turno, String cpf, String nome, String email, TipoEndereco end, Telefone tel) {
         super(cpf, nome, email, end, tel);
         this.setor = setor;
         this.idFuncionario = idFuncionario;

@@ -13,7 +13,7 @@ public abstract class TipoRecepcionista extends TipoFuncionario {
     
     int ramal;
 
-    public TipoRecepcionista(int ramal, String setor, int idFuncionario, String turno, String cpf, String nome, String email, Endereco end, Telefone tel) {
+    public TipoRecepcionista(int ramal, String setor, int idFuncionario, String turno, String cpf, String nome, String email, TipoEndereco end, Telefone tel) {
         super(setor, idFuncionario, turno, cpf, nome, email, end, tel);
         this.ramal = ramal;
     }

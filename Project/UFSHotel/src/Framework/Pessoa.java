@@ -19,11 +19,11 @@ public abstract class Pessoa {
     String nome;
     String email;
     
-    List<Endereco> enderecos;
+    List<TipoEndereco> enderecos;
     List<Telefone> listaTel;
 
     
-    public Pessoa(String cpf, String nome, String email, Endereco end, Telefone tel) {
+    public Pessoa(String cpf, String nome, String email, TipoEndereco end, Telefone tel) {
         this.cpf = cpf;
         this.nome = nome;
         this.email = email;
@@ -37,7 +37,7 @@ public abstract class Pessoa {
     public void addTelefone(Telefone tel){
         this.listaTel.add(tel);
     }
-    public void addEndereco(Endereco end){
+    public void addEndereco(TipoEndereco end){
         this.enderecos.add(end);
     }
     

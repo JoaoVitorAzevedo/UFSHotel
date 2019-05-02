@@ -9,12 +9,12 @@ package Framework;
  *
  * @author 743554
  */
-public class TipoDeQuarto {
+public class TipoCategoriaDeQuarto {
     
     String classificacao;
     int capacidade;
 
-    public TipoDeQuarto(String classificacao, int capacidade) {
+    public TipoCategoriaDeQuarto(String classificacao, int capacidade) {
         this.classificacao = classificacao;
         this.capacidade = capacidade;
     }

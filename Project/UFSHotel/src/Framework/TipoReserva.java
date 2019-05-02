@@ -13,14 +13,14 @@ import java.util.Date;
  */
 public class TipoReserva {
     
-    TipoData dataIn;
-    TipoData dataOut;
+    Data dataIn;
+    Data dataOut;
     int idReserva;
     TipoHospede cliQueReservou;
     TipoRecepcionista recepQueReservou;
     TipoQuarto quarto;
 
-    public TipoReserva(TipoData dataIn, TipoData dataOut, int idReserva, TipoHospede cli, TipoRecepcionista recep, TipoQuarto quarto) {
+    public TipoReserva(Data dataIn, Data dataOut, int idReserva, TipoHospede cli, TipoRecepcionista recep, TipoQuarto quarto) {
         this.dataIn = dataIn;
         this.dataOut = dataOut;
         this.idReserva = idReserva; // muadar aqui, isso precisa ser gerado automaticamente de algum jeito

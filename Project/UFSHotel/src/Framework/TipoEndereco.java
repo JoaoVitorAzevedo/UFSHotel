@@ -9,7 +9,7 @@ package Framework;
  *
  * @author 743554
  */
-public class Endereco {
+public class TipoEndereco {
     
     
     String cep;
@@ -23,7 +23,7 @@ public class Endereco {
     
     
     
-    public Endereco(String cep, String numero, String logradouro, String complemento, String bairro, String cidade, String estado) {
+    public TipoEndereco(String cep, String numero, String logradouro, String complemento, String bairro, String cidade, String estado) {
         this.cep = cep;
         this.numero = numero;
         this.logradouro = logradouro;

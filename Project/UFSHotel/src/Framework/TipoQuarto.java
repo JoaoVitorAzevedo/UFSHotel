@@ -25,6 +25,11 @@ public abstract class TipoQuarto {
         this.status.disponibilidade = true;
     }
 
+    public TipoQuarto(int idQuarto) {
+        this.idQuarto = idQuarto;
+       
+    }
+
     public int getAndar() {
         return andar;
     }

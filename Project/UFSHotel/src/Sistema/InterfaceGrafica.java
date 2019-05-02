@@ -9,17 +9,30 @@ package Sistema;
  *
  * @author 743554
  */
-public class Aplicacao {
+public class InterfaceGrafica {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         
+        //cadastro de quartos
+        
+       
+        Controller.cadastrarQuarto(31);
+        System.out.println("cadastrado quarto com id 31");
+        
+        
+        
+
+        System.out.println("");
+        System.out.println("");
+
         our_Data date = new our_Data(3,4,1299);
         date.printData();
         System.out.println("oiee");
         System.out.println("");
+        
         
         
         // TODO code application logic here

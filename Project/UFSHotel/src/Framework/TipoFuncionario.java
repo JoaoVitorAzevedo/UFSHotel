@@ -9,7 +9,7 @@ package Framework;
  *
  * @author 743554
  */
-public abstract class TipoFuncionario extends Pessoa {
+public abstract class TipoFuncionario extends Pessoa /* implements <nome-interface> */  {
     
     String setor;
     int idFuncionario;

@@ -1,15 +1,17 @@
 # UFSHotel
 UFSHotel
 
+Me leia pfv
 
-
-
-Não me leia.
-
-
-
-tentativa de checklist #1
-
-- [x] Finish my changes
-- [ ] Push my commits to GitHub
-- [ ] Open a pull request
+- [ ] Pagamento? O que vai ter nele? Porque composição com Reserva? 
+- [ ] Discutir Necessidade do TipoData ( podem haver pacotes java que resolvam o problema)
+- [ ] Discutir uso ou não uso de interface gráfica
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 

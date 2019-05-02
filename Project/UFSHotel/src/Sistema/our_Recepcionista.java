@@ -5,8 +5,10 @@
  */
 package Sistema;
 
+import Framework.Data;
 import Framework.TipoEndereco;
 import Framework.Telefone;
+import Framework.TipoHospede;
 import Framework.TipoRecepcionista;
 
 /**
@@ -22,18 +24,20 @@ public class our_Recepcionista extends TipoRecepcionista {
             
             
             
-            
-public void CriarReserva(our_Hospede hospede, our_Data dataIn, our_Data dataOut){
-            our_Reserva reserv = new our_Reserva();
-        //    reserv.quarto.StatusQuarto.setDisponibilidade(false);
-        //    reserv.quarto.StatusQuarto.setLimpeza(false);
-        // arrumar aqui
+   @Override     
+     public  void EfetuarReserva(int id, TipoHospede hospede, Data dataIn, Data dataOut){
+         our_Reserva reserv = new our_Reserva();
+         
+     }
+
+ 
+
         
-            
-            
             
             
         
     }
-    
-}
+
+
+
+

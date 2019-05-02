@@ -15,11 +15,13 @@ public abstract class TipoGerente extends TipoFuncionario {
         super(null, 0, null, null, null, null, null, null);
         System.out.println("Criei Gerente Nulo");
     }
+     
+    
 
     
     
     public void cadastrarFuncionario(){
-        System.out.println("Cadastrei um funcionario urruuuu");
+        System.out.println("Cadastrar funcionario chamado no gerente!!!");
         //manipular BD?
         //
         

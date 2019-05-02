@@ -23,9 +23,17 @@ public class TipoHospede extends Pessoa {
     public int getIdHospede() {
         return idHospede;
     }
+    
+    @Override
+    public int getID() {
+        return this.idHospede;
+    }
+    
     public void setIdHospede(int idHospede) {
         this.idHospede = idHospede;
     }
+
+
     
     
 

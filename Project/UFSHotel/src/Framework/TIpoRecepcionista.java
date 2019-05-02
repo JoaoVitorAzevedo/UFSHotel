@@ -5,6 +5,9 @@
  */
 package Framework;
 
+import Sistema.our_Data;
+import Sistema.our_Hospede;
+
 /**
  *
  * @author 743554
@@ -17,6 +20,9 @@ public abstract class TipoRecepcionista extends TipoFuncionario {
         super(setor, idFuncionario, turno, cpf, nome, email, end, tel);
         this.ramal = ramal;
     }
+    
+    
+    public abstract void EfetuarReserva(int id, TipoHospede hospede, Data dataIn, Data dataOut);
 
  
     
@@ -34,8 +40,9 @@ public abstract class TipoRecepcionista extends TipoFuncionario {
     //metodos    
     
     public void CadastrarHospede(){
-        System.out.println("Chamei Criador de Hospedes");
-        System.out.println("recepcionista cadastrou hospede com sucesso");
+         System.out.println("Chamei Criador de Hospedes na TipoRecepcionista");
+        System.out.println("recepcionista cadastrou hospede com sucesso");   
+
 
         // manipular BD?
     }

@@ -31,6 +31,9 @@ public abstract class Pessoa {
         this.listaTel.add(tel);
         
     }
+
+    
+    
     
     
     public void addTelefone(Telefone tel){
@@ -60,10 +63,9 @@ public abstract class Pessoa {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
- 
+     
+    public abstract int getID();
+    // padrao pra erro em herança
 
-    
-    
-    
     
 }

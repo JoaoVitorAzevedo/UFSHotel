@@ -32,6 +32,7 @@ public class TipoEndereco {
         this.cidade = cidade;
         this.estado = estado;
     }
+    
     //Getters
     public String getBairro() {
         return bairro;

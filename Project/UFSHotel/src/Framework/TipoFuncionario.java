@@ -28,9 +28,13 @@ public abstract class TipoFuncionario extends Pessoa /* implements <nome-interfa
     
     
     //getters
-    public int getIdFuncionario() {
+    
+    
+    @Override
+    public int getID() {
         return idFuncionario;
     }
+    
     public String getSetor() {
         return setor;
     }

@@ -9,7 +9,7 @@ package Framework;
  *
  * @author 743554
  */
-public abstract class TipoData {
+class TipoData {
     
     int dia;
     int mes;

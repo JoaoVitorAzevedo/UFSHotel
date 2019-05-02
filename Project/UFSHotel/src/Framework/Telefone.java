@@ -9,7 +9,7 @@ package Framework;
  *
  * @author 743554
  */
-public abstract class Telefone {
+public class Telefone {
     
     String ddd;
     String numero;
@@ -18,25 +18,19 @@ public abstract class Telefone {
         this.ddd = ddd;
         this.numero = numero;
     }
-
     public String getNumero() {
         return numero;
     }
-
     public String getDdd() {
         return ddd;
     }
-    
-    
     public String getNumComplete(){
     return ddd + numero;
     
     }
-
     public void setNumero(String numero) {
         this.numero = numero;
     }
-
     public void setDdd(String ddd) {
         this.ddd = ddd;
     }

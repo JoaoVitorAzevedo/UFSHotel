@@ -12,12 +12,17 @@ package Framework;
 public abstract class TipoGerente extends TipoFuncionario {
 
     public TipoGerente() {
-        super(null, 0, null, null, null, null, null);
+        super(null, 0, null, null, null, null, null, null);
+        System.out.println("Criei Gerente Nulo");
     }
-  
+
+    
     
     public void cadastrarFuncionario(){
         System.out.println("Cadastrei um funcionario urruuuu");
+        //manipular BD?
+        //
+        
        }
      
     

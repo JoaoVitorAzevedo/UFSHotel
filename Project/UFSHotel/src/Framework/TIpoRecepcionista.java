@@ -9,33 +9,37 @@ package Framework;
  *
  * @author 743554
  */
-public abstract class TIpoRecepcionista extends TipoFuncionario {
+public abstract class TipoRecepcionista extends TipoFuncionario {
     
     int ramal;
 
-    public TIpoRecepcionista(int ramal, String setor, int idFuncionario, String cpf, String nome, String email, Endereco end, Telefone tel) {
-        super(setor, idFuncionario, cpf, nome, email, end, tel);
+    public TipoRecepcionista(int ramal, String setor, int idFuncionario, String turno, String cpf, String nome, String email, Endereco end, Telefone tel) {
+        super(setor, idFuncionario, turno, cpf, nome, email, end, tel);
         this.ramal = ramal;
     }
+
+ 
     
 
     
-    // get set
+    // getters 
     public int getRamal() {
         return ramal;
     }
-
+    //setters
     public void setRamal(int ramal) {
         this.ramal = ramal;
     }
-    
-    
-    
+     
     //metodos    
     
-    
     public void CadastrarHospede(){
+        System.out.println("Chamei Criador de Hospedes");
         System.out.println("recepcionista cadastrou hospede com sucesso");
+
+        // manipular BD?
     }
+    
+    
     
 }

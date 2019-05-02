@@ -19,7 +19,7 @@ public abstract class Pessoa {
     String nome;
     String email;
     
-    Endereco end;
+    List<Endereco> enderecos;
     List<Telefone> listaTel;
 
     
@@ -28,32 +28,36 @@ public abstract class Pessoa {
         this.nome = nome;
         this.email = email;
         //this.end = end;
+        this.enderecos.add(end);
         this.listaTel.add(tel);
         
     }
     
     
+    public void addTelefone(Telefone tel){
+        this.listaTel.add(tel);
+    }
+    public void addEndereco(Endereco end){
+        this.enderecos.add(end);
+    }
     
+    //getters
     public String getEmail() {
         return email;
     }
-
     public String getCpf() {
         return cpf;
     }
-
     public String getNome() {
         return nome;
     }
-
+    //setters
     public void setNome(String nome) {
         this.nome = nome;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }
-
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }

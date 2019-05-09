@@ -5,6 +5,7 @@
  */
 package Framework;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -18,8 +19,8 @@ public abstract class Pessoa {
     String cpf;
     String nome;
     String email;
-    List<TipoEndereco> enderecos;
-    List<Telefone> listaTel;
+    List<TipoEndereco> enderecos = new ArrayList<TipoEndereco>();
+    List<Telefone> listaTel = new ArrayList<Telefone>();
 
     
     public Pessoa(String cpf, String nome, String email, TipoEndereco end, Telefone tel) {

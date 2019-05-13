@@ -20,5 +20,7 @@ public class our_Servicos extends TipoServicos {
         super(nomeDoServico, responsaveis, precoDoServico, dataServico, horario);
 
     }
+    
+    
 
 }

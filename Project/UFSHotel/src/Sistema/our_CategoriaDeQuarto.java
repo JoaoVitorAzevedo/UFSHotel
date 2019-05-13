@@ -11,10 +11,10 @@ import Framework.TipoCategoriaDeQuarto;
  *
  * @author MartManHunter
  */
-public class our_TipoCategoriaDeQuarto extends TipoCategoriaDeQuarto {
+public class our_CategoriaDeQuarto extends TipoCategoriaDeQuarto {
 
-    public our_TipoCategoriaDeQuarto() {
-        super(null, 0);
+    public our_CategoriaDeQuarto(String categoria, int cap ) {
+        super(categoria, cap);
     }
 
 }

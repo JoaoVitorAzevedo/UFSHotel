@@ -5,17 +5,16 @@
  */
 package Sistema;
 
-import Framework.Data;
+import Framework.TipoCategoriaDeQuarto;
 
 /**
  *
  * @author MartManHunter
  */
-public class our_Data extends Data {
+public class our_CategoriaDeQuarto extends TipoCategoriaDeQuarto {
 
-    public our_Data(int dia, int mes, int ano) {
-        super(dia, mes, ano);
-        //nossas coisas especificas aqui pra datas
+    public our_CategoriaDeQuarto(String categoria, int cap ) {
+        super(categoria, cap);
     }
 
 }

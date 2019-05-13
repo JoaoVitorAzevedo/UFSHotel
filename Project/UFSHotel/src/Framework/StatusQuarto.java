@@ -10,16 +10,15 @@ package Framework;
  * @author MartManHunter
  */
 public class StatusQuarto {
-    
+
     boolean limpeza;
     boolean disponibilidade;
-    
-    
-    public boolean isLimpavel(){
+
+    public boolean isLimpavel() {
         return this.limpeza;
     }
-    
-    public boolean isVago(){
+
+    public boolean isVago() {
         return this.disponibilidade;
     }
 
@@ -31,13 +30,9 @@ public class StatusQuarto {
     public void setDisponibilidade(boolean disponibilidade) {
         this.disponibilidade = disponibilidade;
     }
+
     public void setLimpeza(boolean limpeza) {
         this.limpeza = limpeza;
     }
-    
-    
-    
-    
-    
-    
+
 }

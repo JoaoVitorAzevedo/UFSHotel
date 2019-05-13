@@ -55,6 +55,8 @@ public class InterfaceGrafica {
         System.out.println("printando services");
         tipocatroom.printServicos();
 
+        
+        
     }
 
 }

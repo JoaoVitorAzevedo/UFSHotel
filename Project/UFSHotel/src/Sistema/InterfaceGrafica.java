@@ -42,6 +42,7 @@ public class InterfaceGrafica {
         System.out.println(hosp.getCpf());
 
         // TODO code application logic here
+<<<<<<< HEAD
         System.out.println("amigo estou aqui");
         System.out.println("------------------------------------");
 
@@ -55,6 +56,8 @@ public class InterfaceGrafica {
         System.out.println("printando services");
         tipocatroom.printServicos();
 
+=======
+>>>>>>> 1799adffebe8ab4767e0148a1e979e5a75a96e38
     }
 
 }

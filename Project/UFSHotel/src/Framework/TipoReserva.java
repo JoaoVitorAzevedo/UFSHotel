@@ -6,6 +6,7 @@
 package Framework;
 
 import java.util.Date;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  *
@@ -13,6 +14,10 @@ import java.util.Date;
  */
 public class TipoReserva {
     
+<<<<<<< HEAD
+=======
+	AtomicInteger idGen;
+>>>>>>> 1799adffebe8ab4767e0148a1e979e5a75a96e38
     Data dataIn;
     Data dataOut;
     int idReserva;
@@ -21,10 +26,14 @@ public class TipoReserva {
     TipoQuarto quarto;
     TipoPagamento pag;
 
+<<<<<<< HEAD
     public TipoReserva(Data dataIn, Data dataOut, int idReserva, TipoHospede cli, TipoRecepcionista recep, TipoQuarto quarto, TipoPagamento pag) {
+=======
+    public TipoReserva(Data dataIn, Data dataOut, TipoHospede cli, TipoRecepcionista recep, TipoQuarto quarto, TipoPagamento pag) {
+>>>>>>> 1799adffebe8ab4767e0148a1e979e5a75a96e38
         this.dataIn = dataIn;
         this.dataOut = dataOut;
-        this.idReserva = idReserva; // muadar aqui, isso precisa ser gerado automaticamente de algum jeito
+        this.idReserva = idGen.incrementAndGet();
         this.cliQueReservou = cli;
         this.recepQueReservou = recep;
         this.quarto = quarto;

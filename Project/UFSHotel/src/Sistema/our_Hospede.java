@@ -9,10 +9,6 @@ import Framework.TipoEndereco;
 import Framework.TipoTelefone;
 import Framework.TipoHospede;
 
-/**
- *
- * @author MartManHunter
- */
 public class our_Hospede extends TipoHospede {
 
     public our_Hospede(int idHospede, String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {

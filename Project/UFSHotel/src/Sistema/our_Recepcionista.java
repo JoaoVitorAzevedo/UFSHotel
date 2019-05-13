@@ -11,10 +11,6 @@ import Framework.TipoTelefone;
 import Framework.TipoHospede;
 import Framework.TipoRecepcionista;
 
-/**
- *
- * @author MartManHunter
- */
 public class our_Recepcionista extends TipoRecepcionista {
 
     public our_Recepcionista(int ramal, String setor, int idFuncionario, String turno, String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {

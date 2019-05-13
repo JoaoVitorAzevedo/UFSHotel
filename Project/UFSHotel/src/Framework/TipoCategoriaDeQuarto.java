@@ -8,21 +8,20 @@ package Framework;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author 743554
- */
 public class TipoCategoriaDeQuarto {
 
     String classificacao;
     int capacidade;
-    List<TipoServicos> servicos = new ArrayList<TipoServicos>(); // lista de serviços que esse quarto oferece
+    float preco;
+	List<TipoServicos> servicos = new ArrayList<TipoServicos>(); // lista de serviços que esse quarto oferece
     
 
-    public TipoCategoriaDeQuarto(String classificacao, int capacidade) {
+    public TipoCategoriaDeQuarto(String classificacao, int capacidade, float preco) {
         this.classificacao = classificacao;
         this.capacidade = capacidade;
+        this.preco = preco;
     }
+    
     
     public void addServico(TipoServicos service){
         this.servicos.add(service);
@@ -46,6 +45,10 @@ public class TipoCategoriaDeQuarto {
   public String getClassificacao() {
         return classificacao;
     }
+  
+  public float getPreco() {
+		return preco;
+	}
     
     //setters
 
@@ -56,7 +59,10 @@ public class TipoCategoriaDeQuarto {
     public void setClassificacao(String classificacao) {
         this.classificacao = classificacao;
     }
-    
+
+	public void setPreco(float preco) {
+		this.preco = preco;
+	}
   
   
 

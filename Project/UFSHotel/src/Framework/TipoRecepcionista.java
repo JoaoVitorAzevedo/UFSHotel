@@ -5,13 +5,7 @@
  */
 package Framework;
 
-import Sistema.our_Data;
-import Sistema.our_Hospede;
 
-/**
- *
- * @author 743554
- */
 public abstract class TipoRecepcionista extends TipoFuncionario {
 
     int ramal;

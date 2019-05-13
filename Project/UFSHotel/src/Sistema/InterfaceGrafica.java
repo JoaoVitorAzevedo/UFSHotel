@@ -6,17 +6,9 @@
 package Sistema;
 
 import Framework.TipoTelefone;
-import Framework.TipoEndereco;
 
-/**
- *
- * @author 743554
- */
 public class InterfaceGrafica {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
 
         //cadastro de quartos
@@ -48,7 +40,7 @@ public class InterfaceGrafica {
         our_Servicos serv = new our_Servicos("NomedoServ1", null, 22.0f, new our_Data(6, 8, 1986), "horario tal");
         our_Servicos serv2 = new our_Servicos("NomedoServ2", null, 22.0f, new our_Data(6, 8, 1986), "horario y");
         our_Servicos serv3 = new our_Servicos("NomedoServ3", null, 22.0f, new our_Data(6, 8, 1986), "horario x");
-        our_CategoriaDeQuarto tipocatroom = new our_CategoriaDeQuarto("Suite", 3);
+        our_CategoriaDeQuarto tipocatroom = new our_CategoriaDeQuarto("Suite", 3, 1200);
         tipocatroom.addServico(serv2);
         tipocatroom.addServico(serv);
         tipocatroom.addServico(serv3);

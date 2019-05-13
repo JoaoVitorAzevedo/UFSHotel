@@ -5,10 +5,6 @@
  */
 package Sistema;
 
-/**
- *
- * @author MartManHunter
- */
 public class Controller {
 
     public static void cadastrarQuarto(int id) {
@@ -42,7 +38,7 @@ public class Controller {
     }
 
     public static boolean cadastrarGerente() {
-        System.out.println("Cadastrado o genrente. (Por quem?) ");
+        System.out.println("Cadastrado o genrente");
         return true;
     }
 

@@ -7,10 +7,6 @@ package Framework;
 
 import java.util.List;
 
-/**
- *
- * @author MartManHunter
- */
 public class TipoServicos {
 
     String nomeDoServico;

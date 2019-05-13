@@ -12,7 +12,7 @@ import java.util.List;
  * @author 743554
  */
 public class TipoCategoriaDeQuarto {
-    
+
     String classificacao;
     int capacidade;
     List<TipoServicos> servicos;  // lista de serviços que esse quarto oferece
@@ -21,11 +21,5 @@ public class TipoCategoriaDeQuarto {
         this.classificacao = classificacao;
         this.capacidade = capacidade;
     }
-    
-   
-    
-    
-    
-    
-    
+
 }

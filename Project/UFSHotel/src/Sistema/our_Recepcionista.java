@@ -20,24 +20,13 @@ public class our_Recepcionista extends TipoRecepcionista {
     public our_Recepcionista(int ramal, String setor, int idFuncionario, String turno, String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
         super(ramal, setor, idFuncionario, turno, cpf, nome, email, end, tel);
     }
-    
-            
-            
-            
-   @Override     
-     public  void cadastrarReserva(int id, TipoHospede hospede, Data dataIn, Data dataOut){
-         our_Reserva reserv = new our_Reserva();
-         
-     }
 
- 
+    @Override
+    public boolean cadastrarReserva(int id, TipoHospede hospede, Data dataIn, Data dataOut) {
+        //our_Reserva reserv = new our_Reserva();
+        System.out.println("deu certo");
+        return true;
 
-        
-            
-            
-        
     }
 
-
-
-
+}

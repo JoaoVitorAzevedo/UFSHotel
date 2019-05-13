@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Sistema;
+
 import Framework.TipoEndereco;
 
 /**
@@ -11,11 +12,9 @@ import Framework.TipoEndereco;
  * @author MartManHunter
  */
 public class our_Endereco extends TipoEndereco {
-    
+
     public our_Endereco(String cep, String numero, String logradouro, String complemento, String bairro, String cidade, String estado) {
         super(cep, numero, logradouro, complemento, bairro, cidade, estado);
     }
 
-  
-    
 }

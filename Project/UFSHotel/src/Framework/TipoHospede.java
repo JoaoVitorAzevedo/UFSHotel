@@ -10,36 +10,26 @@ package Framework;
  * @author 743554
  */
 public class TipoHospede extends TipoPessoa {
-    
+
     int idHospede;
 
     public TipoHospede(int idHospede, String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
         super(cpf, nome, email, end, tel);
         this.idHospede = idHospede;
-        
-    }
-    
 
-    
+    }
+
     public int getIdHospede() {
         return idHospede;
     }
-    
+
     @Override
     public int getID() {
         return this.idHospede;
     }
-    
+
     public void setIdHospede(int idHospede) {
         this.idHospede = idHospede;
     }
 
-
-    
-    
-
-   
-    
-    
-    
 }

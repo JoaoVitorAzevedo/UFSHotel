@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Sistema;
+
 import Framework.TipoCategoriaDeQuarto;
 
 /**
@@ -15,11 +16,5 @@ public class our_TipoCategoriaDeQuarto extends TipoCategoriaDeQuarto {
     public our_TipoCategoriaDeQuarto() {
         super(null, 0);
     }
-    
 
-    
-    
-    
-    
-    
 }

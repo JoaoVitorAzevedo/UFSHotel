@@ -9,10 +9,11 @@ package Framework;
  *
  * @author MartManHunter
  */
-public abstract class  TipoPagamento {
-       float valorPago;
-       String ModalidadePagamento;
-       int qtdParcelas;
+public abstract class TipoPagamento {
+
+    float valorPago;
+    String ModalidadePagamento;
+    int qtdParcelas;
 
     public TipoPagamento(float valorPago, String ModalidadePagamento, int qtdParcelas) {
         this.valorPago = valorPago;
@@ -24,29 +25,26 @@ public abstract class  TipoPagamento {
     public String getModalidadePagamento() {
         return ModalidadePagamento;
     }
+
     public int getQtdParcelas() {
         return qtdParcelas;
     }
+
     public float getValorPago() {
         return valorPago;
     }
+
     //setters
     public void setModalidadePagamento(String ModalidadePagamento) {
         this.ModalidadePagamento = ModalidadePagamento;
     }
+
     public void setValorPago(float valorPago) {
         this.valorPago = valorPago;
     }
+
     public void setQtdParcelas(int qtdParcelas) {
         this.qtdParcelas = qtdParcelas;
     }
-    
-     
-     
-       
-        
-       
-       
-       
-    
+
 }

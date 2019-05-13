@@ -12,12 +12,10 @@ import Framework.Data;
  * @author MartManHunter
  */
 public class our_Data extends Data {
-    
+
     public our_Data(int dia, int mes, int ano) {
         super(dia, mes, ano);
         //nossas coisas especificas aqui pra datas
     }
-    
-   
-    
+
 }

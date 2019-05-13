@@ -10,12 +10,12 @@ package Framework;
  * @author 743554
  */
 public class TipoTelefone {
-    
+
     String codigoPais;
     String ddd;
     String numero;
 
-    public TipoTelefone(String codigoPais,String ddd, String numero) {
+    public TipoTelefone(String codigoPais, String ddd, String numero) {
         this.codigoPais = codigoPais;
         this.ddd = ddd;
         this.numero = numero;
@@ -25,31 +25,32 @@ public class TipoTelefone {
     public String getCodigoPais() {
         return codigoPais;
     }
+
     public String getNumero() {
         return numero;
     }
+
     public String getDdd() {
         return ddd;
-    }   
-    
-    public String getNumComplete(){
-        System.out.println("Numero completo é: ("+ddd+") "+numero);
+    }
+
+    public String getNumComplete() {
+        System.out.println("Numero completo é: (" + ddd + ") " + numero);
         return ddd + numero;
-    
-    }  
-    
+
+    }
+
     //setters
     public void setNumero(String numero) {
         this.numero = numero;
     }
+
     public void setDdd(String ddd) {
         this.ddd = ddd;
     }
+
     public void setCodigoPais(String codigoPais) {
         this.codigoPais = codigoPais;
     }
-    
-    
-    
-    
+
 }

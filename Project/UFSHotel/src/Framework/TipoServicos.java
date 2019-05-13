@@ -12,6 +12,7 @@ import java.util.List;
  * @author MartManHunter
  */
 public class TipoServicos {
+
     String nomeDoServico;
     List<TipoFuncionario> responsaveis;
     float precoDoServico;
@@ -25,50 +26,51 @@ public class TipoServicos {
         this.dataServico = dataServico;
         this.horario = horario;
     }
-    
-    
-    
+
     //getters
     public Data getDataServico() {
         return dataServico;
     }
+
     public float getPrecoDoServico() {
         return precoDoServico;
     }
+
     public String getNomeDoServico() {
         return nomeDoServico;
     }
+
     public List<TipoFuncionario> getResponsaveis() {
         return responsaveis;
     }
+
     public String getHorario() {
         return horario;
     }
-   
-   
+
     //setters
-    public void addResponsavel(TipoFuncionario func){
+    public void addResponsavel(TipoFuncionario func) {
         this.responsaveis.add(func);
     }
+
     public void setDataServico(Data dataServico) {
         this.dataServico = dataServico;
     }
+
     public void setHorario(String horario) {
         this.horario = horario;
     }
+
     public void setNomeDoServico(String nomeDoServico) {
         this.nomeDoServico = nomeDoServico;
     }
+
     public void setPrecoDoServico(float precoDoServico) {
         this.precoDoServico = precoDoServico;
     }
+
     public void setResponsaveis(List<TipoFuncionario> responsaveis) {
         this.responsaveis = responsaveis;
     }
-    
-    
-    
-    
-    
-    
+
 }

@@ -5,8 +5,10 @@
  */
 package Sistema;
 
-import Framework.Endereco;
-import Framework.Telefone;
+import Framework.Data;
+import Framework.TipoEndereco;
+import Framework.TipoTelefone;
+import Framework.TipoHospede;
 import Framework.TipoRecepcionista;
 
 /**
@@ -15,25 +17,16 @@ import Framework.TipoRecepcionista;
  */
 public class our_Recepcionista extends TipoRecepcionista {
 
-    public our_Recepcionista(int ramal, String setor, int idFuncionario, String turno, String cpf, String nome, String email, Endereco end, Telefone tel) {
+    public our_Recepcionista(int ramal, String setor, int idFuncionario, String turno, String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
         super(ramal, setor, idFuncionario, turno, cpf, nome, email, end, tel);
     }
-    
-            
-            
-            
-            
-public void CriarReserva(our_Hospede hospede, our_Data dataIn, our_Data dataOut){
-            our_Reserva reserv = new our_Reserva();
-        //    reserv.quarto.StatusQuarto.setDisponibilidade(false);
-        //    reserv.quarto.StatusQuarto.setLimpeza(false);
-        // arrumar aqui
-        
-            
-            
-            
-            
-        
+
+    @Override
+    public boolean cadastrarReserva(int id, TipoHospede hospede, Data dataIn, Data dataOut) {
+        //our_Reserva reserv = new our_Reserva();
+        System.out.println("deu certo");
+        return true;
+
     }
-    
+
 }

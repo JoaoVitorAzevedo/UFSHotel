@@ -5,10 +5,19 @@
  */
 package Sistema;
 
+import Framework.TipoQuarto;
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  *
  * @author MartManHunter
  */
-public class our_Quarto {
-    
+public class our_Quarto extends TipoQuarto {
+
+    public our_Quarto(int idQuarto) {
+        super(idQuarto);
+
+    }
+
 }

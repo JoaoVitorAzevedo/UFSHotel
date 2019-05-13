@@ -5,20 +5,20 @@
  */
 package Sistema;
 
-import Framework.Endereco;
-import Framework.Telefone;
+import Framework.TipoEndereco;
+import Framework.TipoTelefone;
 import Framework.TipoHospede;
 
 /**
  *
  * @author MartManHunter
  */
-public class our_Hospede  extends TipoHospede{
-    
-    public our_Hospede(int idHospede, String cpf, String nome, String email, Endereco end, Telefone tel) {
+public class our_Hospede extends TipoHospede {
+
+    public our_Hospede(int idHospede, String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
         super(idHospede, cpf, nome, email, end, tel);
         // nossas coisas especificas aqui
+
     }
-    
-    
+
 }

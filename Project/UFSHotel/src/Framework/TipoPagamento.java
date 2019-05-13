@@ -5,20 +5,18 @@
  */
 package Framework;
 
-/**
- *
- * @author MartManHunter
- */
 public abstract class TipoPagamento {
 
     float valorPago;
     String ModalidadePagamento;
     int qtdParcelas;
+    bool statusPagamento;
 
-    public TipoPagamento(float valorPago, String ModalidadePagamento, int qtdParcelas) {
+    public TipoPagamento(float valorPago, String ModalidadePagamento, int qtdParcelas, bool statusPagamento) {
         this.valorPago = valorPago;
         this.ModalidadePagamento = ModalidadePagamento;
         this.qtdParcelas = qtdParcelas;
+        this.statusPagamento = statusPagamento;
     }
 
     //getters

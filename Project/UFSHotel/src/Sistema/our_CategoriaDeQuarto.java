@@ -13,8 +13,8 @@ import Framework.TipoCategoriaDeQuarto;
  */
 public class our_CategoriaDeQuarto extends TipoCategoriaDeQuarto {
 
-    public our_CategoriaDeQuarto(String categoria, int cap ) {
-        super(categoria, cap);
+    public our_CategoriaDeQuarto(String categoria, int cap, float preco) {
+        super(categoria, cap, preco);
     }
 
 }

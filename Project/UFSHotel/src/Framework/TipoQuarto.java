@@ -5,10 +5,6 @@
  */
 package Framework;
 
-/**
- *
- * @author 743554
- */
 public abstract class TipoQuarto {
 
     int idQuarto;

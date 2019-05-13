@@ -7,10 +7,6 @@ package Framework;
 
 import java.util.Date;
 
-/**
- *
- * @author 743554
- */
 public class TipoReserva {
     
     Data dataIn;

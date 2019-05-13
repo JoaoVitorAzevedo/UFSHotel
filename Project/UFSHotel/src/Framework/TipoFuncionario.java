@@ -5,10 +5,6 @@
  */
 package Framework;
 
-/**
- *
- * @author 743554
- */
 public abstract class TipoFuncionario extends TipoPessoa /* implements <nome-interface> */ /* implements <nome-interface> */ {
 
     String setor;

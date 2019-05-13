@@ -5,10 +5,6 @@
  */
 package Framework;
 
-/**
- *
- * @author 743554
- */
 public class TipoHospede extends TipoPessoa {
 
     int idHospede;

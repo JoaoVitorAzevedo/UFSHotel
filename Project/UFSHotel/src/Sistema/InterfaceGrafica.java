@@ -45,6 +45,10 @@ public class InterfaceGrafica {
         System.out.println("amigo estou aqui");
         System.out.println("------------------------------------");
         
+        
+        
+        our_Servicos serv = new our_Servicos("NomedoServ", new ArrayList<our_Limpeza>,);
+        
     }
 
 }

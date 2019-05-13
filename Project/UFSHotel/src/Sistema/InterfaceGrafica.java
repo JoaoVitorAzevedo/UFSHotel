@@ -5,7 +5,7 @@
  */
 package Sistema;
 
-import Framework.Telefone;
+import Framework.TipoTelefone;
 import Framework.TipoEndereco;
 
 /**
@@ -37,7 +37,7 @@ public class InterfaceGrafica {
         System.out.println("");
         
         our_Endereco end = new our_Endereco("17523275", "252", "logradouro", "blablabla", "Jardim Guanabara", "Marília", "Ceará"); 
-        Telefone tel = new Telefone("+55","14", "99777-7676");
+        TipoTelefone tel = new TipoTelefone("+55","14", "99777-7676");
         
         our_Hospede hosp = new our_Hospede(31, "432.883.228-81", "Joao Vitor", "fulanodetal@gmail.com", end, tel);
                                           //(int idHospede, String cpf, String nome, String email, our_Endereco end, Telefone tel)

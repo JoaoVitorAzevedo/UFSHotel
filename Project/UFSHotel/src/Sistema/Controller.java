@@ -35,6 +35,20 @@ public class Controller {
     public static void cadastrarFuncionario(){
     
     }
+    public static boolean cadastrarRecepcaoAtendimento(){
+        
+        System.out.println("cadastrado funcionario do tipo Recepção");
+        return true;
+        
+    }
+    public static boolean cadastrarLimpeza(){
+    System.out.println("cadastrada Bozena de Pato Branco");
+    return true;
+    }
+    public static boolean cadastrarGerente(){
+        System.out.println("Cadastrado o genrente. (Por quem?) ");
+    return true;
+    }
     
         
     

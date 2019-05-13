@@ -9,13 +9,14 @@ package Framework;
  *
  * @author 743554
  */
-public class TipoHospede extends Pessoa {
+public class TipoHospede extends TipoPessoa {
     
     int idHospede;
 
-    public TipoHospede(int idHospede, String cpf, String nome, String email, TipoEndereco end, Telefone tel) {
+    public TipoHospede(int idHospede, String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
         super(cpf, nome, email, end, tel);
         this.idHospede = idHospede;
+        
     }
     
 

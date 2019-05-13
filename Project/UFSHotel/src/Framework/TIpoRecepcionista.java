@@ -16,17 +16,14 @@ public abstract class TipoRecepcionista extends TipoFuncionario {
     
     int ramal;
 
-    public TipoRecepcionista(int ramal, String setor, int idFuncionario, String turno, String cpf, String nome, String email, TipoEndereco end, Telefone tel) {
+    public TipoRecepcionista(int ramal, String setor, int idFuncionario, String turno, String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
         super(setor, idFuncionario, turno, cpf, nome, email, end, tel);
         this.ramal = ramal;
     }
     
     
-    public abstract void EfetuarReserva(int id, TipoHospede hospede, Data dataIn, Data dataOut);
-
- 
+    public abstract boolean cadastrarReserva(int id, TipoHospede hospede, Data dataIn, Data dataOut);
     
-
     
     // getters 
     public int getRamal() {
@@ -41,9 +38,7 @@ public abstract class TipoRecepcionista extends TipoFuncionario {
     
     public void CadastrarHospede(){
          System.out.println("Chamei Criador de Hospedes na TipoRecepcionista");
-        System.out.println("recepcionista cadastrou hospede com sucesso");   
-
-
+        System.out.println("recepcionista cadastrou hospede com sucesso\n");   
         // manipular BD?
     }
     

@@ -14,16 +14,16 @@ import java.util.List;
  *
  * @author 743554
  */
-public abstract class Pessoa {
+public abstract class TipoPessoa {
     
-    String cpf;
+    protected String cpf;
     String nome;
     String email;
     List<TipoEndereco> enderecos = new ArrayList<TipoEndereco>();
-    List<Telefone> listaTel = new ArrayList<Telefone>();
+    List<TipoTelefone> listaTel = new ArrayList<TipoTelefone>();
 
     
-    public Pessoa(String cpf, String nome, String email, TipoEndereco end, Telefone tel) {
+    public TipoPessoa(String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
         this.cpf = cpf;
         this.nome = nome;
         this.email = email;
@@ -37,7 +37,7 @@ public abstract class Pessoa {
     
     
     
-    public void addTelefone(Telefone tel){
+    public void addTelefone(TipoTelefone tel){
         this.listaTel.add(tel);
     }
     public void addEndereco(TipoEndereco end){

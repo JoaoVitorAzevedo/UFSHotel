@@ -9,18 +9,18 @@ package Framework;
  *
  * @author 743554
  */
-public class Telefone {
+public class TipoTelefone {
     
     String codigoPais;
     String ddd;
     String numero;
 
-    public Telefone(String codigoPais,String ddd, String numero) {
+    public TipoTelefone(String codigoPais,String ddd, String numero) {
         this.codigoPais = codigoPais;
         this.ddd = ddd;
         this.numero = numero;
     }
-    //getters
+    //getters 
 
     public String getCodigoPais() {
         return codigoPais;

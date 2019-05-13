@@ -10,9 +10,9 @@ package Framework;
  * @author MartManHunter
  */
 public abstract class Data {
-    int dia;
-    int mes;
-    int ano;
+    private int dia;
+    private int mes;
+    private int ano;
     
     
     public Data(int dia, int mes, int ano) {
@@ -24,15 +24,15 @@ public abstract class Data {
     
     
     public void setDate(int dia, int mes, int ano){
-        this.dia = dia;
-        this.mes = mes;
-        this.ano = ano;
+        this.setDia(dia);
+        this.setMes(mes);
+        this.setAno(ano);
         
     }
     
     
     public void printData(){
-        System.out.println(dia+"/"+mes+"/"+ano);
+        System.out.println(getDia()+"/"+getMes()+"/"+getAno());
     }
     //getters
     public int getDia() {

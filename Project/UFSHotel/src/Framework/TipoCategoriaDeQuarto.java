@@ -5,6 +5,7 @@
  */
 package Framework;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,11 +16,48 @@ public class TipoCategoriaDeQuarto {
 
     String classificacao;
     int capacidade;
-    List<TipoServicos> servicos;  // lista de serviços que esse quarto oferece
+    List<TipoServicos> servicos = new ArrayList<TipoServicos>(); // lista de serviços que esse quarto oferece
+    
 
     public TipoCategoriaDeQuarto(String classificacao, int capacidade) {
         this.classificacao = classificacao;
         this.capacidade = capacidade;
     }
+    
+    public void addServico(TipoServicos service){
+        this.servicos.add(service);
+    }
+    
+    //getters
+
+    public int getCapacidade() {
+        return capacidade;
+    }
+
+    public List<TipoServicos> getServicos() {
+        return servicos;
+    }
+    
+    public void printServicos(){
+        for(TipoServicos serv : servicos){
+            System.out.println(serv.getNomeDoServico());
+        }
+    }
+  public String getClassificacao() {
+        return classificacao;
+    }
+    
+    //setters
+
+    public void setCapacidade(int capacidade) {
+        this.capacidade = capacidade;
+    }
+
+    public void setClassificacao(String classificacao) {
+        this.classificacao = classificacao;
+    }
+    
+  
+  
 
 }

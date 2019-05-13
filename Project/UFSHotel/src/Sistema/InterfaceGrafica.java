@@ -42,6 +42,9 @@ public class InterfaceGrafica {
         System.out.println(hosp.getCpf());
 
         // TODO code application logic here
+        System.out.println("amigo estou aqui");
+        System.out.println("------------------------------------");
+        
     }
 
 }

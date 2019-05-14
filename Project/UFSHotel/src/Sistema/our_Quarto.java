@@ -22,9 +22,10 @@ public class our_Quarto extends TipoQuarto {
     void printData() {
         System.out.println("Imprimindo dados de " + this.toString());
         System.out.println("ID: " + this.getIdQuarto());
-        System.out.println("Andar: " + this.getIdQuarto());
+        System.out.println("Andar: " + this.getAndar());
         System.out.println("------CategoriaDoQuarto----- ");
         this.getTipo().printData();
+        System.out.println("");
     }
 
 }

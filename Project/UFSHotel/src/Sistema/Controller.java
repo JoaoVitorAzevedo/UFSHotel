@@ -12,17 +12,20 @@ package Sistema;
  */
 public class Controller {
 
-    public static void cadastrarQuarto(int id) {
+    public static void cadastrarQuarto(int id, int andar, our_CategoriaDeQuarto catroom) {
 
-        our_Quarto our = new our_Quarto(id, 0, null);
-        //System.out.println("o andar é: " + our.getIdQuarto());
+        our_Quarto our = new our_Quarto(id, andar, catroom);
+        if (true) {
+            System.out.println("Cadastrado Quarto com dados: ");
+            our.printData();
 
+        }
         // our.save()
     }
 
     public static void cadastrarHospede(our_Hospede novoHospede) {
         //BancoDeHospedes.add(novoHospede);
-        System.out.println("Novo Hospede cadastrado com sucesso! ID:" + novoHospede.getIdHospede() + ", Nome: " + novoHospede.getNome());
+        System.out.println("Novo Hospede cadastrado com sucesso! ID:" + novoHospede.getID() + ", Nome: " + novoHospede.getNome());
 
     }
 

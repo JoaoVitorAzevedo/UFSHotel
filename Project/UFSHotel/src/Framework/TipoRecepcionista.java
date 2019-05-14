@@ -10,7 +10,6 @@ package Framework;
  * @author Sabrina Miranda 743595
  * @author Vitor Sugaya 743605
  */
-
 public abstract class TipoRecepcionista extends TipoFuncionario {
 
     int ramal;

@@ -10,7 +10,7 @@ package Framework;
  * @author Sabrina Miranda 743595
  * @author Vitor Sugaya 743605
  */
-public class TipoHospede extends TipoPessoa {
+public abstract class TipoHospede extends TipoPessoa {
 
     int idHospede;
 

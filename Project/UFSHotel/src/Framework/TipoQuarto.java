@@ -10,8 +10,6 @@ package Framework;
  * @author Sabrina Miranda 743595
  * @author Vitor Sugaya 743605
  */
-import java.util.HashSet;
-import java.util.Set;
 
 public abstract class TipoQuarto {
 

@@ -12,8 +12,8 @@ package Framework;
  */
 public class StatusQuarto {
 
-    boolean limpeza;
-    boolean disponibilidade;
+    boolean limpeza = true;
+    boolean disponibilidade = true;
     
     
 

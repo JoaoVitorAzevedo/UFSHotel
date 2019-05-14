@@ -30,7 +30,7 @@ public class Controller {
     }
 
     public static void cadastrarFuncionario() {
-
+        System.out.println("cadastradoFuncionario rs");
     }
 
     public static boolean cadastrarRecepcaoAtendimento() {

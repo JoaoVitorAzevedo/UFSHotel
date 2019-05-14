@@ -20,10 +20,6 @@ public class TipoHospede extends TipoPessoa {
 
     }
 
-    public int getIdHospede() {
-        return idHospede;
-    }
-
     @Override
     public int getID() {
         return this.idHospede;

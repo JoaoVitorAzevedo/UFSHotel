@@ -37,18 +37,23 @@ public class InterfaceGrafica {
         System.out.println("amigo estou aqui");
         System.out.println("------------------------------------");
 
+        //servicos para a lista de um quarto
         our_Servicos serv = new our_Servicos("NomedoServ1", null, 22.0f, new our_Data(6, 8, 1986), "horario tal");
         our_Servicos serv2 = new our_Servicos("NomedoServ2", null, 22.0f, new our_Data(6, 8, 1986), "horario y");
         our_Servicos serv3 = new our_Servicos("NomedoServ3", null, 22.0f, new our_Data(6, 8, 1986), "horario x");
-        our_CategoriaDeQuarto tipocatroom = new our_CategoriaDeQuarto("Suite", 3, 1200);
-        tipocatroom.addServico(serv2);
-        tipocatroom.addServico(serv);
-        tipocatroom.addServico(serv3);
-        System.out.println("printando services");
-        tipocatroom.printServicos();
 
+        our_CategoriaDeQuarto catRoom = new our_CategoriaDeQuarto("Suite", 3, 120.0f);    //Nome da Categoria, capacidade, preco)
+        catRoom.addServico(serv2);
+        catRoom.addServico(serv);
+        catRoom.addServico(serv3);
+        System.out.println("printando services");
+        catRoom.printServicos();
+        catRoom.printData();
         
-        
+        //criando quarto com categoria criada acima
+        our_Quarto room01 = new our_Quarto(123,7,catRoom);
+        room01.printData();
+
     }
 
 }

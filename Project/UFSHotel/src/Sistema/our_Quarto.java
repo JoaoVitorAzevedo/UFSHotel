@@ -13,9 +13,16 @@ import Framework.TipoQuarto;
  */
 public class our_Quarto extends TipoQuarto {
 
-    public our_Quarto(int idQuarto) {
-        super(idQuarto);
+    public our_Quarto(int idQuarto, int andar, our_CategoriaDeQuarto tipo) {
+        super(idQuarto, andar, tipo);
 
+    }
+
+    void printData() {
+        System.out.println("ID: " + this.getIdQuarto());
+        System.out.println("Andar: " + this.getIdQuarto());
+        System.out.println("------CategoriaDoQuarto----- ");
+        this.getTipo().printData();
     }
 
 }

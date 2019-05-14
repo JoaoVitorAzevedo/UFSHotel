@@ -9,7 +9,7 @@ public class Controller {
 
     public static void cadastrarQuarto(int id) {
 
-        our_Quarto our = new our_Quarto(id);
+        our_Quarto our = new our_Quarto(id,0,null);
         System.out.println("o andar é: " + our.getIdQuarto());
 
         // our.save()

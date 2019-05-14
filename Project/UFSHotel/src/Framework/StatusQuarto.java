@@ -13,6 +13,13 @@ public class StatusQuarto {
 
     boolean limpeza;
     boolean disponibilidade;
+    
+    
+
+    public StatusQuarto(boolean limpeza, boolean disponibilidade) {
+        this.limpeza = limpeza;
+        this.disponibilidade = disponibilidade;
+    }
 
     public boolean isLimpavel() {
         return this.limpeza;
@@ -20,11 +27,6 @@ public class StatusQuarto {
 
     public boolean isVago() {
         return this.disponibilidade;
-    }
-
-    public StatusQuarto(boolean limpeza, boolean disponibilidade) {
-        this.limpeza = limpeza;
-        this.disponibilidade = disponibilidade;
     }
 
     public void setDisponibilidade(boolean disponibilidade) {

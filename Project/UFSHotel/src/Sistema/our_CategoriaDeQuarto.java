@@ -17,4 +17,11 @@ public class our_CategoriaDeQuarto extends TipoCategoriaDeQuarto {
         super(categoria, cap, preco);
     }
 
+    @Override
+    public void printData() {
+        System.out.println("Nome da categoria: " + this.getClassificacao());
+        System.out.println("Comporta  " + this.getCapacidade() + " pessoas");
+        System.out.println("Valor Diaria: " + this.getPreco());
+    }
+
 }

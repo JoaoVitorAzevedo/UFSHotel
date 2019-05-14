@@ -8,7 +8,7 @@ package Framework;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TipoCategoriaDeQuarto {
+public abstract class TipoCategoriaDeQuarto {
 
     String classificacao;
     int capacidade;
@@ -63,6 +63,8 @@ public class TipoCategoriaDeQuarto {
 	public void setPreco(float preco) {
 		this.preco = preco;
 	}
+
+    public abstract  void printData();
   
   
 

@@ -8,8 +8,9 @@ package Sistema;
 import Framework.TipoCategoriaDeQuarto;
 
 /**
- *
- * @author MartManHunter
+ * @author João Vitor Azevedo 743554
+ * @author Sabrina Miranda 743595
+ * @author Vitor Sugaya 743605
  */
 public class our_CategoriaDeQuarto extends TipoCategoriaDeQuarto {
 

@@ -7,6 +7,11 @@ package Sistema;
 
 import Framework.TipoEndereco;
 
+/**
+ * @author João Vitor Azevedo 743554
+ * @author Sabrina Miranda 743595
+ * @author Vitor Sugaya 743605
+ */
 public class our_Endereco extends TipoEndereco {
 
     public our_Endereco(String cep, String numero, String logradouro, String complemento, String bairro, String cidade, String estado) {

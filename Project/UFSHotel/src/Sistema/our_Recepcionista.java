@@ -11,6 +11,12 @@ import Framework.TipoTelefone;
 import Framework.TipoHospede;
 import Framework.TipoRecepcionista;
 
+/**
+ * @author João Vitor Azevedo 743554
+ * @author Sabrina Miranda 743595
+ * @author Vitor Sugaya 743605
+ */
+
 public class our_Recepcionista extends TipoRecepcionista {
 
     public our_Recepcionista(int ramal, String setor, int idFuncionario, String turno, String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
@@ -20,9 +26,13 @@ public class our_Recepcionista extends TipoRecepcionista {
     @Override
     public boolean cadastrarReserva(int id, TipoHospede hospede, Data dataIn, Data dataOut) {
         //our_Reserva reserv = new our_Reserva();
-        System.out.println("deu certo");
-        return true;
-
+        if (true) {
+            System.out.println("Hospede " + hospede.getNome() + " cadastrado com sucesso!");
+            return true;
+        } else { // algo deu errado
+            System.out.println("Algo deu mto errado moçx :/");
+            return false;
+        }
     }
 
 }

@@ -5,6 +5,13 @@
  */
 package Framework;
 
+
+/**
+ * @author João Vitor Azevedo 743554
+ * @author Sabrina Miranda    743595
+ * @author Vitor Sugaya       743605
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 

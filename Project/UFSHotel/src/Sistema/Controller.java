@@ -5,12 +5,17 @@
  */
 package Sistema;
 
+/**
+ * @author João Vitor Azevedo 743554
+ * @author Sabrina Miranda 743595
+ * @author Vitor Sugaya 743605
+ */
 public class Controller {
 
     public static void cadastrarQuarto(int id) {
 
-        our_Quarto our = new our_Quarto(id,0,null);
-        System.out.println("o andar é: " + our.getIdQuarto());
+        our_Quarto our = new our_Quarto(id, 0, null);
+        //System.out.println("o andar é: " + our.getIdQuarto());
 
         // our.save()
     }

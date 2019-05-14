@@ -5,6 +5,11 @@
  */
 package Sistema;
 
+/**
+ * @author João Vitor Azevedo 743554
+ * @author Sabrina Miranda 743595
+ * @author Vitor Sugaya 743605
+ */
 import Framework.TipoTelefone;
 
 public class InterfaceGrafica {
@@ -13,30 +18,28 @@ public class InterfaceGrafica {
 
         //cadastro de quartos
         Controller.cadastrarQuarto(31);
-        System.out.println("cadastrado quarto com id 31");
+        //System.out.println("cadastrado quarto com id 31");
 
         System.out.println("");
         System.out.println("");
 
         our_Data date = new our_Data(3, 4, 1299);
-        date.printData();
-        System.out.println("oiee");
-        System.out.println("");
+        // date.printData();
+        //System.out.println("oiee");
+        //System.out.println("");
 
         our_Endereco end = new our_Endereco("17523275", "252", "logradouro", "blablabla", "Jardim Guanabara", "Marília", "Ceará");
         TipoTelefone tel = new TipoTelefone("+55", "14", "99777-7676");
 
-        our_Hospede hosp = new our_Hospede(31, "432.883.228-81", "Joao Vitor", "fulanodetal@gmail.com", end, tel);
+        //our_Hospede hosp = new our_Hospede(31, "432.883.228-81", "Joao Vitor", "fulanodetal@gmail.com", end, tel);
         //(int idHospede, String cpf, String nome, String email, our_Endereco end, Telefone tel)
-        Controller.cadastrarHospede(hosp);
-        System.out.println(hosp.getCpf());
-        System.out.println(hosp.getCpf());
-        System.out.println(hosp.getCpf());
-
+        //Controller.cadastrarHospede(hosp);
+        // System.out.println(hosp.getCpf());
+        // System.out.println(hosp.getCpf());
+        //  System.out.println(hosp.getCpf());
         // TODO code application logic here
-        System.out.println("amigo estou aqui");
-        System.out.println("------------------------------------");
-
+        //   System.out.println("amigo estou aqui");
+        // System.out.println("------------------------------------");
         //servicos para a lista de um quarto
         our_Servicos serv = new our_Servicos("NomedoServ1", null, 22.0f, new our_Data(6, 8, 1986), "horario tal");
         our_Servicos serv2 = new our_Servicos("NomedoServ2", null, 22.0f, new our_Data(6, 8, 1986), "horario y");
@@ -46,14 +49,14 @@ public class InterfaceGrafica {
         catRoom.addServico(serv2);
         catRoom.addServico(serv);
         catRoom.addServico(serv3);
-        System.out.println("printando services");
-        catRoom.printServicos();
-        catRoom.printData();
-        
-        //criando quarto com categoria criada acima
-        our_Quarto room01 = new our_Quarto(123,7,catRoom);
-        room01.printData();
+        //System.out.println("printando services");
+        //catRoom.printServicos();
 
+        //catRoom.printData();
+        //criando quarto com categoria criada acima
+        our_Quarto room01 = new our_Quarto(123, 7, catRoom);
+
+        //room01.printData();
     }
 
 }

@@ -5,10 +5,16 @@
  */
 package Framework;
 
+/**
+ * @author João Vitor Azevedo 743554
+ * @author Sabrina Miranda 743595
+ * @author Vitor Sugaya 743605
+ */
+
 import java.util.Date;
 
 public class TipoReserva {
-    
+
     Data dataIn;
     Data dataOut;
     int idReserva;
@@ -25,52 +31,57 @@ public class TipoReserva {
         this.recepQueReservou = recep;
         this.quarto = quarto;
         this.pag = pag;
-        
+
     }
 
     //getters
     public Data getDataIn() {
         return dataIn;
     }
+
     public TipoHospede getCliQueReservou() {
         return cliQueReservou;
     }
+
     public TipoQuarto getQuarto() {
         return quarto;
     }
+
     public int getIdReserva() {
         return idReserva;
     }
+
     public TipoRecepcionista getRecepQueReservou() {
         return recepQueReservou;
     }
+
     public Data getDataOut() {
         return dataOut;
     }
+
     //setters
     public void setCliQueReservou(TipoHospede cliQueReservou) {
         this.cliQueReservou = cliQueReservou;
     }
+
     public void setDataOut(Data dataOut) {
         this.dataOut = dataOut;
     }
+
     public void setQuarto(TipoQuarto quarto) {
         this.quarto = quarto;
     }
+
     public void setIdReserva(int idReserva) {
         this.idReserva = idReserva;
     }
+
     public void setDataIn(Data dataIn) {
         this.dataIn = dataIn;
     }
+
     public void setRecepQueReservou(TipoRecepcionista recepQueReservou) {
         this.recepQueReservou = recepQueReservou;
     }
-    
-    
-     
-    
-    
-        
-    
+
 }

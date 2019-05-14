@@ -8,8 +8,9 @@ package Sistema;
 import Framework.TipoQuarto;
 
 /**
- *
- * @author MartManHunter
+ * @author João Vitor Azevedo 743554
+ * @author Sabrina Miranda 743595
+ * @author Vitor Sugaya 743605
  */
 public class our_Quarto extends TipoQuarto {
 
@@ -19,6 +20,7 @@ public class our_Quarto extends TipoQuarto {
     }
 
     void printData() {
+        System.out.println("Imprimindo dados de " + this.toString());
         System.out.println("ID: " + this.getIdQuarto());
         System.out.println("Andar: " + this.getIdQuarto());
         System.out.println("------CategoriaDoQuarto----- ");

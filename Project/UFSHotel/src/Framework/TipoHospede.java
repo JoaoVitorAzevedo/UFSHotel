@@ -5,6 +5,11 @@
  */
 package Framework;
 
+/**
+ * @author João Vitor Azevedo 743554
+ * @author Sabrina Miranda 743595
+ * @author Vitor Sugaya 743605
+ */
 public class TipoHospede extends TipoPessoa {
 
     int idHospede;

@@ -26,7 +26,7 @@ public abstract class TipoPessoa {
         this.nome = nome;
         this.email = email;
         //this.end = end;
-        this.enderecos.add(end);
+        this.enderecos.add(end);    
         this.listaTel.add(tel);
 
     }

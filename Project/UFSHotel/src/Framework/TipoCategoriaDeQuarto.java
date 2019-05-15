@@ -11,12 +11,12 @@ package Framework;
  * @author Vitor Sugaya 743605
  */
 import java.util.ArrayList;
-import java.util.List;
 
 public abstract class TipoCategoriaDeQuarto {
 
     String classificacao;
     int capacidade;
+    
     float preco;
     List<TipoServicos> servicos = new ArrayList<TipoServicos>(); // lista de serviços que esse quarto oferece
 

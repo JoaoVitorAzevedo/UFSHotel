@@ -20,9 +20,10 @@ import java.util.Map;
  */
 public class our_Reserva extends TipoReserva {
 
-    public our_Reserva(Data dataIn, Data dataOut, int idReserva, TipoHospede cli, TipoRecepcionista recep, TipoQuarto quarto, TipoPagamento pag) {
+    public our_Reserva(Data dataIn, Data dataOut, TipoHospede cli, TipoRecepcionista recep, TipoQuarto quarto, TipoPagamento pag) {
 
-        super(dataIn, dataOut, idReserva, cli, recep, quarto, pag);
+        super(dataIn, dataOut, cli, recep, quarto, pag);
+        
 
     }
     

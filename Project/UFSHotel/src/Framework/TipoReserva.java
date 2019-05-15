@@ -14,7 +14,10 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class TipoReserva {
     
+<<<<<<< HEAD
+=======
 	AtomicInteger idGen;
+>>>>>>> 1799adffebe8ab4767e0148a1e979e5a75a96e38
     Data dataIn;
     Data dataOut;
     int idReserva;
@@ -23,7 +26,11 @@ public class TipoReserva {
     TipoQuarto quarto;
     TipoPagamento pag;
 
+<<<<<<< HEAD
+    public TipoReserva(Data dataIn, Data dataOut, int idReserva, TipoHospede cli, TipoRecepcionista recep, TipoQuarto quarto, TipoPagamento pag) {
+=======
     public TipoReserva(Data dataIn, Data dataOut, TipoHospede cli, TipoRecepcionista recep, TipoQuarto quarto, TipoPagamento pag) {
+>>>>>>> 1799adffebe8ab4767e0148a1e979e5a75a96e38
         this.dataIn = dataIn;
         this.dataOut = dataOut;
         this.idReserva = idGen.incrementAndGet();

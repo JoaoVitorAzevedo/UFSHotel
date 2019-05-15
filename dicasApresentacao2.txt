@@ -1,0 +1,8 @@
+P/ as próximas versões
+->Diagrama de classes com atributos e métodos(detalhando a visibilidade)
+->Classes que são os Controller
+->Mostrar tanto o framework quanto a aplicação ue o usa
+->Pensar em 1 cenário concreto e implementá-lo
+    por exemplo:
+        -cadastrarX()
+        -gerarRelatorioY();

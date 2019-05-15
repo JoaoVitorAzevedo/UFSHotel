@@ -42,6 +42,22 @@ public class InterfaceGrafica {
         System.out.println(hosp.getCpf());
 
         // TODO code application logic here
+<<<<<<< HEAD
+        System.out.println("amigo estou aqui");
+        System.out.println("------------------------------------");
+
+        our_Servicos serv = new our_Servicos("NomedoServ1", null, 22.0f, new our_Data(6, 8, 1986), "horario tal");
+        our_Servicos serv2 = new our_Servicos("NomedoServ2", null, 22.0f, new our_Data(6, 8, 1986), "horario y");
+        our_Servicos serv3 = new our_Servicos("NomedoServ3", null, 22.0f, new our_Data(6, 8, 1986), "horario x");
+        our_CategoriaDeQuarto tipocatroom = new our_CategoriaDeQuarto("Suite", 3);
+        tipocatroom.addServico(serv2);
+        tipocatroom.addServico(serv);
+        tipocatroom.addServico(serv3);
+        System.out.println("printando services");
+        tipocatroom.printServicos();
+
+=======
+>>>>>>> 1799adffebe8ab4767e0148a1e979e5a75a96e38
     }
 
 }

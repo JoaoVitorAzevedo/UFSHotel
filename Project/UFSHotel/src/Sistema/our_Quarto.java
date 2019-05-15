@@ -6,18 +6,26 @@
 package Sistema;
 
 import Framework.TipoQuarto;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
- *
- * @author MartManHunter
+ * @author João Vitor Azevedo 743554
+ * @author Sabrina Miranda 743595
+ * @author Vitor Sugaya 743605
  */
 public class our_Quarto extends TipoQuarto {
 
-    public our_Quarto(int idQuarto) {
-        super(idQuarto);
+    public our_Quarto(int idQuarto, int andar, our_CategoriaDeQuarto tipo) {
+        super(idQuarto, andar, tipo);
 
+    }
+
+    void printData() {
+        System.out.println("Imprimindo dados de " + this.toString());
+        System.out.println("ID: " + this.getIdQuarto());
+        System.out.println("Andar: " + this.getAndar());
+        System.out.println("------CategoriaDoQuarto----- ");
+        this.getTipo().printData();
+        System.out.println("");
     }
 
 }

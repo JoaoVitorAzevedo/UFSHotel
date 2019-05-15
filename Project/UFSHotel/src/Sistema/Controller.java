@@ -6,27 +6,31 @@
 package Sistema;
 
 /**
- *
- * @author MartManHunter
+ * @author João Vitor Azevedo 743554
+ * @author Sabrina Miranda 743595
+ * @author Vitor Sugaya 743605
  */
 public class Controller {
 
-    public static void cadastrarQuarto(int id) {
+    public static void cadastrarQuarto(int id, int andar, our_CategoriaDeQuarto catroom) {
 
-        our_Quarto our = new our_Quarto(id);
-        System.out.println("o andar é: " + our.getIdQuarto());
+        our_Quarto our = new our_Quarto(id, andar, catroom);
+        if (true) {
+            System.out.println("Cadastrado Quarto com dados: ");
+            our.printData();
 
+        }
         // our.save()
     }
 
     public static void cadastrarHospede(our_Hospede novoHospede) {
         //BancoDeHospedes.add(novoHospede);
-        System.out.println("Novo Hospede cadastrado com sucesso! ID:" + novoHospede.getIdHospede() + ", Nome: " + novoHospede.getNome());
+        System.out.println("Novo Hospede cadastrado com sucesso! ID:" + novoHospede.getID() + ", Nome: " + novoHospede.getNome());
 
     }
 
     public static void cadastrarFuncionario() {
-
+        System.out.println("cadastradoFuncionario");
     }
 
     public static boolean cadastrarRecepcaoAtendimento() {
@@ -42,7 +46,7 @@ public class Controller {
     }
 
     public static boolean cadastrarGerente() {
-        System.out.println("Cadastrado o genrente. (Por quem?) ");
+        System.out.println("Cadastrado o gerente");
         return true;
     }
 

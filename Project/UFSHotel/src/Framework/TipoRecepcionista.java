@@ -5,19 +5,10 @@
  */
 package Framework;
 
-<<<<<<< HEAD:Project/UFSHotel/src/Framework/TIpoRecepcionista.java
-import Sistema.our_Data;
-import Sistema.our_Hospede;
-
-=======
-/*
-import Sistema.our_Data;
-import Sistema.our_Hospede;
-*/
->>>>>>> 1799adffebe8ab4767e0148a1e979e5a75a96e38:Project/UFSHotel/src/Framework/TipoRecepcionista.java
 /**
- *
- * @author 743554
+ * @author João Vitor Azevedo 743554
+ * @author Sabrina Miranda 743595
+ * @author Vitor Sugaya 743605
  */
 public abstract class TipoRecepcionista extends TipoFuncionario {
 

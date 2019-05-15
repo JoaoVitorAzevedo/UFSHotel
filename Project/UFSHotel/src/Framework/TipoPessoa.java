@@ -9,8 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author 743554
+ * @author João Vitor Azevedo 743554
+ * @author Sabrina Miranda 743595
+ * @author Vitor Sugaya 743605
  */
 public abstract class TipoPessoa {
 
@@ -25,7 +26,7 @@ public abstract class TipoPessoa {
         this.nome = nome;
         this.email = email;
         //this.end = end;
-        this.enderecos.add(end);
+        this.enderecos.add(end);    
         this.listaTel.add(tel);
 
     }

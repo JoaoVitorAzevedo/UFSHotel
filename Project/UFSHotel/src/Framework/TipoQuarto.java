@@ -6,23 +6,26 @@
 package Framework;
 
 /**
- *
- * @author 743554
+ * @author João Vitor Azevedo 743554
+ * @author Sabrina Miranda 743595
+ * @author Vitor Sugaya 743605
  */
+
 public abstract class TipoQuarto {
 
     int idQuarto;
     int andar;
     TipoCategoriaDeQuarto tipo;
-    StatusQuarto status;
+    StatusQuarto status = new StatusQuarto(true, true);
 
 //Construtores
     public TipoQuarto(int idQuarto, int andar, TipoCategoriaDeQuarto tipo) {
         this.idQuarto = idQuarto;
         this.andar = andar;
         this.tipo = tipo;
-        this.status.limpeza = true;
-        this.status.disponibilidade = true;
+        this.status.setLimpeza(true);
+        this.status.setDisponibilidade(true);
+
     }
 
     public TipoQuarto(int idQuarto) {

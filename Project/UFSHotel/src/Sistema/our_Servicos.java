@@ -11,8 +11,9 @@ import Framework.TipoServicos;
 import java.util.List;
 
 /**
- *
- * @author MartManHunter
+ * @author João Vitor Azevedo 743554
+ * @author Sabrina Miranda 743595
+ * @author Vitor Sugaya 743605
  */
 public class our_Servicos extends TipoServicos {
 
@@ -20,7 +21,5 @@ public class our_Servicos extends TipoServicos {
         super(nomeDoServico, responsaveis, precoDoServico, dataServico, horario);
 
     }
-    
-    
 
 }

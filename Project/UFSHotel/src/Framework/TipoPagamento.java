@@ -6,19 +6,22 @@
 package Framework;
 
 /**
- *
- * @author MartManHunter
+ * @author João Vitor Azevedo 743554
+ * @author Sabrina Miranda 743595
+ * @author Vitor Sugaya 743605
  */
 public abstract class TipoPagamento {
 
-    float valorPago;
+    float valor;
     String ModalidadePagamento;
     int qtdParcelas;
+    boolean statusPagamento;
 
-    public TipoPagamento(float valorPago, String ModalidadePagamento, int qtdParcelas) {
-        this.valorPago = valorPago;
+    public TipoPagamento(float valor, String ModalidadePagamento, int qtdParcelas, boolean statusPagamento) {
+        this.valor = valor;
         this.ModalidadePagamento = ModalidadePagamento;
         this.qtdParcelas = qtdParcelas;
+        this.statusPagamento = statusPagamento;
     }
 
     //getters
@@ -30,8 +33,8 @@ public abstract class TipoPagamento {
         return qtdParcelas;
     }
 
-    public float getValorPago() {
-        return valorPago;
+    public float getValor() {
+        return valor;
     }
 
     //setters
@@ -39,12 +42,16 @@ public abstract class TipoPagamento {
         this.ModalidadePagamento = ModalidadePagamento;
     }
 
-    public void setValorPago(float valorPago) {
-        this.valorPago = valorPago;
+    public void setValor(float valo) {
+        this.valor = valor;
     }
 
     public void setQtdParcelas(int qtdParcelas) {
         this.qtdParcelas = qtdParcelas;
+    }
+    
+    public void setStatusPagamento(boolean status) {
+    	this.statusPagamento = status;
     }
 
 }

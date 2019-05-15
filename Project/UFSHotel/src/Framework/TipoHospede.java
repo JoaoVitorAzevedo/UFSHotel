@@ -6,10 +6,11 @@
 package Framework;
 
 /**
- *
- * @author 743554
+ * @author João Vitor Azevedo 743554
+ * @author Sabrina Miranda 743595
+ * @author Vitor Sugaya 743605
  */
-public class TipoHospede extends TipoPessoa {
+public abstract class TipoHospede extends TipoPessoa {
 
     int idHospede;
 
@@ -17,10 +18,6 @@ public class TipoHospede extends TipoPessoa {
         super(cpf, nome, email, end, tel);
         this.idHospede = idHospede;
 
-    }
-
-    public int getIdHospede() {
-        return idHospede;
     }
 
     @Override

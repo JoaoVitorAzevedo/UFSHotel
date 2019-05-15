@@ -6,13 +6,21 @@
 package Framework;
 
 /**
- *
- * @author MartManHunter
+ * @author João Vitor Azevedo 743554
+ * @author Sabrina Miranda    743595
+ * @author Vitor Sugaya       743605
  */
 public class StatusQuarto {
 
-    boolean limpeza;
-    boolean disponibilidade;
+    boolean limpeza = true;
+    boolean disponibilidade = true;
+    
+    
+
+    public StatusQuarto(boolean limpeza, boolean disponibilidade) {
+        this.limpeza = limpeza;
+        this.disponibilidade = disponibilidade;
+    }
 
     public boolean isLimpavel() {
         return this.limpeza;
@@ -20,11 +28,6 @@ public class StatusQuarto {
 
     public boolean isVago() {
         return this.disponibilidade;
-    }
-
-    public StatusQuarto(boolean limpeza, boolean disponibilidade) {
-        this.limpeza = limpeza;
-        this.disponibilidade = disponibilidade;
     }
 
     public void setDisponibilidade(boolean disponibilidade) {

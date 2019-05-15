@@ -11,6 +11,8 @@ package Framework;
  * @author Vitor Sugaya 743605
  */
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class TipoReserva {
 
@@ -21,9 +23,10 @@ public class TipoReserva {
     TipoRecepcionista recepQueReservou;
     TipoQuarto quarto;
     TipoPagamento pag;
-    Map <String, float> Consumido;
+    Map<String, Float> Consumido;
 
     public TipoReserva(Data dataIn, Data dataOut, int idReserva, TipoHospede cli, TipoRecepcionista recep, TipoQuarto quarto, TipoPagamento pag) {
+        this.Consumido = new HashMap<>();
         this.dataIn = dataIn;
         this.dataOut = dataOut;
         this.idReserva = idReserva; // muadar aqui, isso precisa ser gerado automaticamente de algum jeito
@@ -31,15 +34,16 @@ public class TipoReserva {
         this.recepQueReservou = recep;
         this.quarto = quarto;
         this.pag = pag;
-        
-        Consumido = new HashMap<String="", float>();
+
+        Consumido = new HashMap<>();
 
     }
 
     //getters
     public Map getConsumido() {
-    	return Consumido;
+        return Consumido;
     }
+
     public Data getDataIn() {
         return dataIn;
     }
@@ -66,8 +70,9 @@ public class TipoReserva {
 
     //setters
     public void addConsumido(float valor, String produto) {
-    	Consumido.put(produto, valor);
+        Consumido.put(produto, valor);
     }
+
     public void setCliQueReservou(TipoHospede cliQueReservou) {
         this.cliQueReservou = cliQueReservou;
     }

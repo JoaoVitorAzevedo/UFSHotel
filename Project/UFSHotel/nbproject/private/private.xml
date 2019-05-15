@@ -5,15 +5,12 @@
         <group>
             <file>file:/C:/Users/MartManHunter/Desktop/UFSHotel/Project/UFSHotel/src/Framework/TipoPagamento.java</file>
             <file>file:/C:/Users/MartManHunter/Desktop/UFSHotel/Project/UFSHotel/src/Framework/TipoCategoriaDeQuarto.java</file>
+            <file>file:/C:/Users/MartManHunter/Desktop/UFSHotel/Project/UFSHotel/src/Framework/TipoQuarto.java</file>
             <file>file:/C:/Users/MartManHunter/Desktop/UFSHotel/Project/UFSHotel/src/Framework/TipoGerente.java</file>
             <file>file:/C:/Users/MartManHunter/Desktop/UFSHotel/Project/UFSHotel/src/Framework/TipoHospede.java</file>
-            <file>file:/C:/Users/MartManHunter/Desktop/UFSHotel/Project/UFSHotel/src/Sistema/Controller.java</file>
+            <file>file:/C:/Users/MartManHunter/Desktop/UFSHotel/Project/UFSHotel/src/Framework/TipoRecepcionista.java</file>
             <file>file:/C:/Users/MartManHunter/Desktop/UFSHotel/Project/UFSHotel/src/Framework/TipoPessoa.java</file>
-            <file>file:/C:/Users/MartManHunter/Desktop/UFSHotel/Project/UFSHotel/src/Framework/TipoFuncionario.java</file>
-            <file>file:/C:/Users/MartManHunter/Desktop/UFSHotel/Project/UFSHotel/src/Sistema/our_Quarto.java</file>
             <file>file:/C:/Users/MartManHunter/Desktop/UFSHotel/Project/UFSHotel/src/Framework/StatusQuarto.java</file>
-            <file>file:/C:/Users/MartManHunter/Desktop/UFSHotel/Project/UFSHotel/src/Sistema/InterfaceGrafica.java</file>
-            <file>file:/C:/Users/MartManHunter/Desktop/UFSHotel/Project/UFSHotel/src/Sistema/our_CategoriaDeQuarto.java</file>
         </group>
     </open-files>
 </project-private>

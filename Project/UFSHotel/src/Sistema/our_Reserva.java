@@ -11,6 +11,7 @@ import Framework.TipoPagamento;
 import Framework.TipoQuarto;
 import Framework.TipoRecepcionista;
 import Framework.TipoReserva;
+import java.util.Map;
 
 /**
  * @author João Vitor Azevedo 743554
@@ -25,10 +26,10 @@ public class our_Reserva extends TipoReserva {
 
     }
     
-    public getTotalConsumido() {
+    public double getTotalConsumido() {
     	double total = 0;
     	
-        for (Map.Entry<String, float> entry : Consumido.entrySet()) {
+        for (Map.Entry<String, Double> entry : Consumido.entrySet()) {
             float v = entry.getValue();
             total += Double.parseDouble(v);
         }

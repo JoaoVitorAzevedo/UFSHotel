@@ -15,7 +15,6 @@ import Framework.TipoTelefone;
 public class InterfaceGrafica {
 
     public static void main(String[] args) {
-
         //cadastro de quartos
         our_CategoriaDeQuarto catRoom1 = new our_CategoriaDeQuarto("Suite", 3, 120.0f);    //Nome da Categoria, capacidade, preco)
 

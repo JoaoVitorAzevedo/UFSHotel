@@ -23,7 +23,7 @@ public class TipoReserva {
     TipoRecepcionista recepQueReservou;
     TipoQuarto quarto;
     TipoPagamento pag;
-    Map<String, Float> Consumido;
+    Map<String, Double> Consumido;
 
     public TipoReserva(Data dataIn, Data dataOut, int idReserva, TipoHospede cli, TipoRecepcionista recep, TipoQuarto quarto, TipoPagamento pag) {
         this.Consumido = new HashMap<>();
@@ -35,13 +35,15 @@ public class TipoReserva {
         this.quarto = quarto;
         this.pag = pag;
 
-        Consumido = new HashMap<>();
-
     }
 
     //getters
     public Map getConsumido() {
         return Consumido;
+    }
+    
+    public TipoPagamento getPag(){
+        return pag;
     }
 
     public Data getDataIn() {
@@ -69,7 +71,7 @@ public class TipoReserva {
     }
 
     //setters
-    public void addConsumido(float valor, String produto) {
+    public void addConsumido(Double valor, String produto) {
         Consumido.put(produto, valor);
     }
 

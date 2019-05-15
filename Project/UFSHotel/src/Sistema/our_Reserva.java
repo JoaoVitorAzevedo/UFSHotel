@@ -28,10 +28,11 @@ public class our_Reserva extends TipoReserva {
     
     public double getTotalConsumido() {
     	double total = 0;
-    	
+    	Map<String, Double> Consumido;
+        Consumido = getConsumido();
         for (Map.Entry<String, Double> entry : Consumido.entrySet()) {
-            float v = entry.getValue();
-            total += Double.parseDouble(v);
+            Double v = entry.getValue();
+            total += v;
         }
         
         return total;
@@ -39,18 +40,20 @@ public class our_Reserva extends TipoReserva {
     
     public float calcularDesconto(float percentDisc) {
     	float preco;
+        TipoPagamento pag = getPag();
     	preco = pag.getValor();
     	
     	return preco*(percentDisc/100);
     }
     
-    public bool addDesconto(percentDisc) {
+    public boolean addDesconto(int percentDisc) {
     	float Desconto, valorNovo;
+        TipoPagamento pag = getPag();
     	
     	Desconto = calcularDesconto(percentDisc);
-    	valorNovo = getValor() - Desconto;
+    	valorNovo = pag.getValor() - Desconto;
     	
-    	setValor(valorNovo);
+    	pag.setValor(valorNovo);
     	
     	return true;
     }

@@ -16,7 +16,7 @@ public abstract class TipoFuncionario extends TipoPessoa /* implements <nome-int
     int idFuncionario;
     String turno;
 
-    public TipoFuncionario(String setor, int idFuncionario, String turno, String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
+    protected TipoFuncionario(String setor, int idFuncionario, String turno, String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
         super(cpf, nome, email, end, tel);
         this.setor = setor;
         this.idFuncionario = idFuncionario;     // dar um jeito de auto-generate

@@ -14,7 +14,13 @@ import Framework.TipoCategoriaDeQuarto;
 public class our_TipoCategoriaDeQuarto extends TipoCategoriaDeQuarto {
 
     public our_TipoCategoriaDeQuarto() {
-        super(null, 0);
+        super(null, 0, 0);
     }
+
+	@Override
+	public void printData() {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

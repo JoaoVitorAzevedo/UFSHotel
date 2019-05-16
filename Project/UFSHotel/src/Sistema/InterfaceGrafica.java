@@ -55,13 +55,17 @@ public class InterfaceGrafica {
         //criando quarto com categoria criada acima
         our_Quarto room01 = new our_Quarto(123, 7, catRoom);
         room01.printData();
-        
-        our_Gerente gerente = new our_Gerente(0,"Roberto");
-        our_Recepcionista recep = new our_Recepcionista(1,"Marco Antonio");
+
+        our_Gerente gerente = new our_Gerente(0, "Roberto");
+        our_Recepcionista recep = new our_Recepcionista(1, "Marco Antonio");
+        // Controller.cadastrarRecepcaoAtendimento(recep);
+
         ITipoGerenteTipoPessoa modGerente = new ModuloTipoGerente();
         modGerente.realizaCadastro(recep, recep.getNome());
+
         our_Recepcionista or = (our_Recepcionista) modGerente.retornaCadastro(0);
         System.out.println(or.getNome());
+
     }
 
 }

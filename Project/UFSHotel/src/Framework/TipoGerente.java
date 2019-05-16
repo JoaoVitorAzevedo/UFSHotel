@@ -10,22 +10,28 @@ package Framework;
  * @author Sabrina Miranda 743595
  * @author Vitor Sugaya 743605
  */
-public abstract class TipoGerente extends TipoFuncionario {
+public abstract class TipoGerente extends TipoFuncionario{
 
-    /* public TipoGerente() {
+    TipoGerente() {
         super(null, 0, null, null, null, null, null, null);
         System.out.println("Criei Gerente Nulo");
     }
-     */
-    public TipoGerente(String setor, int idFuncionario, String turno, String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
+     
+    protected TipoGerente(String setor, int idFuncionario, String turno, String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
         super(setor, idFuncionario, turno, cpf, nome, email, end, tel);
 
     }
 
-    public void cadastrarFuncionario() {
+    void cadastrarPessoa(TipoPessoa tp) {
+    	
+    }
+    
+    void cadastrarFuncionario() {
         System.out.println("Cadastrar funcionario chamado no gerente ! (aquele definido no framework, wtf");
         //manipular BD?
         //
     }
+    
+    public abstract Boolean cadastrarPessoa();
 
 }

@@ -1,7 +1,5 @@
-.project
 .gitignore
-Project/UFSHotel/.classpath
-Project/bin/
+.project
 
 # Created by https://www.gitignore.io/api/java
 # Edit at https://www.gitignore.io/?templates=java

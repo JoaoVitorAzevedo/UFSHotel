@@ -33,7 +33,7 @@ public class Controller {
         System.out.println("cadastradoFuncionario");
     }
 
-    public static boolean cadastrarRecepcaoAtendimento() {
+    public static boolean cadastrarRecepcaoAtendimento(our_Recepcionista recep) {
 
         System.out.println("cadastrado funcionario do tipo Recepção");
         return true;

@@ -3,10 +3,33 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/home/sabrina/Documentos/Graduação/1-2019/POOAvançado/UFSHotel/Project/UFSHotel/src/Framework/TipoPagamento.java</file>
             <file>file:/home/sabrina/Documentos/Graduação/1-2019/POOAvançado/UFSHotel/Project/UFSHotel/src/Sistema/our_Reserva.java</file>
             <file>file:/home/sabrina/Documentos/Graduação/1-2019/POOAvançado/UFSHotel/Project/UFSHotel/src/Sistema/InterfaceGrafica.java</file>
             <file>file:/home/sabrina/Documentos/Graduação/1-2019/POOAvançado/UFSHotel/Project/UFSHotel/src/Framework/TipoReserva.java</file>
+=======
+            <file>file:/C:/Users/MartManHunter/Desktop/UFSHotel/Project/UFSHotel/src/Framework/TipoCategoriaDeQuarto.java</file>
+            <file>file:/C:/Users/MartManHunter/Desktop/UFSHotel/Project/UFSHotel/src/Framework/TipoGerente.java</file>
+            <file>file:/C:/Users/MartManHunter/Desktop/UFSHotel/Project/UFSHotel/src/Framework/TipoHospede.java</file>
+            <file>file:/C:/Users/MartManHunter/Desktop/UFSHotel/Project/UFSHotel/src/Sistema/our_Reserva.java</file>
+            <file>file:/C:/Users/MartManHunter/Desktop/UFSHotel/Project/UFSHotel/src/Framework/IFuncionario.java</file>
+            <file>file:/C:/Users/MartManHunter/Desktop/UFSHotel/Project/UFSHotel/src/Sistema/Controller.java</file>
+            <file>file:/C:/Users/MartManHunter/Desktop/UFSHotel/Project/UFSHotel/src/Sistema/our_Recepcionista.java</file>
+            <file>file:/C:/Users/MartManHunter/Desktop/UFSHotel/Project/UFSHotel/src/Framework/StatusQuarto.java</file>
+            <file>file:/C:/Users/MartManHunter/Desktop/UFSHotel/Project/UFSHotel/src/Framework/TipoReserva.java</file>
+            <file>file:/C:/Users/MartManHunter/Desktop/UFSHotel/Project/UFSHotel/src/Framework/ModuloTipoGerente.java</file>
+            <file>file:/C:/Users/MartManHunter/Desktop/UFSHotel/Project/UFSHotel/src/Framework/Data.java</file>
+            <file>file:/C:/Users/MartManHunter/Desktop/UFSHotel/Project/UFSHotel/src/Framework/TipoPagamento.java</file>
+            <file>file:/C:/Users/MartManHunter/Desktop/UFSHotel/Project/UFSHotel/src/Framework/TipoQuarto.java</file>
+            <file>file:/C:/Users/MartManHunter/Desktop/UFSHotel/Project/UFSHotel/src/Sistema/our_Gerente.java</file>
+            <file>file:/C:/Users/MartManHunter/Desktop/UFSHotel/Project/UFSHotel/src/Framework/TipoRecepcionista.java</file>
+            <file>file:/C:/Users/MartManHunter/Desktop/UFSHotel/Project/UFSHotel/src/Framework/TipoPessoa.java</file>
+            <file>file:/C:/Users/MartManHunter/Desktop/UFSHotel/Project/UFSHotel/src/Sistema/InterfaceGrafica.java</file>
+            <file>file:/C:/Users/MartManHunter/Desktop/UFSHotel/Project/UFSHotel/src/Framework/ITipoGerenteTipoPessoa.java</file>
+            <file>file:/C:/Users/MartManHunter/Desktop/UFSHotel/Project/UFSHotel/src/Framework/ModuloFuncionario.java</file>
+            <file>file:/C:/Users/MartManHunter/Desktop/UFSHotel/Project/UFSHotel/src/Sistema/our_CategoriaDeQuarto.java</file>
+>>>>>>> 088d356b4b8029e4b853ca95f29e7263d8e895b1
         </group>
     </open-files>
 </project-private>

@@ -5,6 +5,8 @@
  */
 package Framework;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * @author João Vitor Azevedo 743554
  * @author Sabrina Miranda 743595
@@ -15,7 +17,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TipoReserva {
-
+    
+	AtomicInteger idGen;
     Data dataIn;
     Data dataOut;
     int idReserva;
@@ -25,11 +28,11 @@ public class TipoReserva {
     TipoPagamento pag;
     Map<String, Double> Consumido;
 
-    public TipoReserva(Data dataIn, Data dataOut, int idReserva, TipoHospede cli, TipoRecepcionista recep, TipoQuarto quarto, TipoPagamento pag) {
+    public TipoReserva(Data dataIn, Data dataOut, TipoHospede cli, TipoRecepcionista recep, TipoQuarto quarto, TipoPagamento pag) {
         this.Consumido = new HashMap<>();
         this.dataIn = dataIn;
         this.dataOut = dataOut;
-        this.idReserva = idReserva; // muadar aqui, isso precisa ser gerado automaticamente de algum jeito
+        this.idReserva = idGen.incrementAndGet();
         this.cliQueReservou = cli;
         this.recepQueReservou = recep;
         this.quarto = quarto;

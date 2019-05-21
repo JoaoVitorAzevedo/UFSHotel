@@ -10,7 +10,7 @@ package Framework;
  * @author Sabrina Miranda    743595
  * @author Vitor Sugaya       743605
  */
-public class StatusQuarto {
+ class StatusQuarto {
 
     boolean limpeza = true;
     boolean disponibilidade = true;

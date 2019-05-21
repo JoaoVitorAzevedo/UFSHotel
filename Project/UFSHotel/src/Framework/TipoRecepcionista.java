@@ -18,10 +18,10 @@ public abstract class TipoRecepcionista extends TipoFuncionario {
         super(setor, idFuncionario, turno, cpf, nome, email, end, tel);
         this.ramal = ramal;
     }
-    
+
     public TipoRecepcionista(int idFuncionario, String nome) {
         super(null, idFuncionario, null, null, nome, null, null, null);
-        this.ramal =0;
+        this.ramal = 0;
     }
 
     public abstract boolean cadastrarReserva(int id, TipoHospede hospede, Data dataIn, Data dataOut);
@@ -42,6 +42,5 @@ public abstract class TipoRecepcionista extends TipoFuncionario {
         System.out.println("recepcionista cadastrou hospede com sucesso\n");
         // manipular BD?
     }
-
 
 }

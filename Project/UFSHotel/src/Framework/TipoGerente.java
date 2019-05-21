@@ -22,8 +22,9 @@ public abstract class TipoGerente extends TipoFuncionario{
 
     }
 
+   
     void cadastrarPessoa(TipoPessoa tp) {
-    	
+        System.out.println("cadastrei no pai");
     }
     
     void cadastrarFuncionario() {

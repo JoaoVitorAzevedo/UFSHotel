@@ -8,7 +8,7 @@ public class ModuloTipoGerente implements ITipoGerenteTipoPessoa {
 
     IFuncionario i = new ModuloFuncionario();
 
-    public void realizaCadastro(TipoRecepcionista tr, String nome) {
+    public void realizaCadastro(TipoRecepcionista tr) {
         i.insereFuncionario(tr);
         System.out.println("Inseri um recpcionista");
     }

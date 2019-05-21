@@ -16,7 +16,7 @@ public abstract class TipoCategoriaDeQuarto {
 
     String classificacao;
     int capacidade;
-    
+
     float preco;
     ArrayList<TipoServicos> servicos = new ArrayList<TipoServicos>(); // lista de serviços que esse quarto oferece
 

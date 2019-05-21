@@ -35,10 +35,6 @@ public abstract class TipoCategoriaDeQuarto {
     }
     //getters
 
-    public int getCapacidade() {
-        return capacidade;
-    }
-
     public ArrayList<TipoServicos> getServicos() {
         return servicos;
     }
@@ -47,6 +43,11 @@ public abstract class TipoCategoriaDeQuarto {
         for (TipoServicos serv : servicos) {
             System.out.println(serv.getNomeDoServico());
         }
+    }
+
+//getters
+    public int getCapacidade() {
+        return capacidade;
     }
 
     public String getClassificacao() {

@@ -73,6 +73,13 @@ public class SimulaBD {
 
     }
 
+    public void setGerenteRoberto(our_Gerente gerenteRoberto) {
+        this.gerenteRoberto = gerenteRoberto;
+    }
+    
+    
+    
+
     public SimulaBD getBDCarregado() {
         return this;
     }

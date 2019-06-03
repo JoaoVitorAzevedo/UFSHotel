@@ -12,7 +12,11 @@ package Sistema;
  */
 public class Controller {
 
-    public static void cadastrarQuarto(int id, int andar, our_CategoriaDeQuarto catroom) {
+    public Controller() {
+        System.out.println("fiz nada");
+    }
+
+    public void cadastrarQuarto(int id, int andar, our_CategoriaDeQuarto catroom) {
 
         our_Quarto our = new our_Quarto(id, andar, catroom);
         if (true) {
@@ -23,13 +27,13 @@ public class Controller {
         // our.save()
     }
 
-    public static void cadastrarHospede(our_Hospede novoHospede) {
+    public void cadastrarHospede(our_Hospede novoHospede) {
         //BancoDeHospedes.add(novoHospede);
         System.out.println("Novo Hospede cadastrado com sucesso! ID:" + novoHospede.getID() + ", Nome: " + novoHospede.getNome());
 
     }
 
-    public static void cadastrarFuncionario() {
+    public void cadastrarFuncionario() {
         System.out.println("cadastradoFuncionario");
     }
 
@@ -40,12 +44,12 @@ public class Controller {
 
     }
 
-    public static boolean cadastrarLimpeza() {
+    public boolean cadastrarLimpeza() {
         System.out.println("cadastrada Bozena de Pato Branco");
         return true;
     }
 
-    public static boolean cadastrarGerente() {
+    public boolean cadastrarGerente() {
         System.out.println("Cadastrado o gerente");
         return true;
     }

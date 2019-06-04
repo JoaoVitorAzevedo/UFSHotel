@@ -6,6 +6,7 @@
 package Sistema;
 
 import Banco.SimulaBD;
+import Framework.TipoRecepcionista;
 import Sistema.our_CategoriaDeQuarto;
 import Sistema.our_Hospede;
 import Sistema.our_Quarto;
@@ -17,7 +18,7 @@ import Sistema.our_Gerente;
  * @author Sabrina Miranda 743595
  * @author Vitor Sugaya 743605
  */
-public class ControladorDeCadastro implements iCadastro_Recepcionista {
+public class ControladorDeCadastro implements iCadastro_Recepcionista, iCadastro_Gerente {
 
     public ControladorDeCadastro() {
         System.out.println("fiz nada");
@@ -34,7 +35,7 @@ public class ControladorDeCadastro implements iCadastro_Recepcionista {
         // our.save()
     }
 
-    public void cadastrarHospede(our_Hospede novoHospede) {
+    public static void cadastrarHospede(our_Hospede novoHospede) {
         //BancoDeHospedes.add(novoHospede);
         System.out.println("Novo Hospede cadastrado com sucesso! ID:" + novoHospede.getID() + ", Nome: " + novoHospede.getNome());
 
@@ -44,11 +45,10 @@ public class ControladorDeCadastro implements iCadastro_Recepcionista {
         System.out.println("cadastradoFuncionario");
     }
 
-    public static boolean cadastrarRecepcaoAtendimento(our_Recepcionista recep) {
+    public static void cadastrarRecepcaoAtendimento(our_Recepcionista recep) {
 
         System.out.println("cadastrarRecepcaoAtendimento do CONTROLLER executado"); //To change body of generated methods, choose Tools | Templates.
         SimulaBD.addRecepcionista((our_Recepcionista) recep);
-        return true;
 
     }
 
@@ -57,9 +57,10 @@ public class ControladorDeCadastro implements iCadastro_Recepcionista {
         return true;
     }
 
-    public boolean cadastrarGerente() {
+    @Override
+    public void cadastrarGerente() {
         System.out.println("Cadastrado o gerente");
-        return true;
+
     }
 
     @Override
@@ -70,6 +71,21 @@ public class ControladorDeCadastro implements iCadastro_Recepcionista {
     @Override
     public void EfetuarReserva() {
         System.out.println("reservei"); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void cadastrarFuncLimpeza() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void cadastrarRecepcaoAtendimento(TipoRecepcionista recep) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void cadastrarQuarto() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

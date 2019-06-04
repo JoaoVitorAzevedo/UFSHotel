@@ -40,7 +40,7 @@ import java.util.List;
  *
  * @author 743554
  */
-public  class SimulaBD {
+public class SimulaBD {
 
     //our_Gerente gerente;
     our_Recepcionista recep1;
@@ -55,7 +55,7 @@ public  class SimulaBD {
     our_CategoriaDeQuarto suite;
     our_Gerente gerenteRoberto;
 
-    public static List<our_Recepcionista> listaRecepcao;
+    public  static List<our_Recepcionista> listaRecepcao;
 
     our_Hospede hospede1;
 
@@ -64,7 +64,7 @@ public  class SimulaBD {
     public SimulaBD() {
 
         listaRecepcao = new ArrayList<our_Recepcionista>();
-        
+
         this.recep1 = new our_Recepcionista(31, "Recepção", 88, "Tarde", "432.343.222.41", "Juju Recepcionista", "my@email.com", endereco1, telefone1, "Tarde de novo");
         this.listaRecepcao.add(recep1);
 
@@ -91,8 +91,9 @@ public  class SimulaBD {
     }
 
     public static void addRecepcionista(our_Recepcionista or) {
-        System.out.println("adicionando recep: "+ or.getNome());
-        SimulaBD.listaRecepcao.add(or);
+       
+        //System.out.println("adicionando recep: " + or.getNome());
+        listaRecepcao.add(or);
     }
 
     public our_Gerente getGerente() {
@@ -110,7 +111,8 @@ public  class SimulaBD {
     public SimulaBD getBDCarregado() {
         return this;
     }
-    public static ArrayList<our_Recepcionista> getListaRecep(){
-     return (ArrayList<our_Recepcionista>) SimulaBD.listaRecepcao;
+
+    public static ArrayList<our_Recepcionista> getListaRecep() {
+        return (ArrayList<our_Recepcionista>) SimulaBD.listaRecepcao;
     }
 }

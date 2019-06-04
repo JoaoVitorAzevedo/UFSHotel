@@ -7,6 +7,7 @@ package Sistema;
 
 import Framework.ITipoGerenteTipoPessoa;
 import Framework.ModuloTipoGerente;
+import Framework.ModuloCadastro;
 /**
  * @author João Vitor Azevedo 743554
  * @author Sabrina Miranda 743595
@@ -35,6 +36,9 @@ public class InterfaceGrafica {
         System.out.println(or.getNome());
         
         our_CategoriaDeQuarto j = new our_CategoriaDeQuarto("lixo",3,4.0f);
+        
+        or.realizarCadastro(10);
+        
         
 
     }

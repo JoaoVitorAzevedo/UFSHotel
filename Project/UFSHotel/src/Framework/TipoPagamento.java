@@ -49,9 +49,9 @@ public abstract class TipoPagamento {
     public void setQtdParcelas(int qtdParcelas) {
         this.qtdParcelas = qtdParcelas;
     }
-    
+
     public void setStatusPagamento(boolean status) {
-    	this.statusPagamento = status;
+        this.statusPagamento = status;
     }
 
 }

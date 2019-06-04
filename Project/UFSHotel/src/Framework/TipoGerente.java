@@ -5,6 +5,8 @@
  */
 package Framework;
 
+import Sistema.ControllerXGerente;
+
 /**
  * @author João Vitor Azevedo 743554
  * @author Sabrina Miranda 743595
@@ -12,20 +14,26 @@ package Framework;
  */
 public abstract class TipoGerente extends TipoFuncionario {
 
-    /* public TipoGerente() {
+    public TipoGerente() {
         super(null, 0, null, null, null, null, null, null);
         System.out.println("Criei Gerente Nulo");
     }
-     */
-    public TipoGerente(String setor, int idFuncionario, String turno, String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
+
+    protected TipoGerente(String setor, int idFuncionario, String turno, String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
         super(setor, idFuncionario, turno, cpf, nome, email, end, tel);
 
     }
 
-    public void cadastrarFuncionario() {
+    void cadastrarPessoa(TipoPessoa tp) {
+        System.out.println("cadastrei no pai");
+    }
+
+    void cadastrarFuncionario() {
         System.out.println("Cadastrar funcionario chamado no gerente ! (aquele definido no framework, wtf");
         //manipular BD?
         //
     }
+
+    public abstract Boolean cadastrarPessoa();
 
 }

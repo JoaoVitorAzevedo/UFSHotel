@@ -3,11 +3,16 @@ UFSHotel
 
 Me leia pfv
 
-- [ ] cadastrarFuncionario ainda está em TipoGerente, implementar interfaces
-- [ ] cadastrar hospede está em TipoRecepcionista
-- [ ] .
-- [ ] .
-- [ ] .
-- [ ] .
+- [ ] Criar uma interface por caso de uso: 
+	- [ ] Uma onde se considera que o gerente está logado
+	- [ ] Uma onde se considera que a recepcionista está logada etc
+	- [ ] 		
+- [ ] em GUI_Gerente: 
+ControllerXGerente ger = new ControladorDeCadastro();
+// faz as coisas
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
 
 

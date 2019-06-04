@@ -16,11 +16,17 @@ import Framework.TipoRecepcionista;
  * @author Sabrina Miranda 743595
  * @author Vitor Sugaya 743605
  */
-
 public class our_Recepcionista extends TipoRecepcionista {
 
-    public our_Recepcionista(int ramal, String setor, int idFuncionario, String turno, String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
+    String periodo;
+
+    public our_Recepcionista(int ramal, String setor, int idFuncionario, String turno, String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel, String periodo) {
         super(ramal, setor, idFuncionario, turno, cpf, nome, email, end, tel);
+        this.periodo = periodo;
+    }
+
+    public our_Recepcionista(int id, String nome) {
+        super(0, null, id, null, null, nome, null, null, null);
     }
 
     @Override
@@ -33,6 +39,14 @@ public class our_Recepcionista extends TipoRecepcionista {
             System.out.println("Algo deu mto errado moçx :/");
             return false;
         }
+    }
+
+    public String getPeriodo() {
+        return periodo;
+    }
+
+    public void setPeriodo(String periodo) {
+        this.periodo = periodo;
     }
 
 }

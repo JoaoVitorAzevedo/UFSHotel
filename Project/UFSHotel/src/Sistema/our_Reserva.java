@@ -26,37 +26,37 @@ public class our_Reserva extends TipoReserva {
         
 
     }
-    
+
     public double getTotalConsumido() {
-    	double total = 0;
-    	Map<String, Double> Consumido;
+        double total = 0;
+        Map<String, Double> Consumido;
         Consumido = getConsumido();
         for (Map.Entry<String, Double> entry : Consumido.entrySet()) {
             Double v = entry.getValue();
             total += v;
         }
-        
+
         return total;
     }
-    
+
     public float calcularDesconto(float percentDisc) {
-    	float preco;
+        float preco;
         TipoPagamento pag = getPag();
-    	preco = pag.getValor();
-    	
-    	return preco*(percentDisc/100);
+        preco = pag.getValor();
+
+        return preco * (percentDisc / 100);
     }
-    
+
     public boolean addDesconto(int percentDisc) {
-    	float Desconto, valorNovo;
+        float Desconto, valorNovo;
         TipoPagamento pag = getPag();
-    	
-    	Desconto = calcularDesconto(percentDisc);
-    	valorNovo = pag.getValor() - Desconto;
-    	
-    	pag.setValor(valorNovo);
-    	
-    	return true;
+
+        Desconto = calcularDesconto(percentDisc);
+        valorNovo = pag.getValor() - Desconto;
+
+        pag.setValor(valorNovo);
+
+        return true;
     }
 
 }

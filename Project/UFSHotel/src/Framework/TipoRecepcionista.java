@@ -19,6 +19,11 @@ public abstract class TipoRecepcionista extends TipoFuncionario implements IRece
         this.ramal = ramal;
     }
 
+    public TipoRecepcionista(int idFuncionario, String nome) {
+        super(null, idFuncionario, null, null, nome, null, null, null);
+        this.ramal = 0;
+    }
+
     public abstract boolean cadastrarReserva(int id, TipoHospede hospede, Data dataIn, Data dataOut);
 
     // getters 

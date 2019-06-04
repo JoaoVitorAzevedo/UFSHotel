@@ -10,7 +10,7 @@ package Framework;
  * @author Sabrina Miranda 743595
  * @author Vitor Sugaya 743605
  */
-public abstract class TipoRecepcionista extends TipoFuncionario {
+public abstract class TipoRecepcionista extends TipoFuncionario implements IRecepcionistaHospede {
 
     int ramal;
 
@@ -33,6 +33,9 @@ public abstract class TipoRecepcionista extends TipoFuncionario {
 
     //metodos    
     public void CadastrarHospede() {
+    	TipoEndereco te;
+    	TipoTelefone tt;
+    	TipoHospede th = new TipoHospede(0, "485687512", "Roberto", "email@email.com", te, tt);
         System.out.println("Chamei Criador de Hospedes na TipoRecepcionista");
         System.out.println("recepcionista cadastrou hospede com sucesso\n");
         // manipular BD?

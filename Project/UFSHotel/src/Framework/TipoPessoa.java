@@ -65,7 +65,7 @@ public abstract class TipoPessoa {
         this.cpf = cpf;
     }
 
-    public abstract int getID();
+    abstract int getID();
     // padrao pra erro em herança
 
 }

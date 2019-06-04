@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Framework;
+import Framework.ModuloCadastro;
 
 /**
  * @author João Vitor Azevedo 743554
@@ -49,5 +50,7 @@ public abstract class TipoFuncionario extends TipoPessoa /* implements <nome-int
     public void setTurno(String turno) {
         this.turno = turno;
     }
+    
+    
 
 }

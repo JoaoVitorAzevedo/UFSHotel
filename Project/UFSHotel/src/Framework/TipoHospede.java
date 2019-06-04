@@ -14,7 +14,7 @@ public abstract class TipoHospede extends TipoPessoa {
 
     int idHospede;
 
-    public TipoHospede(int idHospede, String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
+    protected TipoHospede(int idHospede, String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
         super(cpf, nome, email, end, tel);
         this.idHospede = idHospede;
 
@@ -25,7 +25,7 @@ public abstract class TipoHospede extends TipoPessoa {
         return this.idHospede;
     }
 
-    public void setIdHospede(int idHospede) {
+    void setIdHospede(int idHospede) {
         this.idHospede = idHospede;
     }
 

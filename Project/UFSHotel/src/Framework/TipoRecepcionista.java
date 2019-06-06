@@ -6,6 +6,7 @@
 package Framework;
 
 import Sistema.iCadastro_Recepcionista;
+import java.util.Date;
 
 /**
  * @author João Vitor Azevedo 743554
@@ -26,7 +27,7 @@ public abstract class TipoRecepcionista extends TipoFuncionario implements iCada
         this.ramal = 0;
     }
 
-    public abstract boolean cadastrarReserva(int id, TipoHospede hospede, Data dataIn, Data dataOut);
+    public abstract boolean cadastrarReserva(int id, TipoHospede hospede, Date dataIn, Date dataOut);
 
     // getters 
     public int getRamal() {

@@ -1,15 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Sistema;
 
-import Framework.Data;
 import Framework.TipoEndereco;
 import Framework.TipoTelefone;
 import Framework.TipoHospede;
 import Framework.TipoRecepcionista;
+import java.util.Date;
 
 /**
  * @author João Vitor Azevedo 743554
@@ -30,7 +25,7 @@ public class our_Recepcionista extends TipoRecepcionista {
     }
 
     @Override
-    public boolean cadastrarReserva(int id, TipoHospede hospede, Data dataIn, Data dataOut) {
+    public boolean cadastrarReserva(int id, TipoHospede hospede, Date dataIn, Date dataOut) {
         //our_Reserva reserv = new our_Reserva();
         if (true) {
             System.out.println("Hospede " + hospede.getNome() + " cadastrado com sucesso!");

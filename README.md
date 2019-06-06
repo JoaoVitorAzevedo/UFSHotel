@@ -10,7 +10,7 @@ Me leia pfv
 
 	- [ ] Escolher casos de uso para entrega!		
 - [ ] em GUI_Gerente: 
-		- [ ] ajeitar : ControllerXGerente ger = new ControladorDeCadastro();
+		- [ ] ajeitar : iCadastro_Gerente ger = new ControladorDeCadastro();
 		- [ ] passar pra dentro do controlador o que der (coupling)
 
 

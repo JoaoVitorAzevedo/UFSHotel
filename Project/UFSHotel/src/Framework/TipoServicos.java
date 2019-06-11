@@ -6,6 +6,7 @@
 package Framework;
 
 import java.util.List;
+import java.util.Date;
 
 /**
  * @author João Vitor Azevedo 743554
@@ -17,10 +18,10 @@ public class TipoServicos {
     String nomeDoServico;
     List<TipoFuncionario> responsaveis;
     float precoDoServico;
-    Data dataServico;
+    Date dataServico;
     String horario;
 
-    public TipoServicos(String nomeDoServico, List<TipoFuncionario> responsaveis, float precoDoServico, Data dataServico, String horario) {
+    public TipoServicos(String nomeDoServico, List<TipoFuncionario> responsaveis, float precoDoServico, Date dataServico, String horario) {
         this.nomeDoServico = nomeDoServico;
         this.responsaveis = responsaveis;
         this.precoDoServico = precoDoServico;
@@ -29,7 +30,7 @@ public class TipoServicos {
     }
 
     //getters
-    public Data getDataServico() {
+    public Date getDataServico() {
         return dataServico;
     }
 
@@ -54,7 +55,7 @@ public class TipoServicos {
         this.responsaveis.add(func);
     }
 
-    public void setDataServico(Data dataServico) {
+    public void setDataServico(Date dataServico) {
         this.dataServico = dataServico;
     }
 

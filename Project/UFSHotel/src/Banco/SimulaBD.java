@@ -24,8 +24,8 @@
 package Banco;
 
 import Framework.TipoTelefone;
+
 import Sistema.our_CategoriaDeQuarto;
-import Sistema.our_Data;
 import Sistema.our_Endereco;
 import Sistema.our_Gerente;
 import Sistema.our_Hospede;
@@ -33,7 +33,9 @@ import Sistema.our_Quarto;
 import Sistema.our_Recepcionista;
 import Sistema.our_Servicos;
 import Sistema.our_TipoCategoriaDeQuarto;
+
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -48,7 +50,7 @@ public class SimulaBD {
     our_Recepcionista recep1;
     our_Hospede valter;
     our_TipoCategoriaDeQuarto casal;
-    our_Data data1;
+    Date data1;
     our_Endereco endereco1;
     TipoTelefone telefone1;
     our_Servicos serv;
@@ -57,7 +59,7 @@ public class SimulaBD {
     our_CategoriaDeQuarto suite;
     our_Gerente gerenteRoberto;
 
-    public  static List<our_Recepcionista> listaRecepcao;
+    public static List<our_Recepcionista> listaRecepcao;
 
     our_Hospede hospede1;
 
@@ -73,14 +75,14 @@ public class SimulaBD {
 
         our_CategoriaDeQuarto casal = new our_CategoriaDeQuarto("Casal", 2, 120.0f);    //Nome da Categoria, capacidade, preco)
 
-        data1 = new our_Data(3, 4, 1299);
+        data1 = new Date(3, 4, 1299);
         endereco1 = new our_Endereco("17523275", "252", "logradouro", "blablabla", "Jardim Guanabara", "Marília", "Ceará");
         telefone1 = new TipoTelefone("+55", "14", "99777-7676");
 
         hospede1 = new our_Hospede(31, "432.883.228-81", "Joao Vitor", "fulanodetal@gmail.com", endereco1, telefone1);
-        serv = new our_Servicos("Comidinhas top", null, 22.0f, new our_Data(6, 8, 1986), "horario tal");
-        serv2 = new our_Servicos("Massagem", null, 22.0f, new our_Data(6, 8, 1986), "horario y");
-        serv3 = new our_Servicos("Frigobar Liberado", null, 22.0f, new our_Data(6, 8, 1986), "horario x");
+        serv = new our_Servicos("Comidinhas top", null, 22.0f, new Date(6, 8, 1986), "horario tal");
+        serv2 = new our_Servicos("Massagem", null, 22.0f, new Date(6, 8, 1986), "horario y");
+        serv3 = new our_Servicos("Frigobar Liberado", null, 22.0f, new Date(6, 8, 1986), "horario x");
         this.suite = new our_CategoriaDeQuarto("Suite", 3, 180.0f);    //Nome da Categoria, capacidade, preco)
 
         suite.addServico(serv2);
@@ -94,7 +96,7 @@ public class SimulaBD {
     }
 
     public static void addRecepcionista(our_Recepcionista or) {
-       
+
         //System.out.println("adicionando recep: " + or.getNome());
         listaRecepcao.add(or);
     }

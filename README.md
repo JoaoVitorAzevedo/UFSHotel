@@ -4,15 +4,14 @@ UFSHotel
 Me leia pfv
 
 - [ ] Criar uma interface por caso de uso: 
-	- [ ] Uma onde se considera que o gerente está logado
-	- [ ] Uma onde se considera que a recepcionista está logada etc
-	- [ ] 		
+	- [x] Uma onde se considera que o gerente está logado
+	- [x] Uma onde se considera que a recepcionista está logada etc
+
+
+	- [ ] Escolher casos de uso para entrega!		
 - [ ] em GUI_Gerente: 
-ControllerXGerente ger = new ControladorDeCadastro();
-// faz as coisas
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
+		- [ ] ajeitar : iCadastro_Gerente ger = new ControladorDeCadastro();
+		- [ ] passar pra dentro do controlador o que der (coupling)
+
 
 

@@ -1,26 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Framework;
-
-import java.util.concurrent.atomic.AtomicInteger;
-
 /**
  * @author João Vitor Azevedo 743554
  * @author Sabrina Miranda 743595
  * @author Vitor Sugaya 743605
  */
+package Framework;
+
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 public class TipoReserva {
-    
-	AtomicInteger idGen;
-    Data dataIn;
-    Data dataOut;
+
+    AtomicInteger idGen;
+    Date dataIn;
+    Date dataOut;
     int idReserva;
     TipoHospede cliQueReservou;
     TipoRecepcionista recepQueReservou;
@@ -28,7 +22,7 @@ public class TipoReserva {
     TipoPagamento pag;
     Map<String, Double> Consumido;
 
-    public TipoReserva(Data dataIn, Data dataOut, TipoHospede cli, TipoRecepcionista recep, TipoQuarto quarto, TipoPagamento pag) {
+    public TipoReserva(Date dataIn, Date dataOut, TipoHospede cli, TipoRecepcionista recep, TipoQuarto quarto, TipoPagamento pag) {
         this.Consumido = new HashMap<>();
         this.dataIn = dataIn;
         this.dataOut = dataOut;
@@ -44,12 +38,12 @@ public class TipoReserva {
     public Map getConsumido() {
         return Consumido;
     }
-    
-    public TipoPagamento getPag(){
+
+    public TipoPagamento getPag() {
         return pag;
     }
 
-    public Data getDataIn() {
+    public Date getDataIn() {
         return dataIn;
     }
 
@@ -69,7 +63,7 @@ public class TipoReserva {
         return recepQueReservou;
     }
 
-    public Data getDataOut() {
+    public Date getDataOut() {
         return dataOut;
     }
 
@@ -82,7 +76,7 @@ public class TipoReserva {
         this.cliQueReservou = cliQueReservou;
     }
 
-    public void setDataOut(Data dataOut) {
+    public void setDataOut(Date dataOut) {
         this.dataOut = dataOut;
     }
 
@@ -94,7 +88,7 @@ public class TipoReserva {
         this.idReserva = idReserva;
     }
 
-    public void setDataIn(Data dataIn) {
+    public void setDataIn(Date dataIn) {
         this.dataIn = dataIn;
     }
 

@@ -43,6 +43,8 @@ import java.util.List;
  * @author 743554
  */
 public class SimulaBD {
+	
+	private static SimulaBD single_instance = null;
 
     //our_Gerente gerente;
     our_Recepcionista recep1;
@@ -64,6 +66,7 @@ public class SimulaBD {
     our_Quarto room1;
 
     public SimulaBD() {
+    	
 
         listaRecepcao = new ArrayList<our_Recepcionista>();
 
@@ -111,7 +114,11 @@ public class SimulaBD {
     }
 
     public SimulaBD getBDCarregado() {
-        return this;
+    	
+    	if (single_instance == null) {
+    		single_instance = new SimulaBD();
+    	}
+        return single_instance;
     }
 
     public static ArrayList<our_Recepcionista> getListaRecep() {

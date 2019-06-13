@@ -6,7 +6,7 @@ public interface iCadastro_Gerente {
 
     void cadastrarFuncLimpeza();
 
-    void cadastrarRecepcaoAtendimento(TipoRecepcionista recep);
+    void cadastrarRecepcao(TipoRecepcionista recep);
 
     void cadastrarGerente();
 

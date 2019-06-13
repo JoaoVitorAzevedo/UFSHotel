@@ -42,45 +42,47 @@ import java.util.List;
  *
  * @author 743554
  */
-public class SimulaBD {
+public class SimulaBD implements iBancoGerente, iBancoRecepcionista{
 
-    //our_Gerente gerente;
+    //Objetos hipotéticos para preencher banco inicialmente
     our_Recepcionista recep1;
     our_Hospede valter;
-    our_TipoCategoriaDeQuarto casal;
-    Date data1;
+    our_Hospede hospede1;
+    our_CategoriaDeQuarto Casal;
     our_Endereco endereco1;
-    TipoTelefone telefone1;
     our_Servicos serv;
     our_Servicos serv2;
     our_Servicos serv3;
     our_CategoriaDeQuarto suite;
     our_Gerente gerenteRoberto;
-
-    public static List<our_Recepcionista> listaRecepcao;
-
-    our_Hospede hospede1;
-
     our_Quarto room1;
+
+    //Listas para armazenamento do banco
+    public static List<our_Recepcionista> listaRecepcao;
+    public static List<our_Quarto> listaQuarto;
+    public static List<our_Gerente> listaGerente;
+    public static List<our_Servicos> listaServico;
+    
 
     public SimulaBD() {
 
-        listaRecepcao = new ArrayList<our_Recepcionista>();
+        listaRecepcao = new ArrayList<>();
+        listaQuarto = new ArrayList<>();
+        listaGerente = new ArrayList<>();
+        listaServico = new ArrayList<>();
 
         this.recep1 = new our_Recepcionista(31, "Recepção", 88, "Tarde", "432.343.222.41", "Juju Recepcionista", "my@email.com", endereco1, telefone1, "Tarde de novo");
         this.listaRecepcao.add(recep1);
 
-        our_CategoriaDeQuarto casal = new our_CategoriaDeQuarto("Casal", 2, 120.0f);    //Nome da Categoria, capacidade, preco)
+        Casal = new our_CategoriaDeQuarto("Casal", 2, 120.0f);
 
-        data1 = new Date(3, 4, 1299);
         endereco1 = new our_Endereco("17523275", "252", "logradouro", "blablabla", "Jardim Guanabara", "Marília", "Ceará");
-        telefone1 = new TipoTelefone("+55", "14", "99777-7676");
 
         hospede1 = new our_Hospede(31, "432.883.228-81", "Joao Vitor", "fulanodetal@gmail.com", endereco1, telefone1);
         serv = new our_Servicos("Comidinhas top", null, 22.0f, new Date(6, 8, 1986), "horario tal");
         serv2 = new our_Servicos("Massagem", null, 22.0f, new Date(6, 8, 1986), "horario y");
         serv3 = new our_Servicos("Frigobar Liberado", null, 22.0f, new Date(6, 8, 1986), "horario x");
-        this.suite = new our_CategoriaDeQuarto("Suite", 3, 180.0f);    //Nome da Categoria, capacidade, preco)
+        this.suite = new our_CategoriaDeQuarto("Suite", 3, 180.0f);  
 
         suite.addServico(serv2);
         suite.addServico(serv);
@@ -92,29 +94,62 @@ public class SimulaBD {
 
     }
 
-    public static void addRecepcionista(our_Recepcionista or) {
-
-        //System.out.println("adicionando recep: " + or.getNome());
-        listaRecepcao.add(or);
+    //Métodos para adicionar no banco
+    @Override
+    public boolean addRecepcionista(our_Recepcionista newRecepcionista) {
+        listaRecepcao.add(newRecepcionista);
+        return true;
+    }
+      
+    public boolean addGerente(our_Gerente newGerente){
+        listaGerente.add(newGerente);
+        return true;
+    }
+    
+    public boolean addQuarto(our_Quarto newQuarto){
+        listaQuarto.add(newQuarto);
+        return true;
+    }
+    
+     public boolean addServico(our_Servicos newServico){
+        listaServico.add(newServico);
+        return true;
     }
 
-    public our_Gerente getGerente() {
-        return gerenteRoberto;
-    }
-
-    public our_Recepcionista getRecep1() {
-        return recep1;
-    }
-
-    public void setGerenteRoberto(our_Gerente gerenteRoberto) {
-        this.gerenteRoberto = gerenteRoberto;
+    //Caso de uso que retorna nome de um Gerente x
+    public String getNomeGerente(int id) {
+        for(our_Gerente or: listaGerente){
+            return or.getNome();
+        }
+        return null;
     }
 
     public SimulaBD getBDCarregado() {
         return this;
     }
 
+    //Retorna toda a lista de Recepcionistas
     public static ArrayList<our_Recepcionista> getListaRecep() {
         return (ArrayList<our_Recepcionista>) SimulaBD.listaRecepcao;
+    }
+
+    @Override
+    public String getNomeGerente() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean addGerente() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean addQuarto() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean addServico() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

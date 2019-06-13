@@ -6,12 +6,8 @@
 package Sistema;
 
 import Banco.SimulaBD;
+import Banco.iBancoGerente;
 import Framework.TipoRecepcionista;
-import Sistema.our_CategoriaDeQuarto;
-import Sistema.our_Hospede;
-import Sistema.our_Quarto;
-import Sistema.our_Recepcionista;
-import Sistema.our_Gerente;
 
 /**
  * @author João Vitor Azevedo 743554
@@ -45,10 +41,10 @@ public class ControladorDeCadastro implements iCadastro_Recepcionista, iCadastro
         System.out.println("cadastradoFuncionario");
     }
 
-    public static void cadastrarRecepcaoAtendimento(our_Recepcionista recep) {
-
-        System.out.println("cadastrarRecepcaoAtendimento do CONTROLLER executado"); //To change body of generated methods, choose Tools | Templates.
-        SimulaBD.addRecepcionista((our_Recepcionista) recep);
+    public static void cadastrarRecepcao(our_Recepcionista recep) {
+        iBancoGerente BG = new SimulaBD();
+        if(BG.addRecepcionista(recep))
+            System.out.println("Recepcionista cadastrado com sucesso!");
 
     }
 
@@ -79,12 +75,12 @@ public class ControladorDeCadastro implements iCadastro_Recepcionista, iCadastro
     }
 
     @Override
-    public void cadastrarRecepcaoAtendimento(TipoRecepcionista recep) {
+    public void cadastrarQuarto() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void cadastrarQuarto() {
+    public void cadastrarRecepcao(TipoRecepcionista recep) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

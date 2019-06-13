@@ -30,7 +30,7 @@ public abstract class TipoPessoa {
         this.listaTel.add(tel);
 
     }
-
+    
     public void addTelefone(TipoTelefone tel) {
         this.listaTel.add(tel);
     }

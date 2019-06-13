@@ -4,15 +4,12 @@
  * and open the template in the editor.
  */
 package Framework;
-
-import Sistema.iCadastro_Gerente;
-
 /**
  * @author João Vitor Azevedo 743554
  * @author Sabrina Miranda 743595
  * @author Vitor Sugaya 743605
  */
-public abstract class TipoGerente extends TipoFuncionario implements iCadastro_Gerente {
+public abstract class TipoGerente extends TipoFuncionario{
 
     public TipoGerente() {
         super(null, 0, null, null, null, null, null, null);
@@ -27,13 +24,16 @@ public abstract class TipoGerente extends TipoFuncionario implements iCadastro_G
     void cadastrarPessoa(TipoPessoa tp) {
         System.out.println("cadastrei no pai");
     }
+    
+      void cadastrarPessoa() {
+        System.out.println("Pessoa cadastrada");
+    }
+
 
     void cadastrarFuncionario() {
         System.out.println("Cadastrar funcionario chamado no gerente ! (aquele definido no framework, wtf");
         //manipular BD?
         //
     }
-
-    public abstract Boolean cadastrarPessoa();
 
 }

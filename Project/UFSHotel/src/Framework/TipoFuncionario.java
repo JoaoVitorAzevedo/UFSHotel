@@ -10,7 +10,7 @@ package Framework;
  * @author Sabrina Miranda 743595
  * @author Vitor Sugaya 743605
  */
-public abstract class TipoFuncionario extends TipoPessoa /* implements <nome-interface> */ /* implements <nome-interface> */ {
+public abstract class TipoFuncionario extends TipoPessoa{
 
     String setor;
     int idFuncionario;
@@ -28,7 +28,7 @@ public abstract class TipoFuncionario extends TipoPessoa /* implements <nome-int
     public int getID() {
         return idFuncionario;
     }
-
+    
     public String getSetor() {
         return setor;
     }

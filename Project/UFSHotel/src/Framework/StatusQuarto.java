@@ -5,6 +5,9 @@
  */
 package Framework;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author João Vitor Azevedo 743554
  * @author Sabrina Miranda 743595
@@ -14,12 +17,25 @@ class StatusQuarto {
 
     boolean limpeza = true;
     boolean disponibilidade = true;
+    public static List<Float> listaServicos;
 
     public StatusQuarto(boolean limpeza, boolean disponibilidade) {
         this.limpeza = limpeza;
         this.disponibilidade = disponibilidade;
+        StatusQuarto.listaServicos = new ArrayList<>();
+    }
+    
+    public void addPrecoServico(float preco){
+        listaServicos.add(preco);
     }
 
+    public Float getPrecoServicos() {
+        float Total = 0;
+	for (float i: listaServicos) 
+		Total += i;
+        return Total;
+    }
+      
     public boolean isLimpavel() {
         return this.limpeza;
     }

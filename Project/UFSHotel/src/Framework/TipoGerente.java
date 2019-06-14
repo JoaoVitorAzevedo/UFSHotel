@@ -35,5 +35,10 @@ public abstract class TipoGerente extends TipoFuncionario{
         //manipular BD?
         //
     }
+    
+    @Override
+    public int getID(){
+        return idFuncionario;
+    }
 
 }

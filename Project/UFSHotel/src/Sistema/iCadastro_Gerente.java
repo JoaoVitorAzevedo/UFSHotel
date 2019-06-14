@@ -1,14 +1,9 @@
 package Sistema;
 
-import Framework.TipoRecepcionista;
-
 public interface iCadastro_Gerente {
+    void cadastrarRecepcao(int id, String nome);
 
-    void cadastrarFuncLimpeza();
+    void cadastrarGerente(int idFuncionario, String nome);
 
-    void cadastrarRecepcao(TipoRecepcionista recep);
-
-    void cadastrarGerente();
-
-    void cadastrarQuarto();
+    void cadastrarQuarto(int id, int andar, our_CategoriaDeQuarto catroom);
 }

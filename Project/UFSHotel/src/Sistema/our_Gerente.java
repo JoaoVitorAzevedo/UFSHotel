@@ -25,15 +25,11 @@ public class our_Gerente extends TipoGerente{
         super(null, idFuncionario, null, null, nome, null, null, null);
     }
      
-    public Boolean cadastrarPessoa() {
-        System.out.println("Cadastrando pessoa dentro do sistema");
-        return true;
-    }
 
     public void cadastrarPessoa(TipoPessoa tp) {
         System.out.println("cadastrei no filho");
     }
     
-    
+
 
 }

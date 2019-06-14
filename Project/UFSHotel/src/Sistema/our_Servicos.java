@@ -13,8 +13,8 @@ import java.util.List;
 
 public class our_Servicos extends TipoServicos {
 
-    public our_Servicos(String nomeDoServico, List<TipoFuncionario> responsaveis, float precoDoServico, Date dataServico, String horario) {
-        super(nomeDoServico, responsaveis, precoDoServico, dataServico, horario);
+    public our_Servicos(String nomeDoServico, List<TipoFuncionario> responsaveis, float precoDoServico) {
+        super(nomeDoServico, responsaveis, precoDoServico);
 
     }
 

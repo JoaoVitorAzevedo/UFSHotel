@@ -11,8 +11,7 @@ public class GUI_Gerente {
         iCadastro_Gerente ir = new ControladorDeCadastro();
         
         //Cadastrando uma nova Recepcionista - entrando com os dados
-        our_Recepcionista fulana = new our_Recepcionista(85, "Josilene");
-        ir.cadastrarRecepcao(fulana);
+        ir.cadastrarRecepcao(85, "Josilene");
                 
         //Retorna os nomes de todas as recepcionistas
         SimulaBD.getListaRecep().forEach((temp) -> {

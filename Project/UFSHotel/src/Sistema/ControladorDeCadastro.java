@@ -21,14 +21,10 @@ public class ControladorDeCadastro implements iCadastro_Recepcionista, iCadastro
     }
 
     public void cadastrarQuarto(int id, int andar, our_CategoriaDeQuarto catroom) {
-
-        our_Quarto our = new our_Quarto(id, andar, catroom);
-        if (true) {
+        iBancoGerente BG = new SimulaBD();
+        if(BG.addQuarto(id, andar, catroom))
             System.out.println("Cadastrado Quarto com dados: ");
-            //our.printData();
-
         }
-        // our.save()
     }
 
     public static void cadastrarHospede(our_Hospede novoHospede) {

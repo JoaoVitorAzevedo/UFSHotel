@@ -110,7 +110,8 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista{
         return true;
     }
     
-    public boolean addQuarto(our_Quarto newQuarto){
+    public boolean addQuarto(int id, int andar, our_CategoriaDeQuarto catroom){
+        our_Quarto newQuarto = our_Quarto();
         listaQuarto.add(newQuarto);
         return true;
     }
@@ -158,6 +159,10 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista{
 
     @Override
     public boolean addServico() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private our_Quarto our_Quarto() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

@@ -23,21 +23,19 @@
  */
 package Banco;
 
-import Sistema.our_CategoriaDeQuarto;
 import Sistema.our_Gerente;
 import Sistema.our_Quarto;
 import Sistema.our_Recepcionista;
-import Sistema.our_Servicos;
 
 
 /**
- *
- * @author sabrina
+ * @author João Vitor Azevedo 743554
+ * @author Sabrina Miranda 743595
+ * @author Vitor Sugaya 743605
  */
 public interface iBancoGerente {
     public String getNomeGerente(int id);
     public boolean addRecepcionista(our_Recepcionista newRecep);
     public boolean addGerente(our_Gerente newGerente);
     public boolean addQuarto(our_Quarto newQuarto);
-    public boolean addServico(our_Servicos newServico);
 }

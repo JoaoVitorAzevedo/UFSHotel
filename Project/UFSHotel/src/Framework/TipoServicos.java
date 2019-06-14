@@ -21,19 +21,13 @@ public class TipoServicos {
     Date dataServico;
     String horario;
 
-    public TipoServicos(String nomeDoServico, List<TipoFuncionario> responsaveis, float precoDoServico, Date dataServico, String horario) {
+    public TipoServicos(String nomeDoServico, List<TipoFuncionario> responsaveis, float precoDoServico) {
         this.nomeDoServico = nomeDoServico;
         this.responsaveis = responsaveis;
         this.precoDoServico = precoDoServico;
-        this.dataServico = dataServico;
-        this.horario = horario;
     }
 
     //getters
-    public Date getDataServico() {
-        return dataServico;
-    }
-
     public float getPrecoDoServico() {
         return precoDoServico;
     }
@@ -46,21 +40,9 @@ public class TipoServicos {
         return responsaveis;
     }
 
-    public String getHorario() {
-        return horario;
-    }
-
     //setters
     public void addResponsavel(TipoFuncionario func) {
         this.responsaveis.add(func);
-    }
-
-    public void setDataServico(Date dataServico) {
-        this.dataServico = dataServico;
-    }
-
-    public void setHorario(String horario) {
-        this.horario = horario;
     }
 
     public void setNomeDoServico(String nomeDoServico) {

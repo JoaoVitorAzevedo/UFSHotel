@@ -7,7 +7,9 @@ package Sistema;
 
 import Banco.SimulaBD;
 import Banco.iBancoGerente;
-import Framework.TipoRecepcionista;
+import Banco.iBancoRecepcionista;
+import Framework.TipoFuncionario;
+import java.util.List;
 
 /**
  * @author João Vitor Azevedo 743554
@@ -16,47 +18,42 @@ import Framework.TipoRecepcionista;
  */
 public class ControladorDeCadastro implements iCadastro_Recepcionista, iCadastro_Gerente {
 
+    //Construtor
     public ControladorDeCadastro() {
-        System.out.println("fiz nada");
     }
 
+    //Métodos de cadastro do Gerente
+    @Override
     public void cadastrarQuarto(int id, int andar, our_CategoriaDeQuarto catroom) {
         iBancoGerente BG = new SimulaBD();
         our_Quarto newQuarto = new our_Quarto(id, andar, catroom);
+        
         if(BG.addQuarto(newQuarto))
             System.out.println("Cadastrado Quarto com dados: ");
         
     }
 
-    public static void cadastrarHospede(our_Hospede novoHospede) {
-        //BancoDeHospedes.add(novoHospede);
-        System.out.println("Novo Hospede cadastrado com sucesso! ID:" + novoHospede.getID() + ", Nome: " + novoHospede.getNome());
-
-    }
-
-    public void cadastrarFuncionario() {
-        System.out.println("cadastradoFuncionario");
-    }
-
-    public static void cadastrarRecepcao(int id, String nome) {
+    @Override
+    public void cadastrarRecepcao(int id, String nome) {
         iBancoGerente BG = new SimulaBD();
         our_Recepcionista newRecep = new our_Recepcionista(id, nome);
+        
         if(BG.addRecepcionista(newRecep))
             System.out.println("Recepcionista cadastrado com sucesso!");
 
     }
 
-    public boolean cadastrarLimpeza() {
-        System.out.println("cadastrada Bozena de Pato Branco");
-        return true;
-    }
-
     @Override
-    public void cadastrarGerente() {
-        System.out.println("Cadastrado o gerente");
+    public void cadastrarGerente(int idFuncionario, String nome) {
+        iBancoGerente BG = new SimulaBD();
+        our_Gerente newGerente = new our_Gerente(idFuncionario, nome);
+        
+        if(BG.addGerente(newGerente))
+            System.out.println("Cadastrado o gerente");
 
     }
 
+    //Métodos de cadastro da Recepcionista
     @Override
     public void CadastrarHospede(our_Hospede o) {
         System.out.println("cadastrado o");
@@ -66,20 +63,17 @@ public class ControladorDeCadastro implements iCadastro_Recepcionista, iCadastro
     public void EfetuarReserva() {
         System.out.println("reservei"); //To change body of generated methods, choose Tools | Templates.
     }
-
-    @Override
-    public void cadastrarFuncLimpeza() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    public void cadastrarServico(String nomeDoServico, List<TipoFuncionario> responsaveis, float precoDoServico){
+     iBancoRecepcionista BR = new SimulaBD();
+     our_Servicos newServico = new our_Servicos(nomeDoServico, responsaveis, precoDoServico);
+        
+     if(BR.addServico(newServico))
+        System.out.println("Serviço cadastrado");
     }
-
-    @Override
-    public void cadastrarQuarto() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void cadastrarRecepcao(TipoRecepcionista recep) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    public void AddServicoQuarto(our_Quarto quarto, Float preco){
+        
     }
 
 }

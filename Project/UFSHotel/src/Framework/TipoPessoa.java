@@ -18,8 +18,8 @@ public abstract class TipoPessoa {
     protected String cpf;
     String nome;
     String email;
-    List<TipoEndereco> enderecos = new ArrayList<TipoEndereco>();
-    List<TipoTelefone> listaTel = new ArrayList<TipoTelefone>();
+    List<TipoEndereco> enderecos = new ArrayList<>();
+    List<TipoTelefone> listaTel = new ArrayList<>();
 
     public TipoPessoa(String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
         this.cpf = cpf;

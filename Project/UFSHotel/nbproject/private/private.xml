@@ -3,7 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/MartManHunter/Desktop/UFSHotel/Project/UFSHotel/src/Framework/StatusQuarto.java</file>
+=======
+            <file>file:/home/sabrina/Documentos/Graduação/1-2019/POOAvançado/UFSHotel/Project/UFSHotel/src/Sistema/ControladorDeCadastro.java</file>
+            <file>file:/home/sabrina/Documentos/Graduação/1-2019/POOAvançado/UFSHotel/Project/UFSHotel/src/Banco/SimulaBD.java</file>
+            <file>file:/home/sabrina/Documentos/Graduação/1-2019/POOAvançado/UFSHotel/Project/UFSHotel/src/Banco/iBancoGerente.java</file>
+            <file>file:/home/sabrina/Documentos/Graduação/1-2019/POOAvançado/UFSHotel/Project/UFSHotel/src/Sistema/our_Recepcionista.java</file>
+>>>>>>> d3bd6eda09a6b0e75cc1a9c002e8d9c171128beb
         </group>
     </open-files>
 </project-private>

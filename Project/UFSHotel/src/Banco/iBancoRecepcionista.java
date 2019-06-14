@@ -23,10 +23,13 @@
  */
 package Banco;
 
+import Sistema.our_Servicos;
+
 /**
- *
- * @author sabrina
+ * @author João Vitor Azevedo 743554
+ * @author Sabrina Miranda 743595
+ * @author Vitor Sugaya 743605
  */
 public interface iBancoRecepcionista {
-    
+        public boolean addServico(our_Servicos newServico);
 }

@@ -72,16 +72,16 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista{
         listaServico = new ArrayList<>();
 
         this.recep1 = new our_Recepcionista(31, "Recepção", 88, "Tarde", "432.343.222.41", "Juju Recepcionista", "my@email.com", endereco1, telefone1, "Tarde de novo");
-        this.listaRecepcao.add(recep1);
+        SimulaBD.listaRecepcao.add(recep1);
 
         Casal = new our_CategoriaDeQuarto("Casal", 2, 120.0f);
 
         endereco1 = new our_Endereco("17523275", "252", "logradouro", "blablabla", "Jardim Guanabara", "Marília", "Ceará");
 
         hospede1 = new our_Hospede(31, "432.883.228-81", "Joao Vitor", "fulanodetal@gmail.com", endereco1, telefone1);
-        serv = new our_Servicos("Comidinhas top", null, 22.0f, new Date(6, 8, 1986), "horario tal");
-        serv2 = new our_Servicos("Massagem", null, 22.0f, new Date(6, 8, 1986), "horario y");
-        serv3 = new our_Servicos("Frigobar Liberado", null, 22.0f, new Date(6, 8, 1986), "horario x");
+        serv = new our_Servicos("Comidinhas top", null, 22.0f);
+        serv2 = new our_Servicos("Massagem", null, 22.0f);
+        serv3 = new our_Servicos("Frigobar Liberado", null, 22.0f);
         this.suite = new our_CategoriaDeQuarto("Suite", 3, 180.0f);  
 
         suite.addServico(serv2);
@@ -118,12 +118,15 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista{
         listaServico.add(newServico);
         return true;
     }
-
+     
+     //ALGUEM ME AJUDA AQUIIII PLIS
     //Caso de uso que retorna nome de um Gerente x
     @Override
     public String getNomeGerente(int id) {
         for(our_Gerente or: listaGerente){
-            return or.getNome();
+            int teste = or.getID();
+            if(id.equals(teste))
+                return or.getNome();
         }
         return null;
     }

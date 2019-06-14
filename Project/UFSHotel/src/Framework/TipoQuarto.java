@@ -36,6 +36,11 @@ public abstract class TipoQuarto {
     public int getAndar() {
         return andar;
     }
+    
+    //Retorna o preco total de todos os serviços cadastrados para esse quarto
+    public float getPrecoServicos(){
+        return(this.status.getPrecoServicos());   
+    }
 
     public int getIdQuarto() {
         return idQuarto;
@@ -54,6 +59,10 @@ public abstract class TipoQuarto {
     }
 
     //setters
+    public void addPrecoServico(float preco){
+        this.status.addPrecoServico(preco);
+    }
+    
     public void setTipo(TipoCategoriaDeQuarto tipo) {
         this.tipo = tipo;
     }

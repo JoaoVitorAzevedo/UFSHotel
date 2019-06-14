@@ -52,6 +52,7 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista{
     our_Hospede hospede1;
     our_CategoriaDeQuarto Casal;
     our_Endereco endereco1;
+    TipoTelefone telefone1;
     our_Servicos serv;
     our_Servicos serv2;
     our_Servicos serv3;

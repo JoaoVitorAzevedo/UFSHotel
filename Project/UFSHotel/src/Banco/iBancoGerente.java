@@ -23,7 +23,11 @@
  */
 package Banco;
 
+import Sistema.our_CategoriaDeQuarto;
+import Sistema.our_Gerente;
+import Sistema.our_Quarto;
 import Sistema.our_Recepcionista;
+import Sistema.our_Servicos;
 
 
 /**
@@ -31,9 +35,9 @@ import Sistema.our_Recepcionista;
  * @author sabrina
  */
 public interface iBancoGerente {
-    public String getNomeGerente();
+    public String getNomeGerente(int id);
     public boolean addRecepcionista(our_Recepcionista newRecep);
-    public boolean addGerente();
-    public boolean addQuarto();
-    public boolean addServico();
+    public boolean addGerente(our_Gerente newGerente);
+    public boolean addQuarto(our_Quarto newQuarto);
+    public boolean addServico(our_Servicos newServico);
 }

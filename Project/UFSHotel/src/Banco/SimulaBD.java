@@ -32,7 +32,6 @@ import Sistema.our_Hospede;
 import Sistema.our_Quarto;
 import Sistema.our_Recepcionista;
 import Sistema.our_Servicos;
-import Sistema.our_TipoCategoriaDeQuarto;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -105,23 +104,26 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista{
         return true;
     }
       
+    @Override
     public boolean addGerente(our_Gerente newGerente){
         listaGerente.add(newGerente);
         return true;
     }
     
-    public boolean addQuarto(int id, int andar, our_CategoriaDeQuarto catroom){
-        our_Quarto newQuarto = our_Quarto();
+    @Override
+    public boolean addQuarto(our_Quarto newQuarto){
         listaQuarto.add(newQuarto);
         return true;
     }
     
+    @Override
      public boolean addServico(our_Servicos newServico){
         listaServico.add(newServico);
         return true;
     }
 
     //Caso de uso que retorna nome de um Gerente x
+    @Override
     public String getNomeGerente(int id) {
         for(our_Gerente or: listaGerente){
             return or.getNome();
@@ -142,27 +144,4 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista{
         return (ArrayList<our_Recepcionista>) SimulaBD.listaRecepcao;
     }
 
-    @Override
-    public String getNomeGerente() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean addGerente() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean addQuarto() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean addServico() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private our_Quarto our_Quarto() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

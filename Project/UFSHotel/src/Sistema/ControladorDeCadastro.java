@@ -22,9 +22,10 @@ public class ControladorDeCadastro implements iCadastro_Recepcionista, iCadastro
 
     public void cadastrarQuarto(int id, int andar, our_CategoriaDeQuarto catroom) {
         iBancoGerente BG = new SimulaBD();
-        if(BG.addQuarto(id, andar, catroom))
+        our_Quarto newQuarto = new our_Quarto(id, andar, catroom);
+        if(BG.addQuarto(newQuarto))
             System.out.println("Cadastrado Quarto com dados: ");
-        }
+        
     }
 
     public static void cadastrarHospede(our_Hospede novoHospede) {
@@ -37,9 +38,10 @@ public class ControladorDeCadastro implements iCadastro_Recepcionista, iCadastro
         System.out.println("cadastradoFuncionario");
     }
 
-    public static void cadastrarRecepcao(our_Recepcionista recep) {
+    public static void cadastrarRecepcao(int id, String nome) {
         iBancoGerente BG = new SimulaBD();
-        if(BG.addRecepcionista(recep))
+        our_Recepcionista newRecep = new our_Recepcionista(id, nome);
+        if(BG.addRecepcionista(newRecep))
             System.out.println("Recepcionista cadastrado com sucesso!");
 
     }

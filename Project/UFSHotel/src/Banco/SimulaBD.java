@@ -94,6 +94,7 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista{
         room1 = new our_Quarto(123, 7, suite);
 
         gerenteRoberto = new our_Gerente(0, "Roberto");
+        SimulaBD.listaGerente.add(gerenteRoberto);
 
     }
 
@@ -128,7 +129,7 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista{
     public String getNomeGerente(int id) {
         for(our_Gerente or: listaGerente){
             int teste = or.getID();
-            if(id.equals(teste))
+            if(id == teste)
                 return or.getNome();
         }
         return null;

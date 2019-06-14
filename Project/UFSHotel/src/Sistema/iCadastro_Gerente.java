@@ -6,4 +6,8 @@ public interface iCadastro_Gerente {
     void cadastrarGerente(int idFuncionario, String nome);
 
     void cadastrarQuarto(int id, int andar, our_CategoriaDeQuarto catroom);
+    
+    
+    
+    
 }

@@ -23,6 +23,8 @@
  */
 package Banco;
 
+import Framework.TipoHospede;
+import Framework.TipoRecepcionista;
 import Framework.TipoTelefone;
 
 import Sistema.our_CategoriaDeQuarto;
@@ -44,7 +46,7 @@ import java.util.List;
 	
 public class SimulaBD implements iBancoGerente, iBancoRecepcionista{
 
-	private static SimulaBD single_instance = null;
+    private static SimulaBD single_instance = null;
     //Objetos hipotéticos para preencher banco inicialmente
     our_Recepcionista recep1;
     our_Hospede valter;
@@ -60,7 +62,8 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista{
     our_Quarto room1;
 
     //Listas para armazenamento do banco
-    public static List<our_Recepcionista> listaRecepcao;
+    public static List<TipoRecepcionista> listaRecepcao;
+    public static List<TipoHospede> listaHospede;
     public static List<our_Quarto> listaQuarto;
     public static List<our_Gerente> listaGerente;
     public static List<our_Servicos> listaServico;
@@ -134,6 +137,24 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista{
         }
         return null;
     }
+    
+    public String getNomeRecepcionista(int id) {
+        for(TipoRecepcionista tr: listaRecepcao){
+            int r_id = tr.getID();
+            if(id == r_id)
+                return tr.getNome();
+        }
+        return null;
+    }
+    
+    public String getNomeHospede(int id) {
+        for(TipoHospede th: listaHospede){
+            int r_id = th.getID();
+            if(id == r_id)
+                return th.getNome();
+        }
+        return null;
+    }
 
     public SimulaBD getBDCarregado() {
     	
@@ -144,8 +165,27 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista{
     }
 
     //Retorna toda a lista de Recepcionistas
-    public static ArrayList<our_Recepcionista> getListaRecep() {
-        return (ArrayList<our_Recepcionista>) SimulaBD.listaRecepcao;
+    public static ArrayList<TipoRecepcionista> getListaRecep() {
+        return (ArrayList<TipoRecepcionista>) SimulaBD.listaRecepcao;
     }
-
+    
+    public boolean isValidRecepcionista(TipoRecepcionista recepcionista){
+        if (recepcionista.getNome() == null){
+            return false;
+        }else if(recepcionista.getNome() != getNomeRecepcionista(recepcionista.getID())){
+            return false;   
+        }else{
+            return true;
+        }
+    }
+    
+    public boolean isValidHospede(TipoHospede hospede){
+        if (hospede.getNome() == null){
+            return false;
+        }else if(hospede.getNome() != getNomeHospede(hospede.getID())){
+            return false;   
+        }else{
+            return true;
+        }
+    }
 }

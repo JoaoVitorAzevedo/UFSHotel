@@ -1,6 +1,5 @@
 package Sistema;
 
-import Sistema.our_Hospede;
 
 public interface iCadastro_Recepcionista {
 

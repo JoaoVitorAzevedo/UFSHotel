@@ -10,11 +10,19 @@ package Framework;
  * @author Sabrina Miranda 743595
  * @author Vitor Sugaya 743605
  */
-public abstract class TipoFuncionario extends TipoPessoa{
+public abstract class TipoFuncionario extends TipoPessoa {
 
     String setor;
     int idFuncionario;
     String turno;
+
+    @Override
+    public String toString() {
+        return super.toString() + "\nSetor: " + setor
+                + "\nID: " + idFuncionario
+                + "\nTurno: " + turno + "\n";
+
+    }
 
     protected TipoFuncionario(String setor, int idFuncionario, String turno, String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
         super(cpf, nome, email, end, tel);
@@ -28,7 +36,7 @@ public abstract class TipoFuncionario extends TipoPessoa{
     public int getID() {
         return idFuncionario;
     }
-    
+
     public String getSetor() {
         return setor;
     }
@@ -49,7 +57,5 @@ public abstract class TipoFuncionario extends TipoPessoa{
     public void setTurno(String turno) {
         this.turno = turno;
     }
-    
-    
 
 }

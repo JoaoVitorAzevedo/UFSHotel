@@ -7,10 +7,9 @@ package Framework;
 
 /**
  * @author João Vitor Azevedo 743554
- * @author Sabrina Miranda    743595
- * @author Vitor Sugaya       743605
+ * @author Sabrina Miranda 743595
+ * @author Vitor Sugaya 743605
  */
-
 public class TipoEndereco {
 
     String cep;
@@ -29,6 +28,14 @@ public class TipoEndereco {
         this.bairro = bairro;
         this.cidade = cidade;
         this.estado = estado;
+    }
+
+    @Override
+    public String toString() {
+        return "Endereco: " + logradouro
+                + ", nº" + numero + ", CEP: " + cep
+                + ", Bairro: " + bairro
+                + ", Cidade: " + cidade + ", Estado: " + estado + ", Complemento: " + complemento + "\n";
     }
 
     //Getters

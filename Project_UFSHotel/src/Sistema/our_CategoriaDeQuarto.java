@@ -24,7 +24,6 @@ public class our_CategoriaDeQuarto extends TipoCategoriaDeQuarto {
         System.out.println("Comporta  " + this.getCapacidade() + " pessoas");
         System.out.println("Valor Diaria: " + this.getPreco());
         System.out.println("");
-    } 
-    
+    }
 
 }

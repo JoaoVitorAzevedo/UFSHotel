@@ -26,11 +26,20 @@ public abstract class TipoPessoa {
         this.nome = nome;
         this.email = email;
         //this.end = end;
-        this.enderecos.add(end);    
+        this.enderecos.add(end);
         this.listaTel.add(tel);
 
     }
-    
+
+    @Override
+    public String toString() {
+        return "Nome: " + nome
+                + "\nCPF: " + cpf
+                + "\nEmail: " + email
+                + "\nEnderecos: " + enderecos
+                + "\nTelefones: "+listaTel;
+    }
+
     public void addTelefone(TipoTelefone tel) {
         this.listaTel.add(tel);
     }

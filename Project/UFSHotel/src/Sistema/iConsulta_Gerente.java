@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2019 MartManHunter.
+ * Copyright 2019 sugaya.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,12 +21,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package Framework;
+package Sistema;
 
 /**
  *
- * @author MartManHunter
+ * @author sugaya
  */
-class Tipo_Hospede {
-    
+public interface iConsulta_Gerente {
+    String getGerente(int id);
 }

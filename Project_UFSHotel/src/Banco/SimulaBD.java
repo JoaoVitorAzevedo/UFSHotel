@@ -23,6 +23,9 @@
  */
 package Banco;
 
+
+import Framework.TipoHospede;
+import Framework.TipoRecepcionista;
 import Framework.TipoFuncionario;
 import Framework.TipoTelefone;
 import Sistema.ControladorDeCadastro;
@@ -73,6 +76,8 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
     iConsulta_Recepcionista iRecepcionistaConsultador = new ControladorDeConsultas();
 
     //Listas para armazenamento do banco
+
+    public static List<TipoHospede> listaHospede;
     public static List<TipoFuncionario> listaFuncionariosBD;
     public static List<our_Quarto> listaQuarto;
     public static List<our_Servicos> listaServico;
@@ -144,12 +149,34 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
     @Override
     public String getNomeGerente(int id) {
         for (TipoFuncionario or : listaFuncionariosBD) {
+            //TODO:TipoGerente Talvez?
             if (or instanceof our_Gerente) {
-                int teste = or.getID();
-                if (id == teste) {
+                int id_g = or.getID();
+                if (id == id_g) {
                     return or.getNome();
                 }
             }
+        }
+        return null;
+    }
+    
+    public String getNomeRecepcionista(int id) {
+        for (TipoFuncionario or : listaFuncionariosBD) {
+            if (or instanceof TipoRecepcionista) {
+                int id_r = or.getID();
+                if (id == id_r) {
+                    return or.getNome();
+                }
+            }
+        }
+        return null;
+    }
+    
+    public String getNomeHospede(int id) {
+        for(TipoHospede th: listaHospede){
+            int r_id = th.getID();
+            if(id == r_id)
+                return th.getNome();
         }
         return null;
     }
@@ -163,6 +190,27 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
     }
 
     //Retorna toda a lista de Recepcionistas
+    
+    public boolean isValidRecepcionista(TipoRecepcionista recepcionista){
+        if (recepcionista.getNome() == null){
+            return false;
+        }else if(recepcionista.getNome() != getNomeRecepcionista(recepcionista.getID())){
+            return false;   
+        }else{
+            return true;
+        }
+    }
+    
+    public boolean isValidHospede(TipoHospede hospede){
+        if (hospede.getNome() == null){
+            return false;
+        }else if(hospede.getNome() != getNomeHospede(hospede.getID())){
+            return false;   
+        }else{
+            return true;
+        }
+    }
+        
     public iCadastro_Gerente getiGerenteCadastrador() {
         return iGerenteCadastrador;
     }
@@ -178,5 +226,4 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
     public iConsulta_Recepcionista getiRecepcionistaConsultador() {
         return iRecepcionistaConsultador;
     }
-
 }

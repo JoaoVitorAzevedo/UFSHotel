@@ -24,6 +24,11 @@ public class our_Gerente extends TipoGerente{
     public our_Gerente(int idFuncionario, String nome) {
         super(null, idFuncionario, null, null, nome, null, null, null);
     }
+    
+    @Override
+    public String toString() {
+        return super.toString();
+    }
      
 
     public void cadastrarPessoa(TipoPessoa tp) {

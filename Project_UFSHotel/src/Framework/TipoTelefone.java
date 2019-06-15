@@ -21,6 +21,11 @@ public class TipoTelefone {
         this.ddd = ddd;
         this.numero = numero;
     }
+
+    @Override
+    public String toString() {
+        return "Fone: " + ddd + numero + "\n";
+    }
     //getters 
 
     public String getCodigoPais() {

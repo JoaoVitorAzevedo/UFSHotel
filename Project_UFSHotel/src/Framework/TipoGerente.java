@@ -4,12 +4,13 @@
  * and open the template in the editor.
  */
 package Framework;
+
 /**
  * @author João Vitor Azevedo 743554
  * @author Sabrina Miranda 743595
  * @author Vitor Sugaya 743605
  */
-public abstract class TipoGerente extends TipoFuncionario{
+public abstract class TipoGerente extends TipoFuncionario {
 
     public TipoGerente() {
         super(null, 0, null, null, null, null, null, null);
@@ -21,23 +22,27 @@ public abstract class TipoGerente extends TipoFuncionario{
 
     }
 
+    @Override
+    public String toString() {
+        return "\n--Dados do Gerente-- \n" + super.toString();
+    }
+
     void cadastrarPessoa(TipoPessoa tp) {
         System.out.println("cadastrei no pai");
     }
-    
-      void cadastrarPessoa() {
+
+    void cadastrarPessoa() {
         System.out.println("Pessoa cadastrada");
     }
-
 
     void cadastrarFuncionario() {
         System.out.println("Cadastrar funcionario chamado no gerente ! (aquele definido no framework, wtf");
         //manipular BD?
         //
     }
-    
+
     @Override
-    public int getID(){
+    public int getID() {
         return idFuncionario;
     }
 

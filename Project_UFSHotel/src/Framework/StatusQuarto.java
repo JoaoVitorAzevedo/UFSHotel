@@ -17,25 +17,27 @@ class StatusQuarto {
 
     boolean limpeza = true;
     boolean disponibilidade = true;
-    public static List<Float> listaServicos;
+    List<TipoServicos> consumidos;
 
-    public StatusQuarto(boolean limpeza, boolean disponibilidade) {
-        this.limpeza = limpeza;
-        this.disponibilidade = disponibilidade;
-        StatusQuarto.listaServicos = new ArrayList<>();
-    }
-    
-    public void addPrecoServico(float preco){
-        listaServicos.add(preco);
+    public StatusQuarto(boolean limp, boolean disp) {
+        this.limpeza = limp;
+        this.disponibilidade = disp;
+        consumidos = new ArrayList<TipoServicos>();
+
     }
 
-    public Float getPrecoServicos() {
+    public void marcarConsumo(TipoServicos serv) {
+        consumidos.add(serv);
+    }
+
+    public Float getValorConsumoTotal() {
         float Total = 0;
-	for (float i: listaServicos) 
-		Total += i;
+        for (TipoServicos i : consumidos) {
+            Total += i.getPrecoDoServico();
+        }
         return Total;
     }
-      
+
     public boolean isLimpavel() {
         return this.limpeza;
     }
@@ -50,6 +52,13 @@ class StatusQuarto {
 
     public void setLimpeza(boolean limpeza) {
         this.limpeza = limpeza;
+    }
+
+    @Override
+    public String toString() {
+        return "--Status do Quarto--\n "
+                + "Limpeza: " + this.limpeza
+                + "\nDisponível: " + this.disponibilidade;
     }
 
 }

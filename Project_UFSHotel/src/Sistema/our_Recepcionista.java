@@ -25,6 +25,11 @@ public class our_Recepcionista extends TipoRecepcionista {
     }
 
     @Override
+    public String toString() {
+        return super.toString();
+    }
+
+    @Override
     public boolean cadastrarReserva(int id, TipoHospede hospede, Date dataIn, Date dataOut) {
         //our_Reserva reserv = new our_Reserva();
         if (true) {
@@ -51,6 +56,11 @@ public class our_Recepcionista extends TipoRecepcionista {
 
     @Override
     public void CadastrarHospede(our_Hospede o) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void FazerCheckout() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

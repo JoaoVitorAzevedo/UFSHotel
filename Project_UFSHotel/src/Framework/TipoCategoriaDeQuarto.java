@@ -20,14 +20,14 @@ public abstract class TipoCategoriaDeQuarto {
     float preco;
     ArrayList<TipoServicos> servicos = new ArrayList<TipoServicos>(); // lista de serviços que esse quarto oferece
 
+    public void addServico(TipoServicos serv) {
+        servicos.add(serv);
+    }
+
     public TipoCategoriaDeQuarto(String classificacao, int capacidade, float preco) {
         this.classificacao = classificacao;
         this.capacidade = capacidade;
         this.preco = preco;
-    }
-
-    public void addServico(TipoServicos service) {
-        this.servicos.add(service);
     }
 
     public void rmServico(TipoServicos servToRemove) {

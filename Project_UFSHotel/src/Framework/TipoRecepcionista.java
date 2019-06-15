@@ -27,6 +27,11 @@ public abstract class TipoRecepcionista extends TipoFuncionario implements iCada
         this.ramal = 0;
     }
 
+    @Override
+    public String toString() {
+        return super.toString() + "Ramal: " + ramal;
+    }
+
     public abstract boolean cadastrarReserva(int id, TipoHospede hospede, Date dataIn, Date dataOut);
 
     // getters 
@@ -42,17 +47,17 @@ public abstract class TipoRecepcionista extends TipoFuncionario implements iCada
     //metodos
     //funcionario nao sabe o que é um hospede
     public void CadastrarHospede() {
-    	TipoEndereco te;
-    	TipoTelefone tt;
-    	//TipoHospede th = new TipoHospede(0, "485687512", "Roberto", "email@email.com", te, tt);
+        TipoEndereco te;
+        TipoTelefone tt;
+        //TipoHospede th = new TipoHospede(0, "485687512", "Roberto", "email@email.com", te, tt);
         System.out.println("Chamei Criador de Hospedes na TipoRecepcionista");
         System.out.println("recepcionista cadastrou hospede com sucesso\n");
         // manipular BD?
     }
-    
+
     protected void realizarCadastro(int id) {
-    //	IModuloCadastroRecepcionista modulo = new ModuloCadastro();
-    //	modulo.cadastraHospede(id);
+        //	IModuloCadastroRecepcionista modulo = new ModuloCadastro();
+        //	modulo.cadastraHospede(id);
     }
 
 }

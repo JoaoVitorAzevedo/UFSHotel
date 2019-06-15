@@ -26,6 +26,8 @@ public class TipoServicos {
         this.responsaveis = responsaveis;
         this.precoDoServico = precoDoServico;
     }
+    
+    
 
     //getters
     public float getPrecoDoServico() {

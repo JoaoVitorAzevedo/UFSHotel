@@ -26,13 +26,31 @@ public class TipoReserva {
         this.Consumido = new HashMap<>();
         this.dataIn = dataIn;
         this.dataOut = dataOut;
-        this.idReserva = idGen.incrementAndGet();
+        this.idReserva = this.idGen.incrementAndGet();
         this.cliQueReservou = cli;
         this.recepQueReservou = recep;
         this.quarto = quarto;
         this.pag = pag;
 
     }
+    
+public TipoReserva(Date dataIn, Date dataOut, TipoHospede cli, TipoRecepcionista recep, TipoQuarto quarto) {
+        this.Consumido = new HashMap<>();
+        this.dataIn = dataIn;
+        this.dataOut = dataOut;
+       // this.idReserva = this.idGen.incrementAndGet();
+        this.cliQueReservou = cli;
+        this.recepQueReservou = recep;
+        this.quarto = quarto;
+        
+
+    }
+
+    @Override
+    public String toString() {
+        return "DataIn: "+dataIn+"\nDataOut: "+dataOut+"\nCliente "+cliQueReservou+"\nRecepcionista "+recepQueReservou+"\nQuarto "+quarto; //To change body of generated methods, choose Tools | Templates.
+    }
+
 
     //getters
     public Map getConsumido() {

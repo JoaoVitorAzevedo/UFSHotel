@@ -23,7 +23,6 @@
  */
 package Banco;
 
-
 import Framework.TipoHospede;
 import Framework.TipoRecepcionista;
 import Framework.TipoFuncionario;
@@ -68,6 +67,9 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
     our_Gerente gerenteRoberto;
     our_Quarto room1;
 
+    Date data1;
+    Date data2;
+
     // Referencias Interfaces, usar getters
     iCadastro_Gerente iGerenteCadastrador = new ControladorDeCadastro();
     iConsulta_Gerente iGerenteConsultador = new ControladorDeConsultas();
@@ -76,7 +78,6 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
     iConsulta_Recepcionista iRecepcionistaConsultador = new ControladorDeConsultas();
 
     //Listas para armazenamento do banco
-
     public static List<TipoHospede> listaHospede;
     public static List<TipoFuncionario> listaFuncionariosBD;
     public static List<our_Quarto> listaQuarto;
@@ -85,6 +86,8 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
     // public static List<our_Recepcionista> listaRecepcao;
     // public static List<our_Gerente> listaGerentes;
     public SimulaBD() {
+        data1 = new Date(1996, 5, 21);
+        data2 = new Date(1996, 7, 21);
 
         listaFuncionariosBD = new ArrayList<TipoFuncionario>();
         listaQuarto = new ArrayList<>();
@@ -92,9 +95,8 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
 
         // listaGerentes = new ArrayList<>(); // not using yet
         // listaRecepcao = new ArrayList<>();
-        
-        telefone1 = new TipoTelefone("+55","15","99768-4759");
-        
+        telefone1 = new TipoTelefone("+55", "15", "99768-4759");
+
         this.recep1 = new our_Recepcionista(31, "Recepção", 88, "Tarde", "432.343.222.41", "Juju Recepcionista", "my@email.com", endereco1, telefone1, "Tarde de novo");
         SimulaBD.listaFuncionariosBD.add(recep1);
 
@@ -124,6 +126,26 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
     public boolean addRecepcionista(our_Recepcionista newRecepcionista) {
         listaFuncionariosBD.add(newRecepcionista);
         return true;
+    }
+
+    public our_Hospede getHospede1() {
+        return hospede1;
+    }
+
+    public our_Recepcionista getRecep1() {
+        return recep1;
+    }
+
+    public Date getData1() {
+        return data1;
+    }
+
+    public Date getData2() {
+        return data2;
+    }
+
+    public our_Quarto getRoom1() {
+        return room1;
     }
 
     @Override
@@ -159,7 +181,7 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
         }
         return null;
     }
-    
+
     public String getNomeRecepcionista(int id) {
         for (TipoFuncionario or : listaFuncionariosBD) {
             if (or instanceof TipoRecepcionista) {
@@ -171,12 +193,13 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
         }
         return null;
     }
-    
+
     public String getNomeHospede(int id) {
-        for(TipoHospede th: listaHospede){
+        for (TipoHospede th : listaHospede) {
             int r_id = th.getID();
-            if(id == r_id)
+            if (id == r_id) {
                 return th.getNome();
+            }
         }
         return null;
     }
@@ -190,27 +213,26 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
     }
 
     //Retorna toda a lista de Recepcionistas
-    
-    public boolean isValidRecepcionista(TipoRecepcionista recepcionista){
-        if (recepcionista.getNome() == null){
+    public boolean isValidRecepcionista(TipoRecepcionista recepcionista) {
+        if (recepcionista.getNome() == null) {
             return false;
-        }else if(recepcionista.getNome() != getNomeRecepcionista(recepcionista.getID())){
-            return false;   
-        }else{
+        } else if (recepcionista.getNome() != getNomeRecepcionista(recepcionista.getID())) {
+            return false;
+        } else {
             return true;
         }
     }
-    
-    public boolean isValidHospede(TipoHospede hospede){
-        if (hospede.getNome() == null){
+
+    public boolean isValidHospede(TipoHospede hospede) {
+        if (hospede.getNome() == null) {
             return false;
-        }else if(hospede.getNome() != getNomeHospede(hospede.getID())){
-            return false;   
-        }else{
+        } else if (hospede.getNome() != getNomeHospede(hospede.getID())) {
+            return false;
+        } else {
             return true;
         }
     }
-        
+
     public iCadastro_Gerente getiGerenteCadastrador() {
         return iGerenteCadastrador;
     }

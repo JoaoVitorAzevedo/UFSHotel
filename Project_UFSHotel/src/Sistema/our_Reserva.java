@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Sistema;
+
 import java.util.Date;
 
 //import Framework.Data;
@@ -24,9 +25,22 @@ public class our_Reserva extends TipoReserva {
     public our_Reserva(Date dataIn, Date dataOut, TipoHospede cli, TipoRecepcionista recep, TipoQuarto quarto, TipoPagamento pag) {
 
         super(dataIn, dataOut, cli, recep, quarto, pag);
-        
 
     }
+
+    public our_Reserva(Date dataIn, Date dataOut, TipoHospede cli, TipoRecepcionista recep, TipoQuarto quarto) {
+
+        super(dataIn, dataOut, cli, recep, quarto);
+
+    }
+
+    @Override
+    public String toString() {
+        return super.toString(); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
+            
 
     public double getTotalConsumido() {
         double total = 0;

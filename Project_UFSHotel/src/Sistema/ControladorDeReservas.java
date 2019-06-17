@@ -28,6 +28,7 @@ package Sistema;
  * @author sugaya
  */
 public class ControladorDeReservas {
+    
     public boolean efetuarReserva(int id_recepcionista, int id_hospede, int id_quarto){
         
         return true;

@@ -23,12 +23,31 @@
  */
 package Sistema;
 
+import Banco.SimulaBD;
+import Banco.iBancoGerente;
+import Banco.iBancoRecepcionista;
 /**
  *
  * @author sugaya
  */
-public class ControladorDeReservas {
-    public boolean efetuarReserva(int id_recepcionista, int id_hospede, int id_quarto){
+public class ControladorDeReservas implements iReserva_Gerente{
+    
+    public void cadastrarReserva(our_Reserva reserva){
+        iBancoGerente BG = new SimulaBD();
+        
+        if (BG.addReserva(reserva)) {
+            System.out.println("Cadastrada a reserva");
+        }
+    }
+    
+    public boolean efetuarReserva(our_Recepcionista recepcionista, our_Hospede hospede, our_Quarto quarto){
+        iBancoRecepcionista ibr = new SimulaBD();
+        if(ibr.isValidRecepcionista(recepcionista)){
+            if(ibr.isValidHospede(hospede)){
+                
+            }
+        }
+        
         
         return true;
     }

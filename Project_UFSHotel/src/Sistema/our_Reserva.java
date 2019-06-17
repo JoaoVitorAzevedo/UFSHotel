@@ -27,6 +27,14 @@ public class our_Reserva extends TipoReserva {
         
 
     }
+    
+    public our_Reserva(Date dataIn, int dias, TipoHospede cli, TipoRecepcionista recep, TipoQuarto quarto, TipoPagamento pag) {
+
+        super(dataIn, dias, cli, recep, quarto, pag);
+        
+
+    }
+    
 
     public double getTotalConsumido() {
         double total = 0;
@@ -45,7 +53,7 @@ public class our_Reserva extends TipoReserva {
         TipoPagamento pag = getPag();
         preco = pag.getValor();
 
-        return preco * (percentDisc / 100);
+        return preco * (1 - (percentDisc / 100));
     }
 
     public boolean addDesconto(int percentDisc) {

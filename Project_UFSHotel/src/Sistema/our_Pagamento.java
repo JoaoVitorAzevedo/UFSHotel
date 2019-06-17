@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2019 sabrina.
+ * Copyright 2019 sugaya.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,21 +21,22 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package Banco;
+package Sistema;
 
-import Sistema.our_Servicos;
-import Framework.TipoRecepcionista;
-import Framework.TipoHospede;
-import Sistema.our_Reserva;
+import Framework.TipoPagamento;
 
 /**
- * @author João Vitor Azevedo 743554
- * @author Sabrina Miranda 743595
- * @author Vitor Sugaya 743605
+ *
+ * @author sugaya
  */
-public interface iBancoRecepcionista {
-        public boolean addServico(our_Servicos newServico);
-        public boolean isValidRecepcionista(TipoRecepcionista id);
-        public boolean isValidHospede(TipoHospede id);
-        public boolean addReserva(our_Reserva newReserva);
+public class our_Pagamento extends TipoPagamento{
+    
+    public our_Pagamento(float valor, String ModalidadePagamento, int qtdParcelas, boolean statusPagamento) {
+        super(valor, ModalidadePagamento, qtdParcelas, statusPagamento);
+    }
+    
+    public our_Pagamento(float valor) {
+        super(valor);
+    }
+    
 }

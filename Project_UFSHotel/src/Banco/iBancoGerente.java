@@ -26,6 +26,7 @@ package Banco;
 import Sistema.our_Gerente;
 import Sistema.our_Quarto;
 import Sistema.our_Recepcionista;
+import Sistema.our_Reserva;
 
 
 /**
@@ -38,4 +39,5 @@ public interface iBancoGerente {
     public boolean addRecepcionista(our_Recepcionista newRecep);
     public boolean addGerente(our_Gerente newGerente);
     public boolean addQuarto(our_Quarto newQuarto);
+    public boolean addReserva(our_Reserva newReserva);
 }

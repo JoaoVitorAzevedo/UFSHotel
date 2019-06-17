@@ -23,6 +23,13 @@ public abstract class TipoPagamento {
         this.qtdParcelas = qtdParcelas;
         this.statusPagamento = statusPagamento;
     }
+    
+    public TipoPagamento(float valor) {
+        this.valor = valor;
+        this.ModalidadePagamento = null;
+        this.qtdParcelas = 0;
+        this.statusPagamento = false;
+    }
 
     //getters
     public String getModalidadePagamento() {
@@ -52,6 +59,22 @@ public abstract class TipoPagamento {
 
     public void setStatusPagamento(boolean status) {
         this.statusPagamento = status;
+    }
+    
+    public void receberPagamento(float valor) {
+        if(valor == this.valor){
+            this.statusPagamento = true;
+            this.valor = 0;
+        }else{
+            this.valor -= valor;
+        }
+    }
+    
+    public void incrementarPagamento(float valor){
+        if(this.statusPagamento == true){
+            this.statusPagamento = false;
+        }
+        this.valor += valor;
     }
 
 }

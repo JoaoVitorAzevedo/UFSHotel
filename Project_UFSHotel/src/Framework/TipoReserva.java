@@ -21,6 +21,14 @@ public class TipoReserva {
     TipoQuarto quarto;
     TipoPagamento pag;
     Map<String, Double> Consumido;
+    
+    private Date incrementDays(Date dataIn, int dias){
+        System.out.println(dataIn.toString());
+        int a_day = 86400000;
+        Date new_dt = new Date(dataIn.getTime() + dias * a_day);
+        System.out.println(new_dt);
+        return new_dt;
+    }
 
     public TipoReserva(Date dataIn, Date dataOut, TipoHospede cli, TipoRecepcionista recep, TipoQuarto quarto, TipoPagamento pag) {
         this.Consumido = new HashMap<>();
@@ -34,7 +42,20 @@ public class TipoReserva {
 
     }
     
-public TipoReserva(Date dataIn, Date dataOut, TipoHospede cli, TipoRecepcionista recep, TipoQuarto quarto) {
+
+    public TipoReserva(Date dataIn, int dias, TipoHospede cli, TipoRecepcionista recep, TipoQuarto quarto, TipoPagamento pag) {
+        this.Consumido = new HashMap<>();
+        this.dataIn = dataIn;
+        this.dataOut = incrementDays(dataIn, dias);
+        this.idReserva = idGen.incrementAndGet();
+        this.cliQueReservou = cli;
+        this.recepQueReservou = recep;
+        this.quarto = quarto;
+        this.pag = pag;
+
+    }
+
+    public TipoReserva(Date dataIn, Date dataOut, TipoHospede cli, TipoRecepcionista recep, TipoQuarto quarto) {
         this.Consumido = new HashMap<>();
         this.dataIn = dataIn;
         this.dataOut = dataOut;

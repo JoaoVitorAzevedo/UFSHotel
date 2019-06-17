@@ -8,6 +8,4 @@ public interface iCadastro_Gerente {
     void cadastrarQuarto(int id, int andar, our_CategoriaDeQuarto catroom);
     
     
-    
-    
 }

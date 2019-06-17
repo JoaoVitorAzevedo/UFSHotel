@@ -26,20 +26,25 @@ package Banco;
 import Framework.TipoHospede;
 import Framework.TipoRecepcionista;
 import Framework.TipoFuncionario;
+import Framework.TipoReserva;
 import Framework.TipoTelefone;
 import Sistema.ControladorDeCadastro;
 import Sistema.ControladorDeConsultas;
+import Sistema.ControladorDeReservas;
 import Sistema.iCadastro_Gerente;
 import Sistema.iCadastro_Recepcionista;
 import Sistema.iConsulta_Gerente;
 import Sistema.iConsulta_Recepcionista;
+import Sistema.iReserva_Gerente;
 
 import Sistema.our_CategoriaDeQuarto;
 import Sistema.our_Endereco;
 import Sistema.our_Gerente;
 import Sistema.our_Hospede;
+import Sistema.our_Pagamento;
 import Sistema.our_Quarto;
 import Sistema.our_Recepcionista;
+import Sistema.our_Reserva;
 import Sistema.our_Servicos;
 
 import java.util.ArrayList;
@@ -66,6 +71,7 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
     our_CategoriaDeQuarto suite;
     our_Gerente gerenteRoberto;
     our_Quarto room1;
+    our_Pagamento pag1;
 
     Date data1;
     Date data2;
@@ -76,12 +82,15 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
 
     iCadastro_Recepcionista iRecepcionistaCadastrador = new ControladorDeCadastro();
     iConsulta_Recepcionista iRecepcionistaConsultador = new ControladorDeConsultas();
+    
+    iReserva_Gerente iGerenteReservador = new ControladorDeReservas();
 
     //Listas para armazenamento do banco
     public static List<TipoHospede> listaHospede;
     public static List<TipoFuncionario> listaFuncionariosBD;
     public static List<our_Quarto> listaQuarto;
     public static List<our_Servicos> listaServico;
+    public static List<our_Reserva> listaReserva;
 
     // public static List<our_Recepcionista> listaRecepcao;
     // public static List<our_Gerente> listaGerentes;
@@ -92,13 +101,13 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
         listaFuncionariosBD = new ArrayList<TipoFuncionario>();
         listaQuarto = new ArrayList<>();
         listaServico = new ArrayList<>();
+        listaHospede = new ArrayList<>();
 
         // listaGerentes = new ArrayList<>(); // not using yet
         // listaRecepcao = new ArrayList<>();
         telefone1 = new TipoTelefone("+55", "15", "99768-4759");
 
         this.recep1 = new our_Recepcionista(31, "Recepção", 88, "Tarde", "432.343.222.41", "Juju Recepcionista", "my@email.com", endereco1, telefone1, "Tarde de novo");
-        SimulaBD.listaFuncionariosBD.add(recep1);
 
         Casal = new our_CategoriaDeQuarto("Casal", 2, 120.0f);
 
@@ -117,7 +126,13 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
         room1 = new our_Quarto(123, 7, suite);
 
         gerenteRoberto = new our_Gerente("gerencia ue", 1, "tarde", "4372837238-12", "Robertinho de Souza", "ro_berto@gmail.com", endereco1, telefone1);
+        
+        pag1 = new our_Pagamento(100);
+        
+        SimulaBD.listaFuncionariosBD.add(recep1);
         SimulaBD.listaFuncionariosBD.add(gerenteRoberto);
+        SimulaBD.listaHospede.add(hospede1);
+        SimulaBD.listaQuarto.add(room1);
 
     }
 
@@ -165,6 +180,11 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
         listaServico.add(newServico);
         return true;
     }
+     @Override
+    public boolean addReserva(our_Reserva newReserva) {
+        listaReserva.add(newReserva);
+        return true;
+    }
 
     //ALGUEM ME AJUDA AQUIIII PLIS
     //Caso de uso que retorna nome de um Gerente x
@@ -202,6 +222,37 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
             }
         }
         return null;
+    }
+    
+    public TipoHospede getHospede(int id) {
+        for(TipoHospede th: listaHospede){
+            int r_id = th.getID();
+            if(id == r_id)
+                return th;
+        }
+        return null;
+    }
+    
+    public our_Recepcionista getRecepcionista(int id) {
+        for (TipoFuncionario or : listaFuncionariosBD) {
+            if (or instanceof TipoRecepcionista) {
+                int id_r = or.getID();
+                if (id == id_r) {
+                    return (our_Recepcionista) or;
+                }
+            }
+        }
+        return null;
+    }
+    
+    //DEBUGGING ONLY PURPOSE
+    public our_Pagamento getPagamento(){
+        return pag1;
+    }
+    
+    //DEBUGGING ONLY PURPOSE
+    public our_Quarto getQuarto(){
+        return room1;
     }
 
     public static SimulaBD getBDCarregado() {
@@ -247,5 +298,9 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
 
     public iConsulta_Recepcionista getiRecepcionistaConsultador() {
         return iRecepcionistaConsultador;
+    }
+    
+    public iReserva_Gerente getiGerenteReservador() {
+        return iGerenteReservador;
     }
 }

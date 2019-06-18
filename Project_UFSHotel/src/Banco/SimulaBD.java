@@ -102,6 +102,7 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
         listaQuarto = new ArrayList<>();
         listaServico = new ArrayList<>();
         listaHospede = new ArrayList<>();
+        listaReserva = new ArrayList<>();
 
         // listaGerentes = new ArrayList<>(); // not using yet
         // listaRecepcao = new ArrayList<>();
@@ -183,6 +184,7 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
      @Override
     public boolean addReserva(our_Reserva newReserva) {
         listaReserva.add(newReserva);
+        System.out.println("Reserva registrada com sucesso");
         return true;
     }
 
@@ -241,6 +243,15 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
                     return (our_Recepcionista) or;
                 }
             }
+        }
+        return null;
+    }
+    
+    public TipoReserva getReserva(Date dt_in) {
+        for(TipoReserva tr: listaReserva){
+            Date r_id = tr.getDataIn();
+            if(dt_in == r_id)
+                return tr;
         }
         return null;
     }

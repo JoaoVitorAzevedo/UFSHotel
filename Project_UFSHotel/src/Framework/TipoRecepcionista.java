@@ -5,15 +5,15 @@
  */
 package Framework;
 
-import Sistema.iCadastro_Recepcionista;
 import java.util.Date;
+import Sistema.iReservaRecepcionista;
 
 /**
  * @author João Vitor Azevedo 743554
  * @author Sabrina Miranda 743595
  * @author Vitor Sugaya 743605
  */
-public abstract class TipoRecepcionista extends TipoFuncionario implements iCadastro_Recepcionista {
+public abstract class TipoRecepcionista extends TipoFuncionario implements iReservaRecepcionista {
 
     int ramal;
 

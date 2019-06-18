@@ -8,9 +8,9 @@ public class GUI_Gerente {
     public static void main(String args[]) {
 
         ////Precisa mesmo ter todos essas interfaces sendo que sempre quem vai executar é o gerente???
-        iCadastro_Gerente mCadastro = SimulaBD.getBDCarregado().getiGerenteCadastrador();
-        iConsulta_Gerente mConsulta = SimulaBD.getBDCarregado().getiGerenteConsultador();
-        iReserva_Gerente mReserva = SimulaBD.getBDCarregado().getiGerenteReservador();
+        iCadastroGerente mCadastro = SimulaBD.getBDCarregado().getiGerenteCadastrador();
+        iConsultaGerente mConsulta = SimulaBD.getBDCarregado().getiGerenteConsultador();
+        iReservaGerente mReserva = SimulaBD.getBDCarregado().getiGerenteReservador();
 
         //Cadastrando uma nova Recepcionista - entrando com os dados
         // bd.getiGerenteCadastrador().cadastrarRecepcao(85, "Josilene");
@@ -31,7 +31,7 @@ public class GUI_Gerente {
         our_Reserva o_r = new our_Reserva(dt, dt, oh, or, oq, op );
         //our_Reserva o_r = new our_Reserva(dt, 3, oh, or, oq, op );
         
-        SimulaBD.getBDCarregado().getiGerenteReservador().cadastrarReserva(o_r);
+        mReserva.cadastrarReserva(o_r);
         
         //busca da reserva de acordo com a data de entrada
         our_Reserva new_o_r = (our_Reserva) SimulaBD.getBDCarregado().getReserva(dt);

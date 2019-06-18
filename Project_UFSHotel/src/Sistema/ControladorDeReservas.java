@@ -31,7 +31,7 @@ import Banco.iBancoRecepcionista;
  * @author sugaya
  */
 
-public class ControladorDeReservas implements iReserva_Gerente{
+public class ControladorDeReservas implements iReservaGerente, iReservaRecepcionista{
     
     @Override
     public void cadastrarReserva(our_Reserva reserva){
@@ -55,4 +55,17 @@ public class ControladorDeReservas implements iReserva_Gerente{
         
         return true;
     }
+
+    @Override
+    public void EfetuarReserva() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void FazerCheckout() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }
+
+   

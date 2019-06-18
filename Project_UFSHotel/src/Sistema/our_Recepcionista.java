@@ -51,12 +51,7 @@ public class our_Recepcionista extends TipoRecepcionista {
 
     @Override
     public void EfetuarReserva() {
-        System.out.println("aaaaaaaaaaaaaaaaaaaaa efetuei reserva");
-    }
-
-    @Override
-    public void CadastrarHospede(our_Hospede o) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override

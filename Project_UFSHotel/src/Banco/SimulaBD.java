@@ -28,14 +28,16 @@ import Framework.TipoRecepcionista;
 import Framework.TipoFuncionario;
 import Framework.TipoReserva;
 import Framework.TipoTelefone;
-import Sistema.ControladorDeCadastro;
+import Sistema.ControladorDeCadastros;
 import Sistema.ControladorDeConsultas;
 import Sistema.ControladorDeReservas;
-import Sistema.iCadastro_Gerente;
-import Sistema.iCadastro_Recepcionista;
-import Sistema.iConsulta_Gerente;
-import Sistema.iConsulta_Recepcionista;
-import Sistema.iReserva_Gerente;
+import Sistema.iCadastroGerente;
+import Sistema.iCadastroRecepcionista;
+import Sistema.iConsultaGerente;
+import Sistema.iConsultaRecepcionista;
+import Sistema.iReservaGerente;
+
+
 
 import Sistema.our_CategoriaDeQuarto;
 import Sistema.our_Endereco;
@@ -50,6 +52,8 @@ import Sistema.our_Servicos;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import Sistema.iReservaGerente;
+import Sistema.iReservaRecepcionista;
 
 /**
  *
@@ -78,13 +82,15 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
     Date data2;
 
     // Referencias Interfaces, usar getters
-    iCadastro_Gerente iGerenteCadastrador = new ControladorDeCadastro();
-    iConsulta_Gerente iGerenteConsultador = new ControladorDeConsultas();
+    iCadastroGerente iGerenteCadastrador = new ControladorDeCadastros();
+    iConsultaGerente iGerenteConsultador = new ControladorDeConsultas();
+    iReservaGerente iGerenteReservador = new ControladorDeReservas();
 
-    iCadastro_Recepcionista iRecepcionistaCadastrador = new ControladorDeCadastro();
-    iConsulta_Recepcionista iRecepcionistaConsultador = new ControladorDeConsultas();
+    iReservaRecepcionista iRecepcionistaCadastrador = new ControladorDeReservas();
+    iConsultaRecepcionista iRecepcionistaConsultador = new ControladorDeConsultas();
+    iCadastroRecepcionista iRecepcionistaCadastro = new ControladorDeCadastros();
     
-    iReserva_Gerente iGerenteReservador = new ControladorDeReservas();
+   
 
     //Listas para armazenamento do banco
     public static List<TipoHospede> listaHospede;
@@ -292,23 +298,23 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
     }
 
     //Tira o poder do usuário de dar "new"
-    public iCadastro_Gerente getiGerenteCadastrador() {
+    public iCadastroGerente getiGerenteCadastrador() {
         return iGerenteCadastrador;
     }
 
-    public iConsulta_Gerente getiGerenteConsultador() {
+    public iConsultaGerente getiGerenteConsultador() {
         return iGerenteConsultador;
     }
 
-    public iCadastro_Recepcionista getiRecepcionistaCadastrador() {
+    public iReservaRecepcionista getiRecepcionistaCadastrador() {
         return iRecepcionistaCadastrador;
     }
 
-    public iConsulta_Recepcionista getiRecepcionistaConsultador() {
+    public iConsultaRecepcionista getiRecepcionistaConsultador() {
         return iRecepcionistaConsultador;
     }
     
-    public iReserva_Gerente getiGerenteReservador() {
+    public iReservaGerente getiGerenteReservador() {
         return iGerenteReservador;
     }
 }

@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2019 sugaya.
+ * Copyright 2019 sabrina.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -25,8 +25,12 @@ package Sistema;
 
 /**
  *
- * @author sugaya
+ * @author sabrina
  */
-public interface iReserva_Gerente {
-            void cadastrarReserva(our_Reserva reserva);
+public interface iConsultaGerente {
+    public void listarRecepcionistas();
+    public void listarReservas();
+    public void getHospedeID(int id);
+    public String getGerente(int id);
+    public void listarFuncionarios();
 }

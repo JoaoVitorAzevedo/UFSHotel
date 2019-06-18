@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2019 sugaya.
+ * Copyright 2019 sabrina.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -25,9 +25,9 @@ package Sistema;
 
 /**
  *
- * @author sugaya
+ * @author sabrina
  */
-public interface iReserva_Recepcionista {
-    
-    
+public interface iCadastroRecepcionista {
+    public void CadastrarHospede(our_Hospede o);
+
 }

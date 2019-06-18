@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2019 MartManHunter.
+ * Copyright 2019 sabrina.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,9 +23,12 @@
  */
 package Sistema;
 
- 
-public interface iConsulta_Recepcionista {
-    public void listarReservas();
-    public void getHospedeByCPF();
-    
+/**
+ *
+ * @author sabrina
+ */
+public interface iCadastroGerente {
+    public void cadastrarRecepcao(int id, String nome);
+    public void cadastrarGerente(int idFuncionario, String nome);
+    public void cadastrarQuarto(int id, int andar, our_CategoriaDeQuarto catroom);
 }

@@ -5,7 +5,7 @@ import Banco.iBancoGerente;
 import Framework.TipoFuncionario;
 import Framework.TipoRecepcionista;
 
-public class ControladorDeConsultas implements iConsulta_Gerente, iConsulta_Recepcionista {
+public class ControladorDeConsultas implements iConsultaGerente, iConsultaRecepcionista {
 
     @Override
     public String getGerente(int id) {
@@ -14,7 +14,6 @@ public class ControladorDeConsultas implements iConsulta_Gerente, iConsulta_Rece
 
     }
 
-    @Override
     public void listarFuncionarios() {
 
         SimulaBD.listaFuncionariosBD.forEach((c) -> {

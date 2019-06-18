@@ -16,10 +16,10 @@ import java.util.List;
  * @author Sabrina Miranda 743595
  * @author Vitor Sugaya 743605
  */
-public class ControladorDeCadastro implements iCadastro_Recepcionista, iCadastro_Gerente {
+public class ControladorDeCadastros implements iCadastroRecepcionista, iCadastroGerente {
 
     //Construtor
-    public ControladorDeCadastro() {
+    public ControladorDeCadastros() {
     }
 
     //Métodos de cadastro do Gerente
@@ -62,11 +62,6 @@ public class ControladorDeCadastro implements iCadastro_Recepcionista, iCadastro
         System.out.println("cadastrado o");
     }
 
-    @Override
-    public void EfetuarReserva() {
-        System.out.println("reservei"); //To change body of generated methods, choose Tools | Templates.
-    }
-
     public void cadastrarServico(String nomeDoServico, List<TipoFuncionario> responsaveis, float precoDoServico) {
         iBancoRecepcionista BR = new SimulaBD();
         our_Servicos newServico = new our_Servicos(nomeDoServico, responsaveis, precoDoServico);
@@ -79,10 +74,4 @@ public class ControladorDeCadastro implements iCadastro_Recepcionista, iCadastro
     public void AddServicoQuarto(our_Quarto quarto, Float preco) {
 
     }
-
-    @Override
-    public void FazerCheckout() {
-        System.out.println("recepcionista precisa limpar a lista de consumação do quarto aqui, receber o pagamento etc");
-    }
-
 }

@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class TipoReserva {
 
-    AtomicInteger idGen;
+    static AtomicInteger idGen;
     Date dataIn;
     Date dataOut;
     int idReserva;

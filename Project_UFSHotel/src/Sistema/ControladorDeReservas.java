@@ -30,6 +30,7 @@ import Banco.iBancoRecepcionista;
  *
  * @author sugaya
  */
+
 public class ControladorDeReservas implements iReserva_Gerente{
     
     public void cadastrarReserva(our_Reserva reserva){
@@ -39,7 +40,7 @@ public class ControladorDeReservas implements iReserva_Gerente{
             System.out.println("Cadastrada a reserva");
         }
     }
-    
+    /*
     public boolean efetuarReserva(our_Recepcionista recepcionista, our_Hospede hospede, our_Quarto quarto){
         iBancoRecepcionista ibr = new SimulaBD();
         if(ibr.isValidRecepcionista(recepcionista)){
@@ -47,7 +48,9 @@ public class ControladorDeReservas implements iReserva_Gerente{
                 
             }
         }
-        
+      */  
+
+    public boolean efetuarReserva(int id_recepcionista, int id_hospede, int id_quarto){
         
         return true;
     }

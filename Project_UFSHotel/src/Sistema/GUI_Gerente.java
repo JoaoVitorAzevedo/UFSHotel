@@ -7,16 +7,20 @@ public class GUI_Gerente {
 
     public static void main(String args[]) {
 
-        SimulaBD bd = SimulaBD.getBDCarregado();
+        ////Precisa mesmo ter todos essas interfaces sendo que sempre quem vai executar é o gerente???
+        iCadastro_Gerente mCadastro = SimulaBD.getBDCarregado().getiGerenteCadastrador();
+        iConsulta_Gerente mConsulta = SimulaBD.getBDCarregado().getiGerenteConsultador();
+        iReserva_Gerente mReserva = SimulaBD.getBDCarregado().getiGerenteReservador();
 
         //Cadastrando uma nova Recepcionista - entrando com os dados
         // bd.getiGerenteCadastrador().cadastrarRecepcao(85, "Josilene");
         //  System.out.println(bd.getBDCarregado().getiGerenteConsultador().getGerente(0));
         System.out.println("listando funcionarios");
-
-        bd.getBDCarregado().getiGerenteConsultador().listarFuncionarios();
+        mConsulta.listarFuncionarios();
         
         
+        //Não acho certo usar o SimulaBD. pq dá abertura pra fazer qualquer coisa
+        //O gerente cadastra a reserva???
         Date dt = new Date();
         our_Hospede oh = (our_Hospede) SimulaBD.getBDCarregado().getHospede(31);
         our_Recepcionista or = (our_Recepcionista) SimulaBD.getBDCarregado().getRecepcionista(88);
@@ -35,11 +39,12 @@ public class GUI_Gerente {
         
         //Joao
         
-        Date dataIn = new Date(); Date dataOut = new Date();
-  
+        Date dataIn = new Date(); 
+        Date dataOut = new Date();
+  /*
         System.out.println("hospede:" + bd.getHospede1());
         our_Reserva rs1 =  new our_Reserva(bd.getData1(), bd.getData2(), bd.getHospede1(), bd.getRecep1(), bd.getRoom1());
-        System.out.println("Reserva dados\n" +        rs1);
+        System.out.println("Reserva dados\n" +        rs1);*/
            
     }
 }

@@ -33,6 +33,7 @@ import Banco.iBancoRecepcionista;
 
 public class ControladorDeReservas implements iReserva_Gerente{
     
+    @Override
     public void cadastrarReserva(our_Reserva reserva){
         iBancoGerente BG = new SimulaBD();
         

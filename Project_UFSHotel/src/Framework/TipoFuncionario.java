@@ -5,6 +5,8 @@
  */
 package Framework;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * @author João Vitor Azevedo 743554
  * @author Sabrina Miranda 743595
@@ -15,6 +17,7 @@ public abstract class TipoFuncionario extends TipoPessoa {
     String setor;
     int idFuncionario;
     String turno;
+    static AtomicInteger idAuto = new AtomicInteger();
 
     @Override
     public String toString() {
@@ -24,10 +27,10 @@ public abstract class TipoFuncionario extends TipoPessoa {
 
     }
 
-    protected TipoFuncionario(String setor, int idFuncionario, String turno, String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
+    protected TipoFuncionario(String setor, String turno, String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
         super(cpf, nome, email, end, tel);
         this.setor = setor;
-        this.idFuncionario = idFuncionario;     // dar um jeito de auto-generate
+        this.idFuncionario = TipoFuncionario.idAuto.incrementAndGet();     // dar um jeito de auto-generate
         this.turno = turno;
     }
 

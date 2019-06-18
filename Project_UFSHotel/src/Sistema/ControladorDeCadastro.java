@@ -37,7 +37,7 @@ public class ControladorDeCadastro implements iCadastro_Recepcionista, iCadastro
     @Override
     public void cadastrarRecepcao(int id, String nome) {
         iBancoGerente BG = new SimulaBD();
-        our_Recepcionista newRecep = new our_Recepcionista(id, nome);
+        our_Recepcionista newRecep = new our_Recepcionista(nome);
 
         if (BG.addRecepcionista(newRecep)) {
             System.out.println("Recepcionista cadastrado com sucesso!");
@@ -48,7 +48,7 @@ public class ControladorDeCadastro implements iCadastro_Recepcionista, iCadastro
     @Override
     public void cadastrarGerente(int idFuncionario, String nome) {
         iBancoGerente BG = new SimulaBD();
-        our_Gerente newGerente = new our_Gerente(idFuncionario, nome);
+        our_Gerente newGerente = new our_Gerente(nome);
 
         if (BG.addGerente(newGerente)) {
             System.out.println("Cadastrado o gerente");

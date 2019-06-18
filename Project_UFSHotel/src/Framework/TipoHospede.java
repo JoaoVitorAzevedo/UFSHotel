@@ -5,6 +5,8 @@
  */
 package Framework;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * @author João Vitor Azevedo 743554
  * @author Sabrina Miranda 743595
@@ -12,11 +14,12 @@ package Framework;
  */
 public abstract class TipoHospede extends TipoPessoa {
 
+    static AtomicInteger idAuto = new AtomicInteger();
     int idHospede;
 
-    protected TipoHospede(int idHospede, String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
+    protected TipoHospede( String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
         super(cpf, nome, email, end, tel);
-        this.idHospede = idHospede;
+        this.idHospede = TipoHospede.idAuto.incrementAndGet();
 
     }
 

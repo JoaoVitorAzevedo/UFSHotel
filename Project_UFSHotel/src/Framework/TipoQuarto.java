@@ -5,6 +5,8 @@
  */
 package Framework;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * @author João Vitor Azevedo 743554
  * @author Sabrina Miranda 743595
@@ -16,10 +18,11 @@ public abstract class TipoQuarto {
     int andar;
     TipoCategoriaDeQuarto tipo;
     StatusQuarto status = new StatusQuarto(true, true);
+    static AtomicInteger idGen = new AtomicInteger();
 
 //Construtores
     public TipoQuarto(int idQuarto, int andar, TipoCategoriaDeQuarto tipo) {
-        this.idQuarto = idQuarto;
+        this.idQuarto = TipoQuarto.idGen.incrementAndGet();
         this.andar = andar;
         this.tipo = tipo;
         this.status.setLimpeza(true);

@@ -17,13 +17,13 @@ public abstract class TipoRecepcionista extends TipoFuncionario implements iCada
 
     int ramal;
 
-    public TipoRecepcionista(int ramal, String setor, int idFuncionario, String turno, String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
-        super(setor, idFuncionario, turno, cpf, nome, email, end, tel);
+    public TipoRecepcionista(int ramal, String setor, String turno, String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
+        super(setor, turno, cpf, nome, email, end, tel);
         this.ramal = ramal;
     }
 
     public TipoRecepcionista(int idFuncionario, String nome) {
-        super(null, idFuncionario, null, null, nome, null, null, null);
+        super(null, null, null, nome, null, null, null);
         this.ramal = 0;
     }
 

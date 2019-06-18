@@ -16,13 +16,13 @@ public class our_Gerente extends TipoGerente{
         super();
     }
 
-    public our_Gerente(String setor, int idFuncionario, String turno, String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
-        super(setor, idFuncionario, turno, cpf, nome, email, end, tel);
+    public our_Gerente(String setor, String turno, String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
+        super(setor, turno, cpf, nome, email, end, tel);
 
     }
 
-    public our_Gerente(int idFuncionario, String nome) {
-        super(null, idFuncionario, null, null, nome, null, null, null);
+    public our_Gerente(String nome) {
+        super(null, null, null, nome, null, null, null);
     }
     
     @Override

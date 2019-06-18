@@ -16,8 +16,8 @@ import Framework.TipoHospede;
 
 public class our_Hospede extends TipoHospede {
 
-    public our_Hospede(int idHospede, String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
-        super(idHospede, cpf, nome, email, end, tel);
+    public our_Hospede(String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
+        super(cpf, nome, email, end, tel);
         // nossas coisas especificas aqui
 
     }

@@ -7,6 +7,7 @@ import Framework.TipoRecepcionista;
 
 public class ControladorDeConsultas implements iConsulta_Gerente, iConsulta_Recepcionista {
 
+    @Override
     public String getGerente(int id) {
         iBancoGerente BG = new SimulaBD();
         return (BG.getNomeGerente(id));
@@ -41,6 +42,11 @@ public class ControladorDeConsultas implements iConsulta_Gerente, iConsulta_Rece
     @Override
     public void getHospedeByCPF() {
 
+    }
+
+    @Override
+    public void getHospedeID(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

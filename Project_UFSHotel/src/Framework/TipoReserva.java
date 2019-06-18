@@ -34,7 +34,7 @@ public class TipoReserva {
         this.Consumido = new HashMap<>();
         this.dataIn = dataIn;
         this.dataOut = dataOut;
-        this.idReserva = this.idGen.incrementAndGet();
+        this.idReserva = TipoReserva.idGen.incrementAndGet();
         this.cliQueReservou = cli;
         this.recepQueReservou = recep;
         this.quarto = quarto;

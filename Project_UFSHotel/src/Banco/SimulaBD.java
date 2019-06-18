@@ -58,6 +58,7 @@ import java.util.List;
 public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
 
     private static SimulaBD single_instance = null;
+    
     //Objetos hipotéticos para preencher banco inicialmente
     our_Recepcionista recep1;
     our_Hospede valter;
@@ -98,7 +99,7 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
         data1 = new Date(1996, 5, 21);
         data2 = new Date(1996, 7, 21);
 
-        listaFuncionariosBD = new ArrayList<TipoFuncionario>();
+        listaFuncionariosBD = new ArrayList<>();
         listaQuarto = new ArrayList<>();
         listaServico = new ArrayList<>();
         listaHospede = new ArrayList<>();
@@ -108,13 +109,13 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
         // listaRecepcao = new ArrayList<>();
         telefone1 = new TipoTelefone("+55", "15", "99768-4759");
 
-        this.recep1 = new our_Recepcionista(31, "Recepção", 88, "Tarde", "432.343.222.41", "Juju Recepcionista", "my@email.com", endereco1, telefone1, "Tarde de novo");
+        this.recep1 = new our_Recepcionista(31,"Recepção", "Tarde", "432.343.222.41", "Juju Recepcionista", "my@email.com", endereco1, telefone1, "Tarde de novo");
 
         Casal = new our_CategoriaDeQuarto("Casal", 2, 120.0f);
 
         endereco1 = new our_Endereco("17523275", "252", "logradouro", "blablabla", "Jardim Guanabara", "Marília", "Ceará");
 
-        hospede1 = new our_Hospede(31, "432.883.228-81", "Joao Vitor", "fulanodetal@gmail.com", endereco1, telefone1);
+        hospede1 = new our_Hospede("432.883.228-81", "Joao Vitor", "fulanodetal@gmail.com", endereco1, telefone1);
         serv = new our_Servicos("Comidinhas top", null, 22.0f);
         serv2 = new our_Servicos("Massagem", null, 22.0f);
         serv3 = new our_Servicos("Frigobar Liberado", null, 22.0f);
@@ -126,7 +127,7 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
 
         room1 = new our_Quarto(123, 7, suite);
 
-        gerenteRoberto = new our_Gerente("gerencia ue", 1, "tarde", "4372837238-12", "Robertinho de Souza", "ro_berto@gmail.com", endereco1, telefone1);
+        gerenteRoberto = new our_Gerente("gerencia ue","tarde", "4372837238-12", "Robertinho de Souza", "ro_berto@gmail.com", endereco1, telefone1);
         
         pag1 = new our_Pagamento(100);
         
@@ -137,12 +138,6 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
 
     }
 
-    //Métodos para adicionar no banco
-    @Override
-    public boolean addRecepcionista(our_Recepcionista newRecepcionista) {
-        listaFuncionariosBD.add(newRecepcionista);
-        return true;
-    }
 
     public our_Hospede getHospede1() {
         return hospede1;
@@ -162,6 +157,13 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
 
     public our_Quarto getRoom1() {
         return room1;
+    }
+    
+    //Métodos para adicionar no banco
+    @Override
+    public boolean addRecepcionista(our_Recepcionista newRecepcionista) {
+        listaFuncionariosBD.add(newRecepcionista);
+        return true;
     }
 
     @Override
@@ -188,16 +190,15 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
         return true;
     }
 
-    //ALGUEM ME AJUDA AQUIIII PLIS
-    //Caso de uso que retorna nome de um Gerente x
+    //Caso de uso que retorna nome de um TipoFuncionario a partir de um id
     @Override
     public String getNomeGerente(int id) {
-        for (TipoFuncionario or : listaFuncionariosBD) {
+        for (TipoFuncionario ger : listaFuncionariosBD) {
             //TODO:TipoGerente Talvez?
-            if (or instanceof our_Gerente) {
-                int id_g = or.getID();
+            if (ger instanceof our_Gerente) {
+                int id_g = ger.getID();
                 if (id == id_g) {
-                    return or.getNome();
+                    return ger.getNome();
                 }
             }
         }
@@ -205,11 +206,11 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
     }
 
     public String getNomeRecepcionista(int id) {
-        for (TipoFuncionario or : listaFuncionariosBD) {
-            if (or instanceof TipoRecepcionista) {
-                int id_r = or.getID();
+        for (TipoFuncionario recep : listaFuncionariosBD) {
+            if (recep instanceof TipoRecepcionista) {
+                int id_r = recep.getID();
                 if (id == id_r) {
-                    return or.getNome();
+                    return recep.getNome();
                 }
             }
         }
@@ -217,20 +218,21 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
     }
 
     public String getNomeHospede(int id) {
-        for (TipoHospede th : listaHospede) {
-            int r_id = th.getID();
+        for (TipoHospede hosp : listaHospede) {
+            int r_id = hosp.getID();
             if (id == r_id) {
-                return th.getNome();
+                return hosp.getNome();
             }
         }
         return null;
     }
     
+    //Métodos para retornar um objeto especifico a partir de um id
     public TipoHospede getHospede(int id) {
-        for(TipoHospede th: listaHospede){
-            int r_id = th.getID();
+        for(TipoHospede hosp: listaHospede){
+            int r_id = hosp.getID();
             if(id == r_id)
-                return th;
+                return hosp;
         }
         return null;
     }
@@ -248,10 +250,10 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
     }
     
     public TipoReserva getReserva(Date dt_in) {
-        for(TipoReserva tr: listaReserva){
-            Date r_id = tr.getDataIn();
+        for(TipoReserva res: listaReserva){
+            Date r_id = res.getDataIn();
             if(dt_in == r_id)
-                return tr;
+                return res;
         }
         return null;
     }
@@ -274,27 +276,22 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
         return single_instance;
     }
 
-    //Retorna toda a lista de Recepcionistas
+    //Retorna toda a lista de um TipoPessoa
+    @Override
     public boolean isValidRecepcionista(TipoRecepcionista recepcionista) {
         if (recepcionista.getNome() == null) {
             return false;
-        } else if (recepcionista.getNome() != getNomeRecepcionista(recepcionista.getID())) {
-            return false;
-        } else {
-            return true;
-        }
+        } else return recepcionista.getNome().equals(getNomeRecepcionista(recepcionista.getID()));
     }
 
+    @Override
     public boolean isValidHospede(TipoHospede hospede) {
         if (hospede.getNome() == null) {
             return false;
-        } else if (hospede.getNome() != getNomeHospede(hospede.getID())) {
-            return false;
-        } else {
-            return true;
-        }
+        } else return hospede.getNome().equals(getNomeHospede(hospede.getID()));
     }
 
+    //Tira o poder do usuário de dar "new"
     public iCadastro_Gerente getiGerenteCadastrador() {
         return iGerenteCadastrador;
     }

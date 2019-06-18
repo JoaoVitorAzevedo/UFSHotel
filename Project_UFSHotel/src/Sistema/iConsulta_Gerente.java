@@ -6,6 +6,6 @@ public interface iConsulta_Gerente {
     public void listarFuncionarios();
     public void listarRecepcionistas();
     public void listarReservas();
-    public void getHospedeByCPF();
+    public void getHospedeID(int id);
     
 }

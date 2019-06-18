@@ -18,7 +18,7 @@ public abstract class TipoCategoriaDeQuarto {
     int capacidade;
 
     float preco;
-    ArrayList<TipoServicos> servicos = new ArrayList<TipoServicos>(); // lista de serviços que esse quarto oferece
+    ArrayList<TipoServicos> servicos = new ArrayList<>(); // lista de serviços que esse quarto oferece
 
     public void addServico(TipoServicos serv) {
         servicos.add(serv);
@@ -40,9 +40,9 @@ public abstract class TipoCategoriaDeQuarto {
     }
 
     public void printServicos() {
-        for (TipoServicos serv : servicos) {
+        servicos.forEach((serv) -> {
             System.out.println(serv.getNomeDoServico());
-        }
+        });
     }
 
 //getters

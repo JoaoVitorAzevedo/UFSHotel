@@ -23,26 +23,23 @@ public class GUI_Gerente {
         our_Quarto oq = SimulaBD.getBDCarregado().getQuarto();
         our_Pagamento op = SimulaBD.getBDCarregado().getPagamento();
         
-        if(oh == null)
-            System.out.println("hospede esta nulo");
-        if(or == null)
-            System.out.println("recepcionista esta nulo");
-        if(oq == null)
-            System.out.println("quarto esta nulo");
-        if(op == null)
-            System.out.println("pagamento esta nulo");
         
         our_Reserva o_r = new our_Reserva(dt, dt, oh, or, oq, op );
         //our_Reserva o_r = new our_Reserva(dt, 3, oh, or, oq, op );
         
-        //SimulaBD.getBDCarregado().getiGerenteReservador().cadastrarReserva(o_r);
+        SimulaBD.getBDCarregado().getiGerenteReservador().cadastrarReserva(o_r);
         
-//Joao
+        //busca da reserva de acordo com a data de entrada
+        our_Reserva new_o_r = (our_Reserva) SimulaBD.getBDCarregado().getReserva(dt);
+        System.out.println("Reserva em nome de: " + new_o_r.getCliQueReservou());
+        
+        //Joao
+        
         Date dataIn = new Date(); Date dataOut = new Date();
   
         System.out.println("hospede:" + bd.getHospede1());
         our_Reserva rs1 =  new our_Reserva(bd.getData1(), bd.getData2(), bd.getHospede1(), bd.getRecep1(), bd.getRoom1());
         System.out.println("Reserva dados\n" +        rs1);
-
+           
     }
 }

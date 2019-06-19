@@ -6,7 +6,6 @@
 package Framework;
 
 import java.util.Date;
-import Sistema.iReservaRecepcionista;
 
 /**
  * @author João Vitor Azevedo 743554

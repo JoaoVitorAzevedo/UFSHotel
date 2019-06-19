@@ -21,14 +21,20 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package Sistema;
+package Framework;
+
+import Sistema.our_Hospede;
+import Sistema.our_Quarto;
 
 /**
  *
  * @author sabrina
  */
-public interface iCadastroGerente {
-    public void cadastrarRecepcao(int id, String nome);
-    public void cadastrarGerente(int idFuncionario, String nome);
-    public void cadastrarQuarto(int id, int andar, our_CategoriaDeQuarto catroom);
+public interface iConsultaGerente {
+    public void listarRecepcionistas();
+    public void listarReservas();
+    public our_Hospede getHospede(int id);
+    public String getGerente(int id);
+    public void listarFuncionarios();
+    public our_Quarto getQuartoDisp();
 }

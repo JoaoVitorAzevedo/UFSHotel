@@ -1,4 +1,4 @@
-package Sistema;
+package Framework;
 
 
 public interface iReservaRecepcionista {

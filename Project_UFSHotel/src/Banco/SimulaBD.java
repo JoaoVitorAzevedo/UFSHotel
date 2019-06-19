@@ -26,16 +26,17 @@ package Banco;
 import Framework.TipoHospede;
 import Framework.TipoRecepcionista;
 import Framework.TipoFuncionario;
+import Framework.TipoQuarto;
 import Framework.TipoReserva;
 import Framework.TipoTelefone;
-import Sistema.ControladorDeCadastros;
-import Sistema.ControladorDeConsultas;
-import Sistema.ControladorDeReservas;
-import Sistema.iCadastroGerente;
-import Sistema.iCadastroRecepcionista;
-import Sistema.iConsultaGerente;
-import Sistema.iConsultaRecepcionista;
-import Sistema.iReservaGerente;
+import Framework.ControladorDeCadastros;
+import Framework.ControladorDeConsultas;
+import Framework.ControladorDeReservas;
+import Framework.iCadastroGerente;
+import Framework.iCadastroRecepcionista;
+import Framework.iConsultaGerente;
+import Framework.iConsultaRecepcionista;
+import Framework.iReservaGerente;
 
 
 
@@ -52,8 +53,8 @@ import Sistema.our_Servicos;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import Sistema.iReservaGerente;
-import Sistema.iReservaRecepcionista;
+import Framework.iReservaGerente;
+import Framework.iReservaRecepcionista;
 
 /**
  *
@@ -95,7 +96,7 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
     //Listas para armazenamento do banco
     public static List<TipoHospede> listaHospede;
     public static List<TipoFuncionario> listaFuncionariosBD;
-    public static List<our_Quarto> listaQuarto;
+    public static List<TipoQuarto> listaQuarto;
     public static List<our_Servicos> listaServico;
     public static List<our_Reserva> listaReserva;
 
@@ -234,14 +235,7 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
     }
     
     //Métodos para retornar um objeto especifico a partir de um id
-    public TipoHospede getHospede(int id) {
-        for(TipoHospede hosp: listaHospede){
-            int r_id = hosp.getID();
-            if(id == r_id)
-                return hosp;
-        }
-        return null;
-    }
+
     
     public our_Recepcionista getRecepcionista(int id) {
         for (TipoFuncionario or : listaFuncionariosBD) {
@@ -264,6 +258,15 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
         return null;
     }
     
+    @Override
+    public TipoQuarto getQuartoDisp() {
+        for(TipoQuarto quarto: listaQuarto){
+            if(quarto.getStatusDisponibilidade() == true)
+                return quarto;
+        }
+        return null;
+    }
+    
     //DEBUGGING ONLY PURPOSE
     public our_Pagamento getPagamento(){
         return pag1;
@@ -280,6 +283,10 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
             single_instance = new SimulaBD();
         }
         return single_instance;
+    }
+    
+    public List getListaHospede(){
+        return listaHospede;
     }
 
     //Retorna toda a lista de um TipoPessoa
@@ -317,4 +324,5 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
     public iReservaGerente getiGerenteReservador() {
         return iGerenteReservador;
     }
+
 }

@@ -3,12 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Sistema;
+package Framework;
 
 import Banco.SimulaBD;
 import Banco.iBancoGerente;
 import Banco.iBancoRecepcionista;
 import Framework.TipoFuncionario;
+import Sistema.our_CategoriaDeQuarto;
+import Sistema.our_Gerente;
+import Sistema.our_Hospede;
+import Sistema.our_Quarto;
+import Sistema.our_Recepcionista;
+import Sistema.our_Servicos;
 import java.util.List;
 
 /**

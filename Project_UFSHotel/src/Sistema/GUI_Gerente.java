@@ -1,5 +1,8 @@
 package Sistema;
 
+import Framework.iConsultaGerente;
+import Framework.iReservaGerente;
+import Framework.iCadastroGerente;
 import Banco.SimulaBD;
 import java.util.Date;
 
@@ -22,16 +25,14 @@ public class GUI_Gerente {
         //Não acho certo usar o SimulaBD. pq dá abertura pra fazer qualquer coisa
         //O gerente cadastra a reserva???
         Date dt = new Date();
-        our_Hospede oh = (our_Hospede) SimulaBD.getBDCarregado().getHospede(31);
-        our_Recepcionista or = (our_Recepcionista) SimulaBD.getBDCarregado().getRecepcionista(88);
-        our_Quarto oq = SimulaBD.getBDCarregado().getQuarto();
-        our_Pagamento op = SimulaBD.getBDCarregado().getPagamento();
+        our_Hospede hosp = (our_Hospede) mConsulta.getHospede(0);
+        our_Quarto oq = (our_Quarto) mConsulta.getQuartoDisp();
         
         
-        our_Reserva o_r = new our_Reserva(dt, dt, oh, or, oq, op );
+        //our_Reserva o_r = new our_Reserva(dt, dt, h, or, oq, op );
         //our_Reserva o_r = new our_Reserva(dt, 3, oh, or, oq, op );
         
-        mReserva.cadastrarReserva(o_r);
+        //mReserva.cadastrarReserva(o_r);
         
         //busca da reserva de acordo com a data de entrada
         our_Reserva new_o_r = (our_Reserva) SimulaBD.getBDCarregado().getReserva(dt);

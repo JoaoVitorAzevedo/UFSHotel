@@ -21,11 +21,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package Sistema;
+package Framework;
 
 import Banco.SimulaBD;
 import Banco.iBancoGerente;
 import Banco.iBancoRecepcionista;
+import Sistema.our_Reserva;
 /**
  *
  * @author sugaya

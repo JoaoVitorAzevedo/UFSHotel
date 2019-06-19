@@ -23,6 +23,8 @@
  */
 package Banco;
 
+import Framework.TipoHospede;
+import Framework.TipoQuarto;
 import Sistema.our_Gerente;
 import Sistema.our_Quarto;
 import Sistema.our_Recepcionista;
@@ -40,4 +42,5 @@ public interface iBancoGerente {
     public boolean addGerente(our_Gerente newGerente);
     public boolean addQuarto(our_Quarto newQuarto);
     public boolean addReserva(our_Reserva newReserva);
+    public TipoQuarto getQuartoDisp();
 }

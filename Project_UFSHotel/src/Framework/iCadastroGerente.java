@@ -21,13 +21,16 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package Sistema;
+package Framework;
+
+import Sistema.our_CategoriaDeQuarto;
 
 /**
  *
  * @author sabrina
  */
-public interface iConsultaRecepcionista {
-    public void listarReservas();
-    public void getHospedeByCPF();
+public interface iCadastroGerente {
+    public void cadastrarRecepcao(int id, String nome);
+    public void cadastrarGerente(int idFuncionario, String nome);
+    public void cadastrarQuarto(int id, int andar, our_CategoriaDeQuarto catroom);
 }

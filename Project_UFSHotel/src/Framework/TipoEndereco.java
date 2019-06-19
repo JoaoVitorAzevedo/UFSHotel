@@ -14,17 +14,13 @@ public class TipoEndereco {
 
     String cep;
     String numero;
-    String logradouro;
-    String complemento;
     String bairro;
     String cidade;
     String estado;
 
-    public TipoEndereco(String cep, String numero, String logradouro, String complemento, String bairro, String cidade, String estado) {
+    public TipoEndereco(String cep, String numero, String bairro, String cidade, String estado) {
         this.cep = cep;
         this.numero = numero;
-        this.logradouro = logradouro;
-        this.complemento = complemento;
         this.bairro = bairro;
         this.cidade = cidade;
         this.estado = estado;
@@ -32,23 +28,15 @@ public class TipoEndereco {
 
     @Override
     public String toString() {
-        return "Endereco: " + logradouro
+        return "Endereco: " 
                 + ", nº" + numero + ", CEP: " + cep
                 + ", Bairro: " + bairro
-                + ", Cidade: " + cidade + ", Estado: " + estado + ", Complemento: " + complemento + "\n";
+                + ", Cidade: " + cidade + ", Estado: " + estado + "\n";
     }
 
     //Getters
     public String getBairro() {
         return bairro;
-    }
-
-    public String getComplemento() {
-        return complemento;
-    }
-
-    public String getLogradouro() {
-        return logradouro;
     }
 
     public String getNumero() {
@@ -76,16 +64,8 @@ public class TipoEndereco {
         this.estado = estado;
     }
 
-    public void setComplemento(String complemento) {
-        this.complemento = complemento;
-    }
-
     public void setBairro(String bairro) {
         this.bairro = bairro;
-    }
-
-    public void setLogradouro(String logradouro) {
-        this.logradouro = logradouro;
     }
 
     public void setCep(String cep) {

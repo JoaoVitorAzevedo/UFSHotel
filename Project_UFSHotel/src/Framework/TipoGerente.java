@@ -27,10 +27,6 @@ public abstract class TipoGerente extends TipoFuncionario {
         return "\n--Dados do Gerente-- \n" + super.toString();
     }
 
-    void cadastrarPessoa(TipoPessoa tp) {
-        System.out.println("cadastrei no pai");
-    }
-
     void cadastrarPessoa() {
         System.out.println("Pessoa cadastrada");
     }

@@ -22,7 +22,7 @@ class StatusQuarto {
     public StatusQuarto(boolean limp, boolean disp) {
         this.limpeza = limp;
         this.disponibilidade = disp;
-        consumidos = new ArrayList<TipoServicos>();
+        consumidos = new ArrayList<>();
 
     }
 

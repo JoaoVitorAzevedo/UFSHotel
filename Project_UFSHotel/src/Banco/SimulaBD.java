@@ -132,7 +132,7 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
         suite.addServico(serv);
         suite.addServico(serv3);
 
-        room1 = new our_Quarto(123, 7, suite);
+        room1 = new our_Quarto(7, suite);
 
         gerenteRoberto = new our_Gerente("gerencia ue","tarde", "4372837238-12", "Robertinho de Souza", "ro_berto@gmail.com", endereco1, telefone1);
         
@@ -193,7 +193,11 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
      @Override
     public boolean addReserva(our_Reserva newReserva) {
         listaReserva.add(newReserva);
-        System.out.println("Reserva registrada com sucesso");
+        return true;
+    }
+    
+    public boolean addHospede(our_Hospede newHospede) {
+        listaHospede.add(newHospede);
         return true;
     }
 
@@ -324,5 +328,7 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
     public iReservaGerente getiGerenteReservador() {
         return iGerenteReservador;
     }
+
+
 
 }

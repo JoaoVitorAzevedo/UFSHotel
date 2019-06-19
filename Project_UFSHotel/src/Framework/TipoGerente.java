@@ -5,6 +5,10 @@
  */
 package Framework;
 
+import Banco.SimulaBD;
+import Sistema.our_Gerente;
+
+
 /**
  * @author João Vitor Azevedo 743554
  * @author Sabrina Miranda 743595
@@ -40,6 +44,17 @@ public abstract class TipoGerente extends TipoFuncionario {
     @Override
     public int getID() {
         return idFuncionario;
+    }
+    
+    
+    //Métodos úteis
+    public void cadastrarGerente() {
+        SimulaBD BG = new SimulaBD();
+        
+        if (BG.addGerente((our_Gerente) this)) {
+            System.out.println("Cadastrado o gerente");
+        }
+
     }
 
 }

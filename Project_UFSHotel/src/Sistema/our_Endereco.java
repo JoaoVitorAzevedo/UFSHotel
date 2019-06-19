@@ -15,7 +15,7 @@ import Framework.TipoEndereco;
 public class our_Endereco extends TipoEndereco {
 
     public our_Endereco(String cep, String numero, String logradouro, String complemento, String bairro, String cidade, String estado) {
-        super(cep, numero, logradouro, complemento, bairro, cidade, estado);
+        super(cep, numero, bairro, cidade, estado);
     }
     
     

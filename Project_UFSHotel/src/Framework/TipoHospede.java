@@ -6,6 +6,7 @@
 package Framework;
 
 import Banco.SimulaBD;
+import Sistema.our_Hospede;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -88,6 +89,14 @@ public abstract class TipoHospede implements iConsultaRecepcionista{
                 return hosp;
         }
         return null;
+    }
+    
+       public void CadastrarHospede() {
+       SimulaBD BG = new SimulaBD();
+       
+        if (BG.addHospede((our_Hospede)this)) {
+            System.out.println("Cadastrado o gerente");
+        }
     }
 
 }

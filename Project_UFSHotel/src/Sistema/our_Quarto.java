@@ -14,8 +14,8 @@ import Framework.TipoQuarto;
  */
 public class our_Quarto extends TipoQuarto {
 
-    public our_Quarto(int idQuarto, int andar, our_CategoriaDeQuarto tipo) {
-        super(idQuarto, andar, tipo);
+    public our_Quarto(int andar, our_CategoriaDeQuarto tipo) {
+        super(andar, tipo);
 
     }
 

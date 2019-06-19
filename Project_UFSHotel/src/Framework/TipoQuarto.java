@@ -5,6 +5,9 @@
  */
 package Framework;
 
+import Banco.SimulaBD;
+import Sistema.our_CategoriaDeQuarto;
+import Sistema.our_Quarto;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -21,7 +24,7 @@ public abstract class TipoQuarto {
     static AtomicInteger idGen = new AtomicInteger();
 
 //Construtores
-    public TipoQuarto(int idQuarto, int andar, TipoCategoriaDeQuarto tipo) {
+    public TipoQuarto(int andar, TipoCategoriaDeQuarto tipo) {
         this.idQuarto = TipoQuarto.idGen.incrementAndGet();
         this.andar = andar;
         this.tipo = tipo;
@@ -87,4 +90,15 @@ public abstract class TipoQuarto {
         this.status.disponibilidade = bol;
     }
 
+    //Métodos com lógica de framework
+    
+    public void cadastrarQuarto() {
+        SimulaBD BG = new SimulaBD();
+        our_Quarto newQuarto = new our_Quarto(andar, (our_CategoriaDeQuarto)tipo);
+
+        if (BG.addQuarto(newQuarto)) {
+            System.out.println("Cadastrado Quarto com dados: ");
+        }
+
+    }
 }

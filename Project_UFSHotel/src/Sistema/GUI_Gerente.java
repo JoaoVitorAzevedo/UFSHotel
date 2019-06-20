@@ -4,7 +4,9 @@ import Framework.iConsultaGerente;
 import Framework.iReservaGerente;
 import Framework.iCadastroGerente;
 import Banco.SimulaBD;
+import Framework.TipoHospede;
 import java.util.Date;
+import java.util.List;
 
 public class GUI_Gerente {
 
@@ -35,8 +37,8 @@ public class GUI_Gerente {
         //mReserva.cadastrarReserva(o_r);
         
         //busca da reserva de acordo com a data de entrada
-        our_Reserva new_o_r = (our_Reserva) SimulaBD.getBDCarregado().getReserva(dt);
-        System.out.println("Reserva em nome de: " + new_o_r.getCliQueReservou());
+        //our_Reserva new_o_r = (our_Reserva) SimulaBD.getBDCarregado().getReserva(dt);
+        //System.out.println("Reserva em nome de: " + new_o_r.getCliQueReservou());
         
         //Joao
         
@@ -47,5 +49,13 @@ public class GUI_Gerente {
         our_Reserva rs1 =  new our_Reserva(bd.getData1(), bd.getData2(), bd.getHospede1(), bd.getRecep1(), bd.getRoom1());
         System.out.println("Reserva dados\n" +        rs1);*/
            
+        //Cadastrando objeto do tipo do nosso Sistema
+        our_Hospede mohammed = new our_Hospede(10, "Mohammed Salim", "Sri Lanka");
+        mohammed.cadastrarHospede();      
+        
+        //Testando listar apenas objetos do tipo do sistema,  com lista do tipoHospede
+        //implementacao do metodo esta no our_hospede
+        List<TipoHospede> listaHospede = SimulaBD.getBDCarregado().getListaHospede();
+        our_Hospede.listarOurHospede(listaHospede);
     }
 }

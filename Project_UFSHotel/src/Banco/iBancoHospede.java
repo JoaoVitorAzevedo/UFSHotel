@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2019 sabrina.
+ * Copyright 2019 sugaya.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,24 +24,11 @@
 package Banco;
 
 import Framework.TipoHospede;
-import Framework.TipoQuarto;
-import Sistema.our_Gerente;
-import Sistema.our_Quarto;
-import Sistema.our_Recepcionista;
-import Sistema.our_Reserva;
-
 
 /**
- * @author João Vitor Azevedo 743554
- * @author Sabrina Miranda 743595
- * @author Vitor Sugaya 743605
+ *
+ * @author sugaya
  */
-public interface iBancoGerente {
-    public boolean addRecepcionista(our_Recepcionista newRecep);
-    public boolean addGerente(our_Gerente newGerente);
-    public boolean addQuarto(our_Quarto newQuarto);
-    public boolean addReserva(our_Reserva newReserva);
-    public TipoHospede getHospede(int id_hospede);
-    public String getNomeGerente(int id);
-    public TipoQuarto getQuartoDisp();
+public interface iBancoHospede {
+    public boolean addHospede(TipoHospede newHospede);
 }

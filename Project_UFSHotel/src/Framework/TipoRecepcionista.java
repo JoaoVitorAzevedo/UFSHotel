@@ -45,9 +45,9 @@ public abstract class TipoRecepcionista extends TipoFuncionario implements iRese
 
     //metodos
     //funcionario nao sabe o que é um hospede
-    public void CadastrarHospede() {
-        TipoEndereco te;
-        TipoTelefone tt;
+    public void cadastrarHospede() {
+        TipoEndereco tipoEndereco;
+        TipoTelefone tipoTelefone;
         //TipoHospede th = new TipoHospede(0, "485687512", "Roberto", "email@email.com", te, tt);
         System.out.println("Chamei Criador de Hospedes na TipoRecepcionista");
         System.out.println("recepcionista cadastrou hospede com sucesso\n");
@@ -55,8 +55,7 @@ public abstract class TipoRecepcionista extends TipoFuncionario implements iRese
     }
 
     protected void realizarCadastro(int id) {
-        //	IModuloCadastroRecepcionista modulo = new ModuloCadastro();
-        //	modulo.cadastraHospede(id);
+        
     }
 
 }

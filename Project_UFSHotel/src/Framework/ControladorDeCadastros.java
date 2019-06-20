@@ -22,16 +22,13 @@ import java.util.List;
  * @author Sabrina Miranda 743595
  * @author Vitor Sugaya 743605
  */
-public class ControladorDeCadastros {
+public class ControladorDeCadastros implements iCadastroGerente, iCadastroRecepcionista {
 
     //Construtor
     public ControladorDeCadastros() {
     }
 
     //Métodos de cadastro do Gerente
-
-  
-    @Override
   
 
     //Métodos de cadastro da Recepcionista
@@ -50,5 +47,20 @@ public class ControladorDeCadastros {
 
     public void AddServicoQuarto(our_Quarto quarto, Float preco) {
 
+    }
+
+    @Override
+    public void cadastrarRecepcao(int id, String nome) {
+        System.out.println("Não implementado ainda");
+    }
+
+    @Override
+    public void cadastrarGerente(int idFuncionario, String nome) {
+        System.out.println("Não implementado ainda");
+    }
+
+    @Override
+    public void cadastrarQuarto(int id, int andar, our_CategoriaDeQuarto catroom) {
+        System.out.println("Não implementado ainda");
     }
 }

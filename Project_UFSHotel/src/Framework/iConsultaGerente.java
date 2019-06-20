@@ -33,7 +33,8 @@ import Sistema.our_Quarto;
 public interface iConsultaGerente {
     public void listarRecepcionistas();
     public void listarReservas();
-    public our_Hospede getHospede(int id);
+    public void listarHospedes();
+    public TipoHospede getHospede(int id);
     public String getGerente(int id);
     public void listarFuncionarios();
     public our_Quarto getQuartoDisp();

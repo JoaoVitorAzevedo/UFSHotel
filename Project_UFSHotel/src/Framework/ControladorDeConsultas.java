@@ -6,6 +6,7 @@ import Framework.TipoFuncionario;
 import Framework.TipoRecepcionista;
 import Sistema.our_Hospede;
 import Sistema.our_Quarto;
+import java.util.List;
 
 public class ControladorDeConsultas implements iConsultaGerente, iConsultaRecepcionista {
 
@@ -37,14 +38,36 @@ public class ControladorDeConsultas implements iConsultaGerente, iConsultaRecepc
 
     @Override
     public void listarReservas() {
-
+        
+        SimulaBD.listaReserva.forEach((r) -> {
+            if (r instanceof TipoReserva) {
+                System.out.println(r);
+            }
+        });
+    }
+    
+    public void listarHospedes() {
+        
+        SimulaBD.listaHospede.forEach((h) -> {
+          
+                System.out.println(h.getID() + " " + h.getNome());
+            
+        });
     }
 
     @Override
-    public void getHospedeByCPF() {
-
+    public TipoHospede getHospedeByCPF(String cpf) {
+        SimulaBD BD = new SimulaBD();
+        List<TipoHospede> listaHospede = BD.getListaHospede();
+        
+        for(TipoHospede hosp: listaHospede){
+            String cpf_corr = hosp.getCPF();
+            if(cpf.equals(cpf_corr)){
+                return hosp;
+            }
+        }
+        return null;
     }
-
 
       @Override
     public our_Quarto getQuartoDisp() {
@@ -55,9 +78,9 @@ public class ControladorDeConsultas implements iConsultaGerente, iConsultaRecepc
     }
 
     
-    public our_Hospede getHospede(int id) {
+    public TipoHospede getHospede(int id) {
         iBancoGerente BG = new SimulaBD();
-        our_Hospede hospede = (our_Hospede) BG.getHospede(id);
+        TipoHospede hospede = BG.getHospede(id);
         return hospede;
     }
 

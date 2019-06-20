@@ -6,7 +6,7 @@
 package Framework;
 
 import Banco.SimulaBD;
-import Sistema.our_Hospede;
+import Banco.iBancoHospede;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author Sabrina Miranda 743595
  * @author Vitor Sugaya 743605
  */
-public abstract class TipoHospede implements iConsultaRecepcionista{
+public abstract class TipoHospede{
 
     static AtomicInteger idAuto = new AtomicInteger();
     int idHospede;
@@ -32,6 +32,16 @@ public abstract class TipoHospede implements iConsultaRecepcionista{
         this.nome = nome;
 
     }
+    
+    protected TipoHospede( int id, String nome) {
+        this.idHospede = id;
+        this.cpf = "999.999.999-99";
+        this.email = null;
+        this.end = null;
+        this.tel = null;
+        this.nome = nome;
+
+    }
 
     //getters
     public int getID() {
@@ -45,7 +55,7 @@ public abstract class TipoHospede implements iConsultaRecepcionista{
         return email;
     }
     
-    public TipoEndereco Getendereco(){
+    public TipoEndereco getEndereco(){
         return end;
     }
     
@@ -91,11 +101,24 @@ public abstract class TipoHospede implements iConsultaRecepcionista{
         return null;
     }
     
-       public void CadastrarHospede() {
-       SimulaBD BG = new SimulaBD();
+    public TipoHospede getHospedeByCPF(String cpf) {
+        SimulaBD BD = new SimulaBD();
+        List<TipoHospede> listaHospede = BD.getListaHospede();
+        
+        for(TipoHospede hosp: listaHospede){
+            String cpf_corr = hosp.getCPF();
+            if(cpf.equals(cpf_corr)){
+                return hosp;
+            }
+        }
+        return null;
+    }
+    
+    public void cadastrarHospede() {
+       iBancoHospede BH = new SimulaBD();
        
-        if (BG.addHospede((our_Hospede)this)) {
-            System.out.println("Cadastrado o gerente");
+        if (BH.addHospede(this)) {
+            System.out.println("Hospede cadastrado com sucesso");
         }
     }
 

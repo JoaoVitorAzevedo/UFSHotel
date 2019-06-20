@@ -60,7 +60,7 @@ import Framework.iReservaRecepcionista;
  *
  * @author 743554
  */
-public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
+public class SimulaBD implements iBancoGerente, iBancoRecepcionista, iBancoHospede {
 
     private static SimulaBD single_instance = null;
     
@@ -200,6 +200,11 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
         listaHospede.add(newHospede);
         return true;
     }
+    
+    public boolean addHospede(TipoHospede newHospede) {
+        listaHospede.add(newHospede);
+        return true;
+    }
 
     //Caso de uso que retorna nome de um TipoFuncionario a partir de um id
     @Override
@@ -240,6 +245,16 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
     
     //Métodos para retornar um objeto especifico a partir de um id
 
+    
+    public TipoHospede getHospede(int id_hospede) {
+        for (TipoHospede tipoHospede : listaHospede) {
+                int id = tipoHospede.getID();
+                if (id == id_hospede) {
+                    return tipoHospede;
+                } 
+        }
+        return null;
+    }
     
     public our_Recepcionista getRecepcionista(int id) {
         for (TipoFuncionario or : listaFuncionariosBD) {

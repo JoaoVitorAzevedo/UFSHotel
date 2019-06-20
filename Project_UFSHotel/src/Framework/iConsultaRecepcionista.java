@@ -29,5 +29,5 @@ package Framework;
  */
 public interface iConsultaRecepcionista {
     public void listarReservas();
-    public void getHospedeByCPF();
+    public TipoHospede getHospedeByCPF(String cpf);
 }

@@ -28,15 +28,14 @@ import Framework.TipoRecepcionista;
 import Framework.TipoFuncionario;
 import Framework.TipoQuarto;
 import Framework.TipoReserva;
+import Framework.TipoServicos;
 import Framework.TipoTelefone;
-import Framework.ControladorDeCadastros;
 import Framework.ControladorDeConsultas;
 import Framework.ControladorDeReservas;
+import Framework.TipoGerente;
 import Framework.iCadastroGerente;
-import Framework.iCadastroRecepcionista;
 import Framework.iConsultaGerente;
 import Framework.iConsultaRecepcionista;
-import Framework.iReservaGerente;
 
 
 
@@ -47,14 +46,14 @@ import Sistema.our_Hospede;
 import Sistema.our_Pagamento;
 import Sistema.our_Quarto;
 import Sistema.our_Recepcionista;
-import Sistema.our_Reserva;
-import Sistema.our_Servicos;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import Framework.iReservaGerente;
 import Framework.iReservaRecepcionista;
+import Sistema.our_Servicos;
+import Sistema.our_Telefone;
 
 /**
  *
@@ -71,9 +70,9 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista, iBancoHospe
     our_CategoriaDeQuarto Casal;
     our_Endereco endereco1;
     TipoTelefone telefone1;
-    our_Servicos serv;
-    our_Servicos serv2;
-    our_Servicos serv3;
+    TipoServicos serv;
+    TipoServicos serv2;
+    TipoServicos serv3;
     our_CategoriaDeQuarto suite;
     our_Gerente gerenteRoberto;
     our_Quarto room1;
@@ -83,13 +82,11 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista, iBancoHospe
     Date data2;
 
     // Referencias Interfaces, usar getters
-    iCadastroGerente iGerenteCadastrador = new ControladorDeCadastros();
     iConsultaGerente iGerenteConsultador = new ControladorDeConsultas();
     iReservaGerente iGerenteReservador = new ControladorDeReservas();
 
     iReservaRecepcionista iRecepcionistaCadastrador = new ControladorDeReservas();
     iConsultaRecepcionista iRecepcionistaConsultador = new ControladorDeConsultas();
-    iCadastroRecepcionista iRecepcionistaCadastro = new ControladorDeCadastros();
     
    
 
@@ -97,8 +94,8 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista, iBancoHospe
     public static List<TipoHospede> listaHospede;
     public static List<TipoFuncionario> listaFuncionariosBD;
     public static List<TipoQuarto> listaQuarto;
-    public static List<our_Servicos> listaServico;
-    public static List<our_Reserva> listaReserva;
+    public static List<TipoServicos> listaServico;
+    public static List<TipoReserva> listaReserva;
 
     // public static List<our_Recepcionista> listaRecepcao;
     // public static List<our_Gerente> listaGerentes;
@@ -114,7 +111,7 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista, iBancoHospe
 
         // listaGerentes = new ArrayList<>(); // not using yet
         // listaRecepcao = new ArrayList<>();
-        telefone1 = new TipoTelefone("+55", "15", "99768-4759");
+        telefone1 = new our_Telefone("+55", "15", "99768-4759");
 
         this.recep1 = new our_Recepcionista(31,"Recepção", "Tarde", "432.343.222.41", "Juju Recepcionista", "my@email.com", endereco1, telefone1, "Tarde de novo");
 
@@ -128,9 +125,9 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista, iBancoHospe
         serv3 = new our_Servicos("Frigobar Liberado", null, 22.0f);
         this.suite = new our_CategoriaDeQuarto("Suite", 3, 180.0f);
 
-        suite.addServico(serv2);
-        suite.addServico(serv);
-        suite.addServico(serv3);
+        //suite.addServico(serv2);
+        //suite.addServico(serv);
+        //suite.addServico(serv3);
 
         room1 = new our_Quarto(7, suite);
 
@@ -168,39 +165,35 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista, iBancoHospe
     
     //Métodos para adicionar no banco
     @Override
-    public boolean addRecepcionista(our_Recepcionista newRecepcionista) {
+    public boolean addRecepcionista(TipoRecepcionista newRecepcionista) {
         listaFuncionariosBD.add(newRecepcionista);
         return true;
     }
 
     @Override
-    public boolean addGerente(our_Gerente newGerente) {
+    public boolean addGerente(TipoGerente newGerente) {
         listaFuncionariosBD.add(newGerente);
         return true;
     }
 
     @Override
-    public boolean addQuarto(our_Quarto newQuarto) {
+    public boolean addQuarto(TipoQuarto newQuarto) {
         listaQuarto.add(newQuarto);
         return true;
     }
 
     @Override
-    public boolean addServico(our_Servicos newServico) {
+    public boolean addServico(TipoServicos newServico) {
         listaServico.add(newServico);
         return true;
     }
      @Override
-    public boolean addReserva(our_Reserva newReserva) {
+    public boolean addReserva(TipoReserva newReserva) {
         listaReserva.add(newReserva);
         return true;
-    }
+    }  
     
-    public boolean addHospede(our_Hospede newHospede) {
-        listaHospede.add(newHospede);
-        return true;
-    }
-    
+    @Override
     public boolean addHospede(TipoHospede newHospede) {
         listaHospede.add(newHospede);
         return true;
@@ -296,7 +289,7 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista, iBancoHospe
         return room1;
     }
 
-    public static SimulaBD getBDCarregado() {
+    public static SimulaBD getInstanceBD() {
 
         if (single_instance == null) {
             single_instance = new SimulaBD();
@@ -321,11 +314,6 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista, iBancoHospe
         if (hospede.getNome() == null) {
             return false;
         } else return hospede.getNome().equals(getNomeHospede(hospede.getID()));
-    }
-
-    //Tira o poder do usuário de dar "new"
-    public iCadastroGerente getiGerenteCadastrador() {
-        return iGerenteCadastrador;
     }
 
     public iConsultaGerente getiGerenteConsultador() {

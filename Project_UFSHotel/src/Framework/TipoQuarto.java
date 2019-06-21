@@ -6,8 +6,6 @@
 package Framework;
 
 import Banco.SimulaBD;
-import Sistema.our_CategoriaDeQuarto;
-import Sistema.our_Quarto;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -19,8 +17,8 @@ public abstract class TipoQuarto {
 
     int idQuarto;
     int andar;
-    TipoCategoriaDeQuarto tipo;
-    StatusQuarto status = new StatusQuarto(true, true);
+    public TipoCategoriaDeQuarto tipo;
+    public TipoStatusQuarto status;
     static AtomicInteger idGen = new AtomicInteger();
 
 //Construtores
@@ -28,8 +26,6 @@ public abstract class TipoQuarto {
         this.idQuarto = TipoQuarto.idGen.incrementAndGet();
         this.andar = andar;
         this.tipo = tipo;
-        this.status.setLimpeza(true);
-        this.status.setDisponibilidade(true);
 
     }
 
@@ -43,16 +39,15 @@ public abstract class TipoQuarto {
         return andar;
     }
 
-    //Retorna o preco total de todos os serviços cadastrados para esse quarto
-    public float getPrecoServicos() {
-        //return(this.TipoCategoriaDeQuarto.getPrecoServicos());    
-        return 0.0f;
-    }
+    
 
     public int getIdQuarto() {
         return idQuarto;
     }
 
+    public TipoStatusQuarto getWholeStatus(){
+        return status;
+    }    
     public boolean getStatusLimpeza() {
         return status.limpeza;
     }
@@ -66,9 +61,7 @@ public abstract class TipoQuarto {
     }
 
     //setters
-    public void addPrecoServico(float preco) {
-        //this.status.addPrecoServico(preco);
-    }
+    
 
     public void setTipo(TipoCategoriaDeQuarto tipo) {
         this.tipo = tipo;
@@ -93,11 +86,10 @@ public abstract class TipoQuarto {
     //Métodos com lógica de framework
     
     public void cadastrarQuarto() {
-        SimulaBD BG = new SimulaBD();
-        our_Quarto newQuarto = new our_Quarto(andar, (our_CategoriaDeQuarto)tipo);
+        SimulaBD BG = SimulaBD.getInstanceBD();
 
-        if (BG.addQuarto(newQuarto)) {
-            System.out.println("Cadastrado Quarto com dados: ");
+        if (BG.addQuarto(this)) {
+            System.out.println("Cadastrado Quarto");
         }
 
     }

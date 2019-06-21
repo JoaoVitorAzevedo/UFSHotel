@@ -10,7 +10,7 @@ package Framework;
  * @author Sabrina Miranda 743595
  * @author Vitor Sugaya 743605
  */
-public class TipoEndereco {
+public abstract class TipoEndereco {
 
     String cep;
     String numero;

@@ -23,7 +23,6 @@
  */
 package Framework;
 
-import Sistema.our_CategoriaDeQuarto;
 
 /**
  *
@@ -32,5 +31,5 @@ import Sistema.our_CategoriaDeQuarto;
 public interface iCadastroGerente {
     public void cadastrarRecepcao(int id, String nome);
     public void cadastrarGerente(int idFuncionario, String nome);
-    public void cadastrarQuarto(int id, int andar, our_CategoriaDeQuarto catroom);
+    public void cadastrarQuarto(int id, int andar, TipoQuarto catroom);
 }

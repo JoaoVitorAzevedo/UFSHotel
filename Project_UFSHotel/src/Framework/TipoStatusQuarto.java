@@ -13,13 +13,13 @@ import java.util.List;
  * @author Sabrina Miranda 743595
  * @author Vitor Sugaya 743605
  */
-class StatusQuarto {
+public abstract class TipoStatusQuarto {
 
     boolean limpeza = true;
     boolean disponibilidade = true;
     List<TipoServicos> consumidos;
 
-    public StatusQuarto(boolean limp, boolean disp) {
+    public TipoStatusQuarto(boolean limp, boolean disp) {
         this.limpeza = limp;
         this.disponibilidade = disp;
         consumidos = new ArrayList<>();

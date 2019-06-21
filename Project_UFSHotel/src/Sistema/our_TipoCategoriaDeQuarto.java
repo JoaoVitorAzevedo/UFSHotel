@@ -14,7 +14,7 @@ import Framework.TipoCategoriaDeQuarto;
 public class our_TipoCategoriaDeQuarto extends TipoCategoriaDeQuarto {
 
     public our_TipoCategoriaDeQuarto() {
-        super(null, 0, 0);
+        super("Quarto Casal grande", 0, 0);
     }
 
 	@Override

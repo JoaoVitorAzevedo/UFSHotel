@@ -25,8 +25,6 @@ package Framework;
 
 import Banco.SimulaBD;
 import Banco.iBancoGerente;
-import Banco.iBancoRecepcionista;
-import Sistema.our_Reserva;
 /**
  *
  * @author sugaya
@@ -35,7 +33,7 @@ import Sistema.our_Reserva;
 public class ControladorDeReservas implements iReservaGerente, iReservaRecepcionista{
     
     @Override
-    public void cadastrarReserva(our_Reserva reserva){
+    public void cadastrarReserva(TipoReserva reserva){
         iBancoGerente BG = new SimulaBD();
         
         if (BG.addReserva(reserva)) {

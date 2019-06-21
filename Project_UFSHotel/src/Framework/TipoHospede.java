@@ -115,7 +115,7 @@ public abstract class TipoHospede{
     }
     
     public void cadastrarHospede() {
-       iBancoHospede BH = new SimulaBD();
+       iBancoHospede BH = SimulaBD.getInstanceBD();
        
         if (BH.addHospede(this)) {
             System.out.println("Hospede cadastrado com sucesso");

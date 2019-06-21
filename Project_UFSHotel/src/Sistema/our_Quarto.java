@@ -16,6 +16,7 @@ public class our_Quarto extends TipoQuarto {
 
     public our_Quarto(int andar, our_CategoriaDeQuarto tipo) {
         super(andar, tipo);
+        this.status = new our_Status(true, true);
 
     }
 
@@ -27,5 +28,18 @@ public class our_Quarto extends TipoQuarto {
         this.getTipo().printData();
         System.out.println("");
     }
-
+    
+    
+    public our_Status getStatus(){
+        return (our_Status) this.getWholeStatus();
+    }
+    
+    public void setLimpeza(boolean status) {
+        this.setStatuslimpeza(status);
+    }
+    
+    public void setDisponibilidade(boolean disponibilidade) {
+        this.setStatusDisponibilidade(disponibilidade);
+    }
+    
 }

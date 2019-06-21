@@ -13,9 +13,8 @@ public class GUI_Gerente {
     public static void main(String args[]) {
 
         ////Precisa mesmo ter todos essas interfaces sendo que sempre quem vai executar é o gerente???
-        iCadastroGerente mCadastro = SimulaBD.getBDCarregado().getiGerenteCadastrador();
-        iConsultaGerente mConsulta = SimulaBD.getBDCarregado().getiGerenteConsultador();
-        iReservaGerente mReserva = SimulaBD.getBDCarregado().getiGerenteReservador();
+        iConsultaGerente mConsulta = SimulaBD.getInstanceBD().getiGerenteConsultador();
+        iReservaGerente mReserva = SimulaBD.getInstanceBD().getiGerenteReservador();
 
         //Cadastrando uma nova Recepcionista - entrando com os dados
         // bd.getiGerenteCadastrador().cadastrarRecepcao(85, "Josilene");
@@ -28,7 +27,7 @@ public class GUI_Gerente {
         //O gerente cadastra a reserva???
         Date dt = new Date();
         our_Hospede hosp = (our_Hospede) mConsulta.getHospede(0);
-        our_Quarto oq = (our_Quarto) mConsulta.getQuartoDisp();
+        //our_Quarto oq = (our_Quarto) mConsulta.getQuartoDisp();
         
         
         //our_Reserva o_r = new our_Reserva(dt, dt, h, or, oq, op );
@@ -51,11 +50,14 @@ public class GUI_Gerente {
            
         //Cadastrando objeto do tipo do nosso Sistema
         our_Hospede mohammed = new our_Hospede(10, "Mohammed Salim", "Sri Lanka");
+        our_Hospede vitor = new our_Hospede(191, "sugaya vitor", "Brasil");
+        vitor.cadastrarHospede();
         mohammed.cadastrarHospede();      
         
         //Testando listar apenas objetos do tipo do sistema,  com lista do tipoHospede
         //implementacao do metodo esta no our_hospede
-        List<TipoHospede> listaHospede = SimulaBD.getBDCarregado().getListaHospede();
+        System.out.println("~~listando hospedes~~");
+        List<TipoHospede> listaHospede = SimulaBD.getInstanceBD().getListaHospede();
         our_Hospede.listarOurHospede(listaHospede);
     }
 }

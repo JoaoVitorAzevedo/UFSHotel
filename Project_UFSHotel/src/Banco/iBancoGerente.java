@@ -23,12 +23,11 @@
  */
 package Banco;
 
+import Framework.TipoGerente;
 import Framework.TipoHospede;
+import Framework.TipoReserva;
 import Framework.TipoQuarto;
-import Sistema.our_Gerente;
-import Sistema.our_Quarto;
-import Sistema.our_Recepcionista;
-import Sistema.our_Reserva;
+import Framework.TipoRecepcionista;
 
 
 /**
@@ -37,10 +36,12 @@ import Sistema.our_Reserva;
  * @author Vitor Sugaya 743605
  */
 public interface iBancoGerente {
-    public boolean addRecepcionista(our_Recepcionista newRecep);
-    public boolean addGerente(our_Gerente newGerente);
-    public boolean addQuarto(our_Quarto newQuarto);
-    public boolean addReserva(our_Reserva newReserva);
+    
+    public boolean addGerente(TipoGerente newGerente);
+    public boolean addHospede(TipoHospede newHospede);
+    public boolean addQuarto(TipoQuarto newQuarto);
+    public boolean addRecepcionista(TipoRecepcionista newRecep);
+    public boolean addReserva(TipoReserva newReserva);
     public TipoHospede getHospede(int id_hospede);
     public String getNomeGerente(int id);
     public TipoQuarto getQuartoDisp();

@@ -2,10 +2,6 @@ package Framework;
 
 import Banco.SimulaBD;
 import Banco.iBancoGerente;
-import Framework.TipoFuncionario;
-import Framework.TipoRecepcionista;
-import Sistema.our_Hospede;
-import Sistema.our_Quarto;
 import java.util.List;
 
 public class ControladorDeConsultas implements iConsultaGerente, iConsultaRecepcionista {
@@ -40,9 +36,7 @@ public class ControladorDeConsultas implements iConsultaGerente, iConsultaRecepc
     public void listarReservas() {
         
         SimulaBD.listaReserva.forEach((r) -> {
-            if (r instanceof TipoReserva) {
-                System.out.println(r);
-            }
+                System.out.println(r);       
         });
     }
     
@@ -70,9 +64,9 @@ public class ControladorDeConsultas implements iConsultaGerente, iConsultaRecepc
     }
 
       @Override
-    public our_Quarto getQuartoDisp() {
-         iBancoGerente BG = new SimulaBD();
-        our_Quarto quarto = (our_Quarto) BG.getQuartoDisp();
+    public TipoQuarto getQuartoDisp() {
+        iBancoGerente BG = new SimulaBD();
+        TipoQuarto quarto = BG.getQuartoDisp();
         return quarto;
     
     }

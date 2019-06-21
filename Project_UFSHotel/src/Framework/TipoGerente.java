@@ -6,6 +6,7 @@
 package Framework;
 
 import Banco.SimulaBD;
+import Banco.iBancoGerente;
 import Sistema.our_Gerente;
 
 
@@ -49,12 +50,28 @@ public abstract class TipoGerente extends TipoFuncionario {
     
     //Métodos úteis
     public void cadastrarGerente() {
-        SimulaBD BG = new SimulaBD();
+        iBancoGerente BG = SimulaBD.getInstanceBD();
         
-        if (BG.addGerente((our_Gerente) this)) {
+        if (BG.addGerente(this)) {
             System.out.println("Cadastrado o gerente");
         }
 
+    }
+    
+    public void cadastrarRecepcionista(TipoRecepcionista recepcionista) {
+        iBancoGerente BG = SimulaBD.getInstanceBD();
+        
+        if (BG.addRecepcionista(recepcionista)){
+            System.out.println("Gerente cadastrou uma recepcionista");
+        }
+    }
+    
+    public void cadastrarHospede(TipoHospede hospede) {
+        iBancoGerente BG = SimulaBD.getInstanceBD();
+        
+        if ( BG.addHospede(hospede) ) {
+            System.out.println("Gerente cadastrou um hospede");
+        }
     }
 
 }

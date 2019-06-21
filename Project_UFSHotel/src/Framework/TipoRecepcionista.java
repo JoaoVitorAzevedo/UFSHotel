@@ -6,6 +6,8 @@
 package Framework;
 
 import java.util.Date;
+import Banco.SimulaBD;
+import Banco.iBancoRecepcionista;
 
 /**
  * @author João Vitor Azevedo 743554
@@ -45,17 +47,21 @@ public abstract class TipoRecepcionista extends TipoFuncionario implements iRese
 
     //metodos
     //funcionario nao sabe o que é um hospede
-    public void cadastrarHospede() {
-        TipoEndereco tipoEndereco;
-        TipoTelefone tipoTelefone;
-        //TipoHospede th = new TipoHospede(0, "485687512", "Roberto", "email@email.com", te, tt);
-        System.out.println("Chamei Criador de Hospedes na TipoRecepcionista");
-        System.out.println("recepcionista cadastrou hospede com sucesso\n");
-        // manipular BD?
+    public void cadastrarHospede(TipoHospede hospede) {
+        iBancoRecepcionista BD = SimulaBD.getInstanceBD();
+        
+        if ( BD.addHospede(hospede)) {
+            System.out.println("Recepcionista cadastrou um hospede");
+        }
+
     }
 
-    protected void realizarCadastro(int id) {
+    protected void cadastrarRecepcionista() {
+        iBancoRecepcionista BR = SimulaBD.getInstanceBD();
         
+        if ( BR.addRecepcionista(this)) {
+            System.out.println("Cadastrada recepcionista");
+        }
     }
 
 }

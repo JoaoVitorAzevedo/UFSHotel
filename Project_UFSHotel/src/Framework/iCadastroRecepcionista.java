@@ -23,13 +23,12 @@
  */
 package Framework;
 
-import Sistema.our_Hospede;
 
 /**
  *
  * @author sabrina
  */
 public interface iCadastroRecepcionista {
-    public void CadastrarHospede(our_Hospede o);
+    
 
 }

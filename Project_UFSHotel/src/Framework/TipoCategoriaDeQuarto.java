@@ -10,48 +10,27 @@ package Framework;
  * @author Sabrina Miranda 743595
  * @author Vitor Sugaya 743605
  */
-import java.util.ArrayList;
 
 public abstract class TipoCategoriaDeQuarto {
 
-    String classificacao;
+    String categoria;
     int capacidade;
-
     float preco;
-    ArrayList<TipoServicos> servicos = new ArrayList<>(); // lista de serviços que esse quarto oferece
 
-    public void addServico(TipoServicos serv) {
-        servicos.add(serv);
-    }
-
-    public TipoCategoriaDeQuarto(String classificacao, int capacidade, float preco) {
-        this.classificacao = classificacao;
+    public TipoCategoriaDeQuarto(String categoria, int capacidade, float preco) {
+        this.categoria = categoria;
         this.capacidade = capacidade;
         this.preco = preco;
     }
 
-    public void rmServico(TipoServicos servToRemove) {
-        this.servicos.remove(servToRemove);
-    }
+
     //getters
-
-    public ArrayList<TipoServicos> getServicos() {
-        return servicos;
-    }
-
-    public void printServicos() {
-        servicos.forEach((serv) -> {
-            System.out.println(serv.getNomeDoServico());
-        });
-    }
-
-//getters
     public int getCapacidade() {
         return capacidade;
     }
 
-    public String getClassificacao() {
-        return classificacao;
+    public String getCategoria() {
+        return categoria;
     }
 
     public float getPreco() {
@@ -63,8 +42,8 @@ public abstract class TipoCategoriaDeQuarto {
         this.capacidade = capacidade;
     }
 
-    public void setClassificacao(String classificacao) {
-        this.classificacao = classificacao;
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 
     public void setPreco(float preco) {

@@ -5,6 +5,8 @@
  */
 package Framework;
 
+import Banco.SimulaBD;
+import Banco.iBancoRecepcionista;
 import java.util.List;
 import java.util.Date;
 
@@ -13,7 +15,7 @@ import java.util.Date;
  * @author Sabrina Miranda 743595
  * @author Vitor Sugaya 743605
  */
-public class TipoServicos {
+public abstract class TipoServicos {
 
     String nomeDoServico;
     List<TipoFuncionario> responsaveis;
@@ -57,6 +59,14 @@ public class TipoServicos {
 
     public void setResponsaveis(List<TipoFuncionario> responsaveis) {
         this.responsaveis = responsaveis;
+    }
+    
+    public void cadastrarServico() {
+        iBancoRecepcionista BR = SimulaBD.getInstanceBD();
+        
+        if (BR.addServico(this)) {
+            System.out.println("Serviço cadastrado");
+        }
     }
 
 }

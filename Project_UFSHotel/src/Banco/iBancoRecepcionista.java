@@ -23,10 +23,10 @@
  */
 package Banco;
 
-import Sistema.our_Servicos;
+import Framework.TipoServicos;
 import Framework.TipoRecepcionista;
 import Framework.TipoHospede;
-import Sistema.our_Reserva;
+import Framework.TipoReserva;
 
 /**
  * @author João Vitor Azevedo 743554
@@ -34,8 +34,11 @@ import Sistema.our_Reserva;
  * @author Vitor Sugaya 743605
  */
 public interface iBancoRecepcionista {
-        public boolean addServico(our_Servicos newServico);
-        public boolean isValidRecepcionista(TipoRecepcionista id);
-        public boolean isValidHospede(TipoHospede id);
-        public boolean addReserva(our_Reserva newReserva);
+    
+    public boolean addHospede(TipoHospede newHospede);
+    public boolean addRecepcionista(TipoRecepcionista newRecepcionista);
+    public boolean addServico(TipoServicos newServico);
+    public boolean isValidRecepcionista(TipoRecepcionista id);
+    public boolean isValidHospede(TipoHospede id);
+    public boolean addReserva(TipoReserva newReserva);
 }

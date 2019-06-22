@@ -42,7 +42,11 @@ public interface iBancoGerente {
     public boolean addQuarto(TipoQuarto newQuarto);
     public boolean addRecepcionista(TipoRecepcionista newRecep);
     public boolean addReserva(TipoReserva newReserva);
+    
     public TipoHospede getHospede(int id_hospede);
     public String getNomeGerente(int id);
+    public String getNomeRecepcionista(int id);
     public TipoQuarto getQuartoDisp();
+    public void listarRecepcionistas();
+    public void listarFuncionarios();
 }

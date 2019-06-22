@@ -49,14 +49,4 @@ public class our_Recepcionista extends TipoRecepcionista {
         this.periodo = periodo;
     }
 
-    @Override
-    public void EfetuarReserva() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void FazerCheckout() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
 }

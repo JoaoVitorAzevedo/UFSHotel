@@ -30,14 +30,7 @@ import Framework.TipoQuarto;
 import Framework.TipoReserva;
 import Framework.TipoServicos;
 import Framework.TipoTelefone;
-import Framework.ControladorDeConsultas;
-import Framework.ControladorDeReservas;
 import Framework.TipoGerente;
-import Framework.iCadastroGerente;
-import Framework.iConsultaGerente;
-import Framework.iConsultaRecepcionista;
-
-
 
 import Sistema.our_CategoriaDeQuarto;
 import Sistema.our_Endereco;
@@ -50,16 +43,10 @@ import Sistema.our_Recepcionista;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import Framework.iReservaGerente;
-import Framework.iReservaRecepcionista;
 import Sistema.our_Servicos;
 import Sistema.our_Telefone;
 
-/**
- *
- * @author 743554
- */
-public class SimulaBD implements iBancoGerente, iBancoRecepcionista, iBancoHospede {
+public class SimulaBD implements iBancoGerente, iBancoRecepcionista, iBancoHospede, iBancoReserva {
 
     private static SimulaBD single_instance = null;
     
@@ -79,16 +66,7 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista, iBancoHospe
     our_Pagamento pag1;
 
     Date data1;
-    Date data2;
-
-    // Referencias Interfaces, usar getters
-    iConsultaGerente iGerenteConsultador = new ControladorDeConsultas();
-    iReservaGerente iGerenteReservador = new ControladorDeReservas();
-
-    iReservaRecepcionista iRecepcionistaCadastrador = new ControladorDeReservas();
-    iConsultaRecepcionista iRecepcionistaConsultador = new ControladorDeConsultas();
-    
-   
+    Date data2;   
 
     //Listas para armazenamento do banco
     public static List<TipoHospede> listaHospede;
@@ -142,27 +120,6 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista, iBancoHospe
 
     }
 
-
-    public our_Hospede getHospede1() {
-        return hospede1;
-    }
-
-    public our_Recepcionista getRecep1() {
-        return recep1;
-    }
-
-    public Date getData1() {
-        return data1;
-    }
-
-    public Date getData2() {
-        return data2;
-    }
-
-    public our_Quarto getRoom1() {
-        return room1;
-    }
-    
     //Métodos para adicionar no banco
     @Override
     public boolean addRecepcionista(TipoRecepcionista newRecepcionista) {
@@ -214,6 +171,7 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista, iBancoHospe
         return null;
     }
 
+    @Override
     public String getNomeRecepcionista(int id) {
         for (TipoFuncionario recep : listaFuncionariosBD) {
             if (recep instanceof TipoRecepcionista) {
@@ -236,10 +194,20 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista, iBancoHospe
         return null;
     }
     
-    //Métodos para retornar um objeto especifico a partir de um id
-
+    @Override
+    public TipoHospede getHospedeByCPF(String cpf) {        
+        for(TipoHospede hosp: listaHospede){
+            String cpf_corr = hosp.getCPF();
+            if(cpf.equals(cpf_corr)){
+                return hosp;
+            }
+        }
+        return null;
+    }
     
-    public TipoHospede getHospede(int id_hospede) {
+    //Métodos para retornar um objeto especifico a partir de um id
+    @Override
+       public TipoHospede getHospede(int id_hospede) {
         for (TipoHospede tipoHospede : listaHospede) {
                 int id = tipoHospede.getID();
                 if (id == id_hospede) {
@@ -248,6 +216,7 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista, iBancoHospe
         }
         return null;
     }
+
     
     public our_Recepcionista getRecepcionista(int id) {
         for (TipoFuncionario or : listaFuncionariosBD) {
@@ -297,6 +266,7 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista, iBancoHospe
         return single_instance;
     }
     
+    @Override
     public List getListaHospede(){
         return listaHospede;
     }
@@ -316,22 +286,43 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista, iBancoHospe
         } else return hospede.getNome().equals(getNomeHospede(hospede.getID()));
     }
 
-    public iConsultaGerente getiGerenteConsultador() {
-        return iGerenteConsultador;
-    }
-
-    public iReservaRecepcionista getiRecepcionistaCadastrador() {
-        return iRecepcionistaCadastrador;
-    }
-
-    public iConsultaRecepcionista getiRecepcionistaConsultador() {
-        return iRecepcionistaConsultador;
+    @Override
+    public void listarReservas() {
+        
+        SimulaBD.listaReserva.forEach((r) -> {
+                System.out.println(r);       
+        });
     }
     
-    public iReservaGerente getiGerenteReservador() {
-        return iGerenteReservador;
+    @Override
+    public void listarRecepcionistas() {
+
+    SimulaBD.listaFuncionariosBD.forEach((c) -> {
+        if (c instanceof TipoRecepcionista)
+            System.out.println(c);
+            
+        });
+    }
+        
+    @Override
+    public void listarFuncionarios() {
+
+        SimulaBD.listaFuncionariosBD.forEach((c) -> {
+            System.out.println(c);
+        });
+
+    }
+    @Override
+    public void listarHospedes() {
+
+        SimulaBD.listaHospede.forEach((c) -> {
+            System.out.println(c);
+        });
+
     }
 
+    
 
+    
 
 }

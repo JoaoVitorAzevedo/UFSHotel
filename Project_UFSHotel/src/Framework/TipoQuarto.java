@@ -84,7 +84,6 @@ public abstract class TipoQuarto {
     }
 
     //Métodos com lógica de framework
-    
     public void cadastrarQuarto() {
         SimulaBD BG = SimulaBD.getInstanceBD();
 

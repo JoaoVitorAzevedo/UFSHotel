@@ -21,19 +21,19 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package Framework;
+package Banco;
 
+import Framework.TipoHospede;
+import Framework.TipoRecepcionista;
+import Framework.TipoReserva;
 
 /**
  *
  * @author sabrina
  */
-public interface iConsultaGerente {
-    public void listarRecepcionistas();
-    public void listarReservas();
-    public void listarHospedes();
-    public TipoHospede getHospede(int id);
-    public String getGerente(int id);
-    public void listarFuncionarios();
-    public TipoQuarto getQuartoDisp();
+public interface iBancoReserva {
+    public boolean addReserva(TipoReserva newReserva);
+    public boolean isValidRecepcionista(TipoRecepcionista recepcionista);
+    public boolean isValidHospede(TipoHospede hospede);
+    
 }

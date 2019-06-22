@@ -5,6 +5,8 @@
  */
 package Framework;
 
+import Banco.SimulaBD;
+import Banco.iBancoReserva;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.Date;
@@ -163,5 +165,21 @@ public abstract class TipoReserva {
     public void setRecepQueReservou(TipoRecepcionista recepQueReservou) {
         this.recepQueReservou = recepQueReservou;
     }
+    
+     
+    public void EfetuarReserva(){
+    iBancoReserva BR = new SimulaBD();
+        if(BR.isValidRecepcionista(recepQueReservou)){
+            if(BR.isValidHospede(cliQueReservou)){
+                if (BR.addReserva(this)) {
+                    System.out.println("Cadastrada a reserva");
+                }
+            }
+        }
 
+    }
+    
+    public void FazerCheckout(){
+        setDataOut(dataOut);
+    }
 }

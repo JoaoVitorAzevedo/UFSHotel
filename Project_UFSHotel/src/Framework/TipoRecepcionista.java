@@ -14,7 +14,7 @@ import Banco.iBancoRecepcionista;
  * @author Sabrina Miranda 743595
  * @author Vitor Sugaya 743605
  */
-public abstract class TipoRecepcionista extends TipoFuncionario implements iReservaRecepcionista {
+public abstract class TipoRecepcionista extends TipoFuncionario {
 
     int ramal;
 

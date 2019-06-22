@@ -26,7 +26,9 @@ package Banco;
 import Framework.TipoServicos;
 import Framework.TipoRecepcionista;
 import Framework.TipoHospede;
+import Framework.TipoQuarto;
 import Framework.TipoReserva;
+import java.util.List;
 
 /**
  * @author João Vitor Azevedo 743554
@@ -41,4 +43,12 @@ public interface iBancoRecepcionista {
     public boolean isValidRecepcionista(TipoRecepcionista id);
     public boolean isValidHospede(TipoHospede id);
     public boolean addReserva(TipoReserva newReserva);
+    
+    public TipoHospede getHospede(int id);
+    public TipoQuarto getQuartoDisp();
+    public TipoHospede getHospedeByCPF(String cpf);
+    public String getNomeHospede(int id);
+    public void listarReservas();
+    public void listarHospedes();
+    public List getListaHospede();
 }

@@ -33,8 +33,8 @@ public abstract class TipoHospede{
 
     }
     
-    protected TipoHospede( int id, String nome) {
-        this.idHospede = id;
+    protected TipoHospede(String nome) {
+        this.idHospede = TipoHospede.idAuto.incrementAndGet();
         this.cpf = "999.999.999-99";
         this.email = null;
         this.end = null;
@@ -89,37 +89,13 @@ public abstract class TipoHospede{
     }
     
     //métodos úteis
-    public TipoHospede getHospede(int id) {
-        SimulaBD BD = new SimulaBD();
-        List<TipoHospede> listaHospede = BD.getListaHospede();
-        
-        for(TipoHospede hosp: listaHospede){
-            int r_id = hosp.getID();
-            if(id == r_id)
-                return hosp;
-        }
-        return null;
-    }
-    
-    public TipoHospede getHospedeByCPF(String cpf) {
-        SimulaBD BD = new SimulaBD();
-        List<TipoHospede> listaHospede = BD.getListaHospede();
-        
-        for(TipoHospede hosp: listaHospede){
-            String cpf_corr = hosp.getCPF();
-            if(cpf.equals(cpf_corr)){
-                return hosp;
-            }
-        }
-        return null;
-    }
-    
     public void cadastrarHospede() {
-       iBancoHospede BH = SimulaBD.getInstanceBD();
+       iBancoHospede BH = (iBancoHospede) SimulaBD.getInstanceBD();
        
         if (BH.addHospede(this)) {
             System.out.println("Hospede cadastrado com sucesso");
         }
     }
+    
 
 }

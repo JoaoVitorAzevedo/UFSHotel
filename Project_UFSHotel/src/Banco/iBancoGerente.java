@@ -25,7 +25,6 @@ package Banco;
 
 import Framework.TipoGerente;
 import Framework.TipoHospede;
-import Framework.TipoReserva;
 import Framework.TipoQuarto;
 import Framework.TipoRecepcionista;
 

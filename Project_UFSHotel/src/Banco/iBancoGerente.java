@@ -36,13 +36,13 @@ import Framework.TipoRecepcionista;
  * @author Vitor Sugaya 743605
  */
 public interface iBancoGerente {
-    
+    //Métodos para adicionar no banco
     public boolean addGerente(TipoGerente newGerente);
     public boolean addHospede(TipoHospede newHospede);
     public boolean addQuarto(TipoQuarto newQuarto);
     public boolean addRecepcionista(TipoRecepcionista newRecep);
-    public boolean addReserva(TipoReserva newReserva);
     
+    //Métodos para resgatar do banco
     public TipoHospede getHospede(int id_hospede);
     public String getNomeGerente(int id);
     public String getNomeRecepcionista(int id);

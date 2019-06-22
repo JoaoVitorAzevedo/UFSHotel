@@ -271,36 +271,18 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista, iBancoHospe
         return listaHospede;
     }
 
-    //Retorna toda a lista de um TipoPessoa
-    @Override
-    public boolean isValidRecepcionista(TipoRecepcionista recepcionista) {
-        if (recepcionista.getNome() == null) {
-            return false;
-        } else return recepcionista.getNome().equals(getNomeRecepcionista(recepcionista.getID()));
-    }
-
-    @Override
-    public boolean isValidHospede(TipoHospede hospede) {
-        if (hospede.getNome() == null) {
-            return false;
-        } else return hospede.getNome().equals(getNomeHospede(hospede.getID()));
-    }
-
     @Override
     public void listarReservas() {
-        
         SimulaBD.listaReserva.forEach((r) -> {
-                System.out.println(r);       
+            System.out.println("ID da reserva: "+r.getIdReserva()+" \nNome do Cliente: "+r.getNomeCli());       
         });
     }
     
     @Override
     public void listarRecepcionistas() {
-
     SimulaBD.listaFuncionariosBD.forEach((c) -> {
         if (c instanceof TipoRecepcionista)
-            System.out.println(c);
-            
+            System.out.println(c);   
         });
     }
         
@@ -314,11 +296,9 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista, iBancoHospe
     }
     @Override
     public void listarHospedes() {
-
         SimulaBD.listaHospede.forEach((c) -> {
             System.out.println(c);
         });
-
     }
 
     

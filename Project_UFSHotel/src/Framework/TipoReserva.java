@@ -20,53 +20,47 @@ public abstract class TipoReserva {
     Date dataOut;
     int idReserva;
     TipoHospede cliQueReservou;
-    TipoRecepcionista recepQueReservou;
     TipoQuarto quarto;
     TipoPagamento pag;
     Map<String, Double> Consumido;
     ArrayList<TipoServicos> servicos = new ArrayList<>(); // lista de serviços pertencentes a reserva
 
-    public TipoReserva(Date dataIn, Date dataOut, TipoHospede cli, TipoRecepcionista recep, TipoQuarto quarto, TipoPagamento pag) {
+    public TipoReserva(Date dataIn, Date dataOut, TipoHospede cli, TipoQuarto quarto, TipoPagamento pag) {
         this.Consumido = new HashMap<>();
         this.dataIn = dataIn;
         this.dataOut = dataOut;
         this.idReserva = TipoReserva.idGen.incrementAndGet();
         this.cliQueReservou = cli;
-        this.recepQueReservou = recep;
         this.quarto = quarto;
         this.pag = pag;
 
     }   
 
-    public TipoReserva(Date dataIn, int dias, TipoHospede cli, TipoRecepcionista recep, TipoQuarto quarto, TipoPagamento pag) {
+    public TipoReserva(Date dataIn, int dias, TipoHospede cli, TipoQuarto quarto, TipoPagamento pag) {
         this.Consumido = new HashMap<>();
         this.dataIn = dataIn;
         this.dataOut = incrementDays(dataIn, dias);
         this.idReserva = idGen.incrementAndGet();
         this.cliQueReservou = cli;
-        this.recepQueReservou = recep;
         this.quarto = quarto;
         this.pag = pag;
 
     }
 
-    public TipoReserva(Date dataIn, Date dataOut, TipoHospede cli, TipoRecepcionista recep, TipoQuarto quarto) {
+    public TipoReserva(Date dataIn, Date dataOut, TipoHospede cli, TipoQuarto quarto) {
         this.Consumido = new HashMap<>();
         this.dataIn = dataIn;
         this.dataOut = dataOut;
-       // this.idReserva = this.idGen.incrementAndGet();
+        this.idReserva = TipoReserva.idGen.incrementAndGet();
         this.cliQueReservou = cli;
-        this.recepQueReservou = recep;
         this.quarto = quarto;
         
 
     }
     
     private Date incrementDays(Date dataIn, int dias){
-        System.out.println(dataIn.toString());
         int a_day = 86400000;
         Date new_dt = new Date(dataIn.getTime() + dias * a_day);
-        System.out.println(new_dt);
         return new_dt;
     }
     
@@ -82,15 +76,11 @@ public abstract class TipoReserva {
         return servicos;
     }
 
-    //Retorna o preco total de todos os serviços cadastrados para esse quarto
+    //Retorna o preco total de todos os serviços cadastrados para esse quarto //Precisa fazer esse método
     public float getPrecoServicos() {
-        //return(this.TipoCategoriaDeQuarto.getPrecoServicos());    
-        return 0.0f;
+     return 0;
     }
-    
-    public void addPrecoServico(float preco) {
-        //this.status.addPrecoServico(preco);
-    }
+
     
     public void printServicos() {
         servicos.forEach((serv) -> {
@@ -100,7 +90,7 @@ public abstract class TipoReserva {
 
     @Override
     public String toString() {
-        return "DataIn: "+dataIn+"\nDataOut: "+dataOut+"\nCliente "+cliQueReservou+"\nRecepcionista "+recepQueReservou+"\nQuarto "+quarto; //To change body of generated methods, choose Tools | Templates.
+        return "DataIn: "+dataIn+"\nDataOut: "+dataOut+"\nCliente "+cliQueReservou+"\nQuarto "+quarto; //To change body of generated methods, choose Tools | Templates.
     }
 
 
@@ -120,6 +110,10 @@ public abstract class TipoReserva {
     public TipoHospede getCliQueReservou() {
         return cliQueReservou;
     }
+    
+    public String getNomeCli(){
+        return cliQueReservou.getNome();
+    }
 
     public TipoQuarto getQuarto() {
         return quarto;
@@ -127,10 +121,6 @@ public abstract class TipoReserva {
 
     public int getIdReserva() {
         return idReserva;
-    }
-
-    public TipoRecepcionista getRecepQueReservou() {
-        return recepQueReservou;
     }
 
     public Date getDataOut() {
@@ -161,25 +151,16 @@ public abstract class TipoReserva {
     public void setDataIn(Date dataIn) {
         this.dataIn = dataIn;
     }
-
-    public void setRecepQueReservou(TipoRecepcionista recepQueReservou) {
-        this.recepQueReservou = recepQueReservou;
-    }
-    
      
     public void EfetuarReserva(){
     iBancoReserva BR = new SimulaBD();
-        if(BR.isValidRecepcionista(recepQueReservou)){
-            if(BR.isValidHospede(cliQueReservou)){
-                if (BR.addReserva(this)) {
-                    System.out.println("Cadastrada a reserva");
-                }
-            }
+        if(BR.addReserva(this)) {
+            System.out.println("Reserva cadastrada com sucesso");
         }
-
     }
     
-    public void FazerCheckout(){
+    public void FazerCheckout(Date dataOut){
         setDataOut(dataOut);
     }
+ 
 }

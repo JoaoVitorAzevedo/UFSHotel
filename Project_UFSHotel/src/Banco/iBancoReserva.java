@@ -23,17 +23,8 @@
  */
 package Banco;
 
-import Framework.TipoHospede;
-import Framework.TipoRecepcionista;
 import Framework.TipoReserva;
 
-/**
- *
- * @author sabrina
- */
 public interface iBancoReserva {
-    public boolean addReserva(TipoReserva newReserva);
-    public boolean isValidRecepcionista(TipoRecepcionista recepcionista);
-    public boolean isValidHospede(TipoHospede hospede);
-    
+    public boolean addReserva(TipoReserva newReserva);    
 }

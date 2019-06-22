@@ -29,8 +29,6 @@ public abstract class TipoServicos {
         this.precoDoServico = precoDoServico;
     }
     
-    
-
     //getters
     public float getPrecoDoServico() {
         return precoDoServico;

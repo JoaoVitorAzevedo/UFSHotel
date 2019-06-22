@@ -49,7 +49,7 @@ public abstract class TipoPagamento {
         this.ModalidadePagamento = ModalidadePagamento;
     }
 
-    public void setValor(float valo) {
+    public void setValor(float valor) {
         this.valor = valor;
     }
 
@@ -75,6 +75,22 @@ public abstract class TipoPagamento {
             this.statusPagamento = false;
         }
         this.valor += valor;
+    }
+    
+       
+    public float calcularDesconto(float percentDisc) {
+        return this.valor * (1 - (percentDisc / 100));
+    }
+    
+    public boolean addDesconto(int percentDisc) {
+        float Desconto, valorNovo;
+
+        Desconto = calcularDesconto(percentDisc);
+        valorNovo = this.valor - Desconto;
+
+        this.setValor(valorNovo);
+
+        return true;
     }
 
 }

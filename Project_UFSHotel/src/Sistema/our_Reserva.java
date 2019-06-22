@@ -11,9 +11,7 @@ import java.util.Date;
 import Framework.TipoHospede;
 import Framework.TipoPagamento;
 import Framework.TipoQuarto;
-import Framework.TipoRecepcionista;
 import Framework.TipoReserva;
-import java.util.Map;
 
 /**
  * @author João Vitor Azevedo 743554
@@ -22,64 +20,22 @@ import java.util.Map;
  */
 public class our_Reserva extends TipoReserva {
 
-    public our_Reserva(Date dataIn, Date dataOut, TipoHospede cli, TipoRecepcionista recep, TipoQuarto quarto, TipoPagamento pag) {
-
-        super(dataIn, dataOut, cli, recep, quarto, pag);
-
+    public our_Reserva(Date dataIn, Date dataOut, TipoHospede cli, TipoQuarto quarto, TipoPagamento pag) {
+        super(dataIn, dataOut, cli, quarto, pag);
     }
     
-    public our_Reserva(Date dataIn, int dias, TipoHospede cli, TipoRecepcionista recep, TipoQuarto quarto, TipoPagamento pag) {
-
-        super(dataIn, dias, cli, recep, quarto, pag);
-        
-
+    public our_Reserva(Date dataIn, int dias, TipoHospede cli, TipoQuarto quarto, TipoPagamento pag) {
+        super(dataIn, dias, cli, quarto, pag);
     }
     
 
-    public our_Reserva(Date dataIn, Date dataOut, TipoHospede cli, TipoRecepcionista recep, TipoQuarto quarto) {
-
-        super(dataIn, dataOut, cli, recep, quarto);
-
+    public our_Reserva(Date dataIn, Date dataOut, TipoHospede cli, TipoQuarto quarto) {
+        super(dataIn, dataOut, cli, quarto);
     }
 
     @Override
     public String toString() {
-        return super.toString(); //To change body of generated methods, choose Tools | Templates.
+        return super.toString();
     }
     
-    
-            
-
-    public double getTotalConsumido() {
-        double total = 0;
-        Map<String, Double> Consumido;
-        Consumido = getConsumido();
-        for (Map.Entry<String, Double> entry : Consumido.entrySet()) {
-            Double v = entry.getValue();
-            total += v;
-        }
-
-        return total;
-    }
-
-    public float calcularDesconto(float percentDisc) {
-        float preco;
-        TipoPagamento pag = getPag();
-        preco = pag.getValor();
-
-        return preco * (1 - (percentDisc / 100));
-    }
-
-    public boolean addDesconto(int percentDisc) {
-        float Desconto, valorNovo;
-        TipoPagamento pag = getPag();
-
-        Desconto = calcularDesconto(percentDisc);
-        valorNovo = pag.getValor() - Desconto;
-
-        pag.setValor(valorNovo);
-
-        return true;
-    }
-
 }

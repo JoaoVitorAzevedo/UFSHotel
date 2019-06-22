@@ -37,13 +37,12 @@ import java.util.List;
  */
 public interface iBancoRecepcionista {
     
+    //Métodos para adicionar no banco
     public boolean addHospede(TipoHospede newHospede);
     public boolean addRecepcionista(TipoRecepcionista newRecepcionista);
     public boolean addServico(TipoServicos newServico);
-    public boolean isValidRecepcionista(TipoRecepcionista id);
-    public boolean isValidHospede(TipoHospede id);
-    public boolean addReserva(TipoReserva newReserva);
     
+    //Métodos para resgatar do banco
     public TipoHospede getHospede(int id);
     public TipoQuarto getQuartoDisp();
     public TipoHospede getHospedeByCPF(String cpf);

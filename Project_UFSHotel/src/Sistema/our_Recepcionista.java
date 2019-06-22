@@ -24,23 +24,6 @@ public class our_Recepcionista extends TipoRecepcionista {
         super(0, null, null, null, nome, null, null, null);
     }
 
-    @Override
-    public String toString() {
-        return super.toString();
-    }
-
-    @Override
-    public boolean cadastrarReserva(int id, TipoHospede hospede, Date dataIn, Date dataOut) {
-        //our_Reserva reserv = new our_Reserva();
-        if (true) {
-            System.out.println("Hospede " + hospede.getNome() + " cadastrado com sucesso!");
-            return true;
-        } else { // algo deu errado
-            System.out.println("Algo deu mto errado moçx :/");
-            return false;
-        }
-    }
-
     public String getPeriodo() {
         return periodo;
     }

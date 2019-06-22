@@ -33,8 +33,6 @@ public abstract class TipoRecepcionista extends TipoFuncionario {
         return super.toString() + "Ramal: " + ramal;
     }
 
-    public abstract boolean cadastrarReserva(int id, TipoHospede hospede, Date dataIn, Date dataOut);
-
     // getters 
     public int getRamal() {
         return ramal;
@@ -44,24 +42,12 @@ public abstract class TipoRecepcionista extends TipoFuncionario {
     public void setRamal(int ramal) {
         this.ramal = ramal;
     }
-
-    //metodos
-    //funcionario nao sabe o que é um hospede
-    public void cadastrarHospede(TipoHospede hospede) {
-        iBancoRecepcionista BD = SimulaBD.getInstanceBD();
         
-        if ( BD.addHospede(hospede)) {
-            System.out.println("Recepcionista cadastrou um hospede");
-        }
-
-    }
-
-    protected void cadastrarRecepcionista() {
+    public void cadastrarRecepcionista() {
         iBancoRecepcionista BR = SimulaBD.getInstanceBD();
         
-        if ( BR.addRecepcionista(this)) {
-            System.out.println("Cadastrada recepcionista");
+        if (BR.addRecepcionista(this)){
+            System.out.println("Recepcionista cadastrada com sucesso");
         }
     }
-
 }

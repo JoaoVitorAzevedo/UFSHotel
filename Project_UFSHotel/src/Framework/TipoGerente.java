@@ -24,29 +24,12 @@ public abstract class TipoGerente extends TipoFuncionario {
 
     protected TipoGerente(String setor, String turno, String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
         super(setor, turno, cpf, nome, email, end, tel);
-
     }
 
     @Override
     public String toString() {
         return "\n--Dados do Gerente-- \n" + super.toString();
     }
-
-    void cadastrarPessoa() {
-        System.out.println("Pessoa cadastrada");
-    }
-
-    void cadastrarFuncionario() {
-        System.out.println("Cadastrar funcionario chamado no gerente ! (aquele definido no framework, wtf");
-        //manipular BD?
-        //
-    }
-
-    @Override
-    public int getID() {
-        return idFuncionario;
-    }
-    
     
     //Métodos úteis
     public void cadastrarGerente() {
@@ -58,20 +41,4 @@ public abstract class TipoGerente extends TipoFuncionario {
 
     }
     
-    public void cadastrarRecepcionista(TipoRecepcionista recepcionista) {
-        iBancoGerente BG = SimulaBD.getInstanceBD();
-        
-        if (BG.addRecepcionista(recepcionista)){
-            System.out.println("Gerente cadastrou uma recepcionista");
-        }
-    }
-    
-    public void cadastrarHospede(TipoHospede hospede) {
-        iBancoGerente BG = SimulaBD.getInstanceBD();
-        
-        if ( BG.addHospede(hospede) ) {
-            System.out.println("Gerente cadastrou um hospede");
-        }
-    }
-
 }

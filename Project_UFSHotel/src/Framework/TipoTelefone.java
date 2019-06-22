@@ -27,7 +27,6 @@ public abstract class TipoTelefone {
         return "Fone: " + ddd + numero + "\n";
     }
     //getters 
-
     public String getCodigoPais() {
         return codigoPais;
     }

@@ -14,7 +14,7 @@ import java.util.List;
 public class GUI_Recepcionista {
     
     public static void main(String args[]){
-    iBancoRecepcionista mConsulta = SimulaBD.getInstanceBD();
+    iBancoRecepcionista mRecepcionista = SimulaBD.getInstanceBD();
     
     //Cadastrar hospede    
     our_Hospede mohammed = new our_Hospede("Mohammed Salim", "Sri Lanka");
@@ -26,17 +26,17 @@ public class GUI_Recepcionista {
     
     //Lista todos os hospedes cadastrados fazendo uso da sobrescrita de método (há atributos a mais na classe filha)
     System.out.println("~~Listando todos os hospedes~~");
-    List<our_Hospede> listaHospede = mConsulta.getListaHospede();
+    List<our_Hospede> listaHospede = mRecepcionista.getListaHospede();
     our_Hospede.listarOurHospede(listaHospede);
     System.out.println("\n");
     
     System.out.println("~~Buscando Hospede de ID 1~~");
     //Retorna o nome do Hospede a partir do id
-    System.out.println(mConsulta.getNomeHospede(1));
+    System.out.println(mRecepcionista.getNomeHospede(1));
     System.out.println("\n");
     
     //Construindo uma reserva
-    our_Quarto quartoDisp = (our_Quarto) mConsulta.getQuartoDisp();
+    our_Quarto quartoDisp = (our_Quarto) mRecepcionista.getQuartoDisp();
     Date dataIn = new Date(2019, 0, 21);
     our_Pagamento pagamento = new our_Pagamento(400, "Crédito", 3, false);
     
@@ -44,8 +44,8 @@ public class GUI_Recepcionista {
     Reserva1.EfetuarReserva();
     System.out.println("\n");
     
-     System.out.println("~~Listando todas as reservas~~");
-    mConsulta.listarReservas();
+    System.out.println("~~Listando todas as reservas~~");
+    mRecepcionista.listarReservas();
     
     //Realizando pagamento
     

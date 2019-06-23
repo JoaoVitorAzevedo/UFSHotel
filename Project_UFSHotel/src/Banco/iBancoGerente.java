@@ -27,6 +27,10 @@ import Framework.TipoGerente;
 import Framework.TipoHospede;
 import Framework.TipoQuarto;
 import Framework.TipoRecepcionista;
+import Framework.TipoReserva;
+import Framework.TipoServicos;
+import java.util.Date;
+import java.util.List;
 
 
 /**
@@ -40,12 +44,21 @@ public interface iBancoGerente {
     public boolean addHospede(TipoHospede newHospede);
     public boolean addQuarto(TipoQuarto newQuarto);
     public boolean addRecepcionista(TipoRecepcionista newRecep);
+    public boolean addServico(TipoServicos newServico);
+    public boolean addReserva(TipoReserva newReserva);
     
     //Métodos para resgatar do banco
     public TipoHospede getHospede(int id_hospede);
     public String getNomeGerente(int id);
     public String getNomeRecepcionista(int id);
+    public String getNomeHospede(int id);
+    public TipoRecepcionista getRecepcionista(int id);    
     public TipoQuarto getQuartoDisp();
+    public TipoReserva getReserva(int id);
+    public List getListaHospede();
+    public List getListaFuncionario();
+    public List getListaQuarto();
     public void listarRecepcionistas();
     public void listarFuncionarios();
+    public void listarReservas();
 }

@@ -17,11 +17,6 @@ import Sistema.our_Gerente;
  */
 public abstract class TipoGerente extends TipoFuncionario {
 
-    public TipoGerente() {
-        super(null, null, null, null, null, null, null);
-        System.out.println("Criei Gerente Nulo");
-    }
-
     protected TipoGerente(String setor, String turno, String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
         super(setor, turno, cpf, nome, email, end, tel);
     }

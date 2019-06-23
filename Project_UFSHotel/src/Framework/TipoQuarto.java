@@ -44,11 +44,11 @@ public abstract class TipoQuarto {
         return status;
     }    
     public boolean getStatusLimpeza() {
-        return status.limpeza;
+        return status.isLimpavel();
     }
 
     public boolean getStatusDisponibilidade() {
-        return status.disponibilidade;
+        return status.isVago();
     }
 
     public TipoCategoriaDeQuarto getTipo() {

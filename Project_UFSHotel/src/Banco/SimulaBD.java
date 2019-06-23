@@ -208,18 +208,6 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista, iBancoHospe
         return null;
     }
     
-    //Retorna um hospede a partir do cpf
-    @Override
-    public TipoHospede getHospedeByCPF(String cpf) {        
-        for(TipoHospede hosp: listaHospedes){
-            String cpf_corr = hosp.getCPF();
-            if(cpf.equals(cpf_corr)){
-                return hosp;
-            }
-        }
-        return null;
-    }
-    
      //Métodos para retornar um objeto especifico a partir de um id
     @Override
        public TipoHospede getHospede(int id_hospede) {
@@ -233,22 +221,21 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista, iBancoHospe
     }
 
     
-    public our_Recepcionista getRecepcionista(int id) {
+    public TipoRecepcionista getRecepcionista(int id) {
         for (TipoFuncionario or : listaFuncionarios) {
             if (or instanceof TipoRecepcionista) {
                 int id_r = or.getID();
                 if (id == id_r) {
-                    return (our_Recepcionista) or;
+                    return (TipoRecepcionista) or;
                 }
             }
         }
         return null;
     }
     
-    public TipoReserva getReserva(Date dt_in) {
+    public TipoReserva getReserva(int id) {
         for(TipoReserva res: listaReservas){
-            Date r_id = res.getDataIn();
-            if(dt_in == r_id)
+            if(id == res.getIdReserva())
                 return res;
         }
         return null;
@@ -258,7 +245,7 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista, iBancoHospe
     @Override
     public TipoQuarto getQuartoDisp() {
         for(TipoQuarto quarto: listaQuartos){
-            if(quarto.getStatusDisponibilidade() == true)
+            if(quarto.getStatusDisponibilidade()== true)
                 return quarto;
         }
         return null;
@@ -288,7 +275,7 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista, iBancoHospe
     public void listarRecepcionistas() {
     SimulaBD.listaFuncionarios.forEach((c) -> {
         if (c instanceof TipoRecepcionista)
-            System.out.println(c);   
+            System.out.println(c.toString());   
         });
     }
         
@@ -296,14 +283,14 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista, iBancoHospe
     public void listarFuncionarios() {
 
         SimulaBD.listaFuncionarios.forEach((c) -> {
-            System.out.println(c);
+            System.out.println(c.toString());
         });
 
     }
     @Override
     public void listarHospedes() {
         SimulaBD.listaHospedes.forEach((c) -> {
-            System.out.println(c);
+            System.out.println(c.toString());
         });
     }
 

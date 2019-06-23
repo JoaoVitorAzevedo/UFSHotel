@@ -46,11 +46,13 @@ public class GUI_Recepcionista {
     
     System.out.println("~~Listando todas as reservas~~");
     mRecepcionista.listarReservas();
+    System.out.println("\n");
     
-    System.out.println(Reserva1.getPrecoTotal());
-    
-    //Realizando pagamento
+    System.out.println("~~Realizando pagamento de Reserva1~~");
+    System.out.println("Valor a pagar: R$"+Reserva1.getPrecoTotal());
+    Reserva1.getPag().receberPagamento(100);
            
+    
     }
     
     

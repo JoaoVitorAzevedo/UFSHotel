@@ -45,7 +45,6 @@ public interface iBancoRecepcionista {
     //Métodos para resgatar do banco
     public TipoHospede getHospede(int id);
     public TipoQuarto getQuartoDisp();
-    public TipoHospede getHospedeByCPF(String cpf);
     public String getNomeHospede(int id);
     public void listarReservas();
     public void listarHospedes();

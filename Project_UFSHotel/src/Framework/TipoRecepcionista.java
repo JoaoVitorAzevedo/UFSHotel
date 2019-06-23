@@ -5,7 +5,6 @@
  */
 package Framework;
 
-import java.util.Date;
 import Banco.SimulaBD;
 import Banco.iBancoRecepcionista;
 

@@ -6,7 +6,7 @@
 package Framework;
 
 import Banco.SimulaBD;
-import Banco.iBancoReserva;
+import Banco.iBancoGerente;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.Date;
@@ -126,8 +126,8 @@ public abstract class TipoReserva {
     }
      
     public void EfetuarReserva(){
-    iBancoReserva BR = new SimulaBD();
-        if(BR.addReserva(this)) {
+    iBancoGerente BG = new SimulaBD();
+        if(BG.addReserva(this)) {
             System.out.println("Reserva cadastrada com sucesso");
         }
     }

@@ -46,7 +46,7 @@ import java.util.List;
 import Sistema.our_Servicos;
 import Sistema.our_Telefone;
 
-public class SimulaBD implements iBancoGerente, iBancoRecepcionista, iBancoHospede, iBancoReserva {
+public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
 
     private static SimulaBD single_instance = null;
     
@@ -256,9 +256,11 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista, iBancoHospe
     public List getListaHospede(){
         return listaHospedes;
     }
+    @Override
     public List getListaFuncionario(){
         return listaFuncionarios;
     }
+    @Override
     public List getListaQuarto(){
         return listaQuartos;
     }

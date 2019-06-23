@@ -6,6 +6,7 @@
 package Framework;
 
 import Banco.SimulaBD;
+import Banco.iBancoGerente;
 import Banco.iBancoRecepcionista;
 
 /**
@@ -43,9 +44,9 @@ public abstract class TipoRecepcionista extends TipoFuncionario {
     }
         
     public void cadastrarRecepcionista() {
-        iBancoRecepcionista BR = SimulaBD.getInstanceBD();
+        iBancoGerente BG = SimulaBD.getInstanceBD();
         
-        if (BR.addRecepcionista(this)){
+        if (BG.addRecepcionista(this)){
             System.out.println("Recepcionista cadastrada com sucesso");
         }
     }

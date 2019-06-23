@@ -6,6 +6,7 @@
 package Framework;
 
 import Banco.SimulaBD;
+import Banco.iBancoGerente;
 import Banco.iBancoRecepcionista;
 import java.util.List;
 import java.util.Date;
@@ -60,9 +61,9 @@ public abstract class TipoServicos {
     }
     
     public void cadastrarServico() {
-        iBancoRecepcionista BR = SimulaBD.getInstanceBD();
+        iBancoGerente BG = SimulaBD.getInstanceBD();
         
-        if (BR.addServico(this)) {
+        if (BG.addServico(this)) {
             System.out.println("Serviço cadastrado");
         }
     }

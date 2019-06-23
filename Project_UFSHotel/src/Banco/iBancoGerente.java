@@ -61,4 +61,5 @@ public interface iBancoGerente {
     public void listarRecepcionistas();
     public void listarFuncionarios();
     public void listarReservas();
+    public void listarHospedes();
 }

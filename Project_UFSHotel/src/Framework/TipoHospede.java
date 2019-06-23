@@ -6,7 +6,7 @@
 package Framework;
 
 import Banco.SimulaBD;
-import Banco.iBancoHospede;
+import Banco.iBancoGerente;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -90,9 +90,9 @@ public abstract class TipoHospede{
     
     //métodos úteis
     public void cadastrarHospede() {
-       iBancoHospede BH = (iBancoHospede) SimulaBD.getInstanceBD();
+       iBancoGerente BG = SimulaBD.getInstanceBD();
        
-        if (BH.addHospede(this)) {
+        if (BG.addHospede(this)) {
             System.out.println("Hospede cadastrado com sucesso");
         }
     }

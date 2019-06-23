@@ -63,6 +63,7 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista, iBancoHospe
     our_CategoriaDeQuarto suite;
     our_Gerente gerenteRoberto;
     our_Quarto room1;
+    our_Quarto room2;
     our_Pagamento pag1;
 
     Date data1;
@@ -92,8 +93,9 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista, iBancoHospe
         this.recep1 = new our_Recepcionista(31,"Recepção", "Tarde", "432.343.222.41", "Juju Recepcionista", "my@email.com", endereco1, telefone1, "Tarde de novo");
 
         Casal = new our_CategoriaDeQuarto("Casal", 2, 120.0f);
+        this.suite = new our_CategoriaDeQuarto("Suite", 3, 180.0f);
 
-        endereco1 = new our_Endereco("17523275", "252", "logradouro", "blablabla", "Jardim Guanabara", "Marília", "Ceará");
+        endereco1 = new our_Endereco("17523275", "252", "Jardim Guanabara", "Marília", "Ceará");
 
         hospede1 = new our_Hospede("432.883.228-81", "Joao Vitor", "fulanodetal@gmail.com", endereco1, telefone1);
         
@@ -101,9 +103,12 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista, iBancoHospe
         serv2 = new our_Servicos("Massagem", null, 22.0f);
         serv3 = new our_Servicos("Frigobar Liberado", null, 22.0f);
         
-        this.suite = new our_CategoriaDeQuarto("Suite", 3, 180.0f);
-
+        
         room1 = new our_Quarto(7, suite);
+        room1.setLimpeza(false);
+        
+        room2 = new our_Quarto(7, Casal);
+        room2.setDisponibilidade(true);
 
         gerenteRoberto = new our_Gerente("gerencia ue","tarde", "4372837238-12", "Robertinho de Souza", "ro_berto@gmail.com", endereco1, telefone1);
         

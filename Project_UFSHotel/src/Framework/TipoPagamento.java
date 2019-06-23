@@ -17,18 +17,10 @@ public abstract class TipoPagamento {
     int qtdParcelas;
     boolean statusPagamento;
 
-    public TipoPagamento(float valor, String ModalidadePagamento, int qtdParcelas, boolean statusPagamento) {
-        this.valor = valor;
+    public TipoPagamento(String ModalidadePagamento, int qtdParcelas, boolean statusPagamento) {
         this.ModalidadePagamento = ModalidadePagamento;
         this.qtdParcelas = qtdParcelas;
         this.statusPagamento = statusPagamento;
-    }
-    
-    public TipoPagamento(float valor) {
-        this.valor = valor;
-        this.ModalidadePagamento = null;
-        this.qtdParcelas = 0;
-        this.statusPagamento = false;
     }
 
     //getters
@@ -47,10 +39,6 @@ public abstract class TipoPagamento {
     //setters
     public void setModalidadePagamento(String ModalidadePagamento) {
         this.ModalidadePagamento = ModalidadePagamento;
-    }
-
-    public void setValor(float valor) {
-        this.valor = valor;
     }
 
     public void setQtdParcelas(int qtdParcelas) {
@@ -88,7 +76,6 @@ public abstract class TipoPagamento {
         Desconto = calcularDesconto(percentDisc);
         valorNovo = this.valor - Desconto;
 
-        this.setValor(valorNovo);
 
         return true;
     }

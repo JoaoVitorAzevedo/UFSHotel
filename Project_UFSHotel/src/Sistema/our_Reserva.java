@@ -28,11 +28,6 @@ public class our_Reserva extends TipoReserva {
         super(dataIn, dias, cli, quarto, pag);
     }
     
-
-    public our_Reserva(Date dataIn, Date dataOut, TipoHospede cli, TipoQuarto quarto) {
-        super(dataIn, dataOut, cli, quarto);
-    }
-
     @Override
     public String toString() {
         return super.toString();

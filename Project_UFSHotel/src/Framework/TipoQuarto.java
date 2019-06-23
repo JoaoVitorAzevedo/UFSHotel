@@ -29,11 +29,6 @@ public abstract class TipoQuarto {
 
     }
 
-    public TipoQuarto(int idQuarto) {
-        this.idQuarto = idQuarto;
-
-    }
-
     //getters
     public int getAndar() {
         return andar;
@@ -61,8 +56,6 @@ public abstract class TipoQuarto {
     }
 
     //setters
-    
-
     public void setTipo(TipoCategoriaDeQuarto tipo) {
         this.tipo = tipo;
     }

@@ -12,6 +12,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 public abstract class TipoReserva {
 
@@ -22,7 +23,8 @@ public abstract class TipoReserva {
     TipoHospede cliQueReservou;
     TipoQuarto quarto;
     TipoPagamento pag;
-    Map<String, Double> Consumido;
+    Float preco;
+    Map<String, Float> Consumido;
     ArrayList<TipoServicos> servicos = new ArrayList<>(); // lista de serviços pertencentes a reserva
 
     public TipoReserva(Date dataIn, Date dataOut, TipoHospede cli, TipoQuarto quarto, TipoPagamento pag) {
@@ -33,6 +35,7 @@ public abstract class TipoReserva {
         this.cliQueReservou = cli;
         this.quarto = quarto;
         this.pag = pag;
+        this.preco = CalcularPreco();
 
     }   
 
@@ -44,17 +47,7 @@ public abstract class TipoReserva {
         this.cliQueReservou = cli;
         this.quarto = quarto;
         this.pag = pag;
-
-    }
-
-    public TipoReserva(Date dataIn, Date dataOut, TipoHospede cli, TipoQuarto quarto) {
-        this.Consumido = new HashMap<>();
-        this.dataIn = dataIn;
-        this.dataOut = dataOut;
-        this.idReserva = TipoReserva.idGen.incrementAndGet();
-        this.cliQueReservou = cli;
-        this.quarto = quarto;
-        
+        this.preco = CalcularPreco();
 
     }
     
@@ -64,39 +57,19 @@ public abstract class TipoReserva {
         return new_dt;
     }
     
-    public void addServico(TipoServicos serv) {
-        this.servicos.add(serv);
-    }
-    
-    public void rmServico(TipoServicos servToRemove) {
-        this.servicos.remove(servToRemove);
-    }
-    
-    public ArrayList<TipoServicos> getServicos() {
-        return servicos;
-    }
-
-    //Retorna o preco total de todos os serviços cadastrados para esse quarto //Precisa fazer esse método
-    public float getPrecoServicos() {
-     return 0;
-    }
-
-    
-    public void printServicos() {
-        servicos.forEach((serv) -> {
-            System.out.println(serv.getNomeDoServico());
-        });
-    }
-
     @Override
     public String toString() {
-        return "DataIn: "+dataIn+"\nDataOut: "+dataOut+"\nCliente "+cliQueReservou+"\nQuarto "+quarto; //To change body of generated methods, choose Tools | Templates.
+        return "DataIn: "+dataIn+"\nDataOut: "+dataOut+"\nCliente: "+cliQueReservou+"\nQuarto: "+quarto;
     }
-
-
+    
+  
     //getters
     public Map getConsumido() {
         return Consumido;
+    }
+    
+    public float getPrecoTotal(){
+        return preco;
     }
 
     public TipoPagamento getPag() {
@@ -128,7 +101,7 @@ public abstract class TipoReserva {
     }
 
     //setters
-    public void addConsumido(Double valor, String produto) {
+    public void addConsumido(Float valor, String produto) {
         Consumido.put(produto, valor);
     }
 
@@ -162,5 +135,54 @@ public abstract class TipoReserva {
     public void FazerCheckout(Date dataOut){
         setDataOut(dataOut);
     }
- 
+    
+    public void addServico(TipoServicos serv) {
+        this.servicos.add(serv);
+    }
+    
+    public void rmServico(TipoServicos servToRemove) {
+        this.servicos.remove(servToRemove);
+    }
+    
+    public ArrayList<TipoServicos> getServicos() {
+        return servicos;
+    }
+
+    //Retorna o preco total de todos os serviços cadastrados para esse quarto
+    public float getPrecoServicos() {
+        Float Total = null;
+    
+        for (TipoServicos or : servicos) {
+            Total += or.getPrecoDoServico();
+                
+        }
+        return Total;
+    }
+
+    
+    public void printServicos() {
+        servicos.forEach((serv) -> {
+            System.out.println(serv.getNomeDoServico());
+        });
+    }
+    
+    public float getPrecoConsumidos(){
+        Float Total = null;
+        
+        for(Entry<String, Float> entry : Consumido.entrySet()) {
+            Total += entry.getValue();
+        }
+        
+        return Total;
+    }
+
+    private Float CalcularPreco() {
+        Float PrecoTotal = null;
+       
+        PrecoTotal += this.getPrecoConsumidos();
+        PrecoTotal += this.getPrecoServicos();
+        PrecoTotal += this.getQuarto().getTipo().getPreco();
+        
+        return PrecoTotal;
+    }
 }

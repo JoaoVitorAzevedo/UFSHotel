@@ -38,7 +38,7 @@ public class GUI_Recepcionista {
     //Construindo uma reserva
     our_Quarto quartoDisp = (our_Quarto) mRecepcionista.getQuartoDisp();
     Date dataIn = new Date(2019, 0, 21);
-    our_Pagamento pagamento = new our_Pagamento(400, "Crédito", 3, false);
+    our_Pagamento pagamento = new our_Pagamento("Crédito", 3, false);
     
     our_Reserva Reserva1 = new our_Reserva(dataIn, 2, vitor, quartoDisp, pagamento);
     Reserva1.EfetuarReserva();
@@ -47,10 +47,10 @@ public class GUI_Recepcionista {
     System.out.println("~~Listando todas as reservas~~");
     mRecepcionista.listarReservas();
     
-    //Realizando pagamento
+    System.out.println(Reserva1.getPrecoTotal());
     
-   
-        
+    //Realizando pagamento
+           
     }
     
     

@@ -31,12 +31,9 @@ import Framework.TipoPagamento;
  */
 public class our_Pagamento extends TipoPagamento{
     
-    public our_Pagamento(float valor, String ModalidadePagamento, int qtdParcelas, boolean statusPagamento) {
-        super(valor, ModalidadePagamento, qtdParcelas, statusPagamento);
+    public our_Pagamento(String ModalidadePagamento, int qtdParcelas, boolean statusPagamento) {
+        super(ModalidadePagamento, qtdParcelas, statusPagamento);
     }
-    
-    public our_Pagamento(float valor) {
-        super(valor);
-    }
+
     
 }

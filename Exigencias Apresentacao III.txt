@@ -2,8 +2,8 @@ Exig�ncias para a pr�xima apresenta��o
 
 Para a pr�xima apresenta��o os grupos dever�o entregar um relat�rio t�cnico contendo as seguintes se��es:
 
-- [ ] Capa {t�tulo do sistema, infos da disciplina, do grupo, data, etc}
-- [ ] Descri��o do sistema {deixando claro se � frameowrk ou n�o}
+- [x] Capa {t�tulo do sistema, infos da disciplina, do grupo, data, etc}
+- [x] Descri��o do sistema {deixando claro se � frameowrk ou n�o}
 - [ ] Diagrama de classes
 - [ ] Diagrama de pacotes {mostrando a arquitetura}
 - [ ] An�lise SonarGraph {mostrar gr�ficos e as principais m�tricas do seu sistema, principalmente a manutenibilidade}

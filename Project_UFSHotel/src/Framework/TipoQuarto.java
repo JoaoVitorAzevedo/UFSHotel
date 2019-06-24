@@ -28,6 +28,14 @@ public abstract class TipoQuarto {
         this.tipo = tipo;
 
     }
+    
+    @Override
+        public String toString() {
+        return ("\nID: " + idQuarto
+                + "\nAndar: " + andar 
+                + "\n");
+
+    }
 
     //getters
     public int getAndar() {

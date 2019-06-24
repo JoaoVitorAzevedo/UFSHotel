@@ -30,7 +30,7 @@ public abstract class TipoRecepcionista extends TipoFuncionario {
 
     @Override
     public String toString() {
-        return super.toString() + "Ramal: " + ramal;
+        return "\n--Dados Recepcinosta--" + super.toString() + "Ramal: " + ramal;
     }
 
     // getters 

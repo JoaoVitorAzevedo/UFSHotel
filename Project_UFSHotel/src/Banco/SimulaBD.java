@@ -129,6 +129,7 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
 
     //Métodos para adicionar no banco
     //Para caso o engenheiro de aplicação queira adicionar um novo tipo de funcionario no banco
+    @Override
     public boolean addFuncionario(TipoFuncionario newFuncionario) {
         listaFuncionarios.add(newFuncionario);
         return true;
@@ -286,7 +287,8 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
     @Override
     public void listarReservas() {
         SimulaBD.listaReservas.forEach((r) -> {
-            System.out.println("ID da reserva: " + r.getIdReserva() + " \nNome do Cliente: " + r.getNomeCli());
+            if (r instanceof TipoReserva)
+            System.out.println(r.toString());
         });
     }
 

@@ -14,11 +14,15 @@ public class GUI_Recepcionista {
     public static void main(String args[]) {
         iBancoRecepcionista mRecepcionista = SimulaBD.getInstanceBD();
 
-        //Cadastrar hospede    
-        our_Hospede mohammed = new our_Hospede("Mohammed Salim", "Sri Lanka");
+        //Cadastrar hospede   
+        our_Endereco end1 = new our_Endereco("13.677-201", "34", "Capitolio", "Veneza", "SP");
+        our_Telefone fone1 = new our_Telefone("+55", "16", "2345-9876");
+        our_Hospede mohammed = new our_Hospede("356.545.677-00", "Mohammed Salim", "Mohammed@gmail.com", end1, fone1, "Sri Lanka");
         mohammed.cadastrarHospede();
-
-        our_Hospede vitor = new our_Hospede("sugaya vitor", "Brasil");
+        
+        our_Endereco end2 = new our_Endereco("13.455-200", "36", "Capivara", "Limeira", "GO");
+        our_Telefone fone2 = new our_Telefone("+55", "11", "9999-9876");
+        our_Hospede vitor = new our_Hospede("345.345.233-00", "Vitor Sugaya", "Vitor@gmail.com", end2, fone2, "Brasil");
         vitor.cadastrarHospede();
         System.out.println("\n");
 

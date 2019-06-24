@@ -16,15 +16,19 @@ public class GUI_Recepcionista {
 
         //Cadastrar hospede    
         our_Hospede mohammed = new our_Hospede("Mohammed Salim", "Sri Lanka");
-        mohammed.cadastrarHospede();
+        mRecepcionista.addHospede(mohammed);
 
         our_Hospede vitor = new our_Hospede("sugaya vitor", "Brasil");
-        vitor.cadastrarHospede();
+        mRecepcionista.addHospede(vitor);
         System.out.println("\n");
 
         //Lista todos os hospedes cadastrados fazendo uso da sobrescrita de método (há atributos a mais na classe filha)
         System.out.println("~~Listando todos os hospedes~~");
         List<our_Hospede> listaHospede = mRecepcionista.getListaHospede();
+        
+        System.out.println("doMRecep");
+        mRecepcionista.listarHospedes();
+        System.out.println("DoHosped");
         our_Hospede.listarOurHospede(listaHospede);
         System.out.println("\n");
 
@@ -35,7 +39,7 @@ public class GUI_Recepcionista {
 
         //Construindo uma reserva
         our_Quarto quartoDisp = (our_Quarto) mRecepcionista.getQuartoDisp();
-        Date dataIn = new Date(2019, 0, 21);
+        Date dataIn = new Date(2019, 3, 21);
         our_Pagamento pagamento = new our_Pagamento("Crédito", 3, false);
 
         our_Reserva Reserva1 = new our_Reserva(dataIn, 2, vitor, quartoDisp, pagamento);
@@ -50,7 +54,6 @@ public class GUI_Recepcionista {
         System.out.println("Valor a pagar: R$" + Reserva1.getPrecoTotal());
         Reserva1.getPag().receberPagamento(100);
 
-        System.out.println(Reserva1);
     }
 
     //efetuar reserva

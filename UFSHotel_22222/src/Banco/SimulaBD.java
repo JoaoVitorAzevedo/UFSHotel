@@ -110,15 +110,13 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
         room2 = new our_Quarto(7, (our_TipoCategoriaDeQuarto) Casal);
         room2.setStatusDisponibilidade(true);
 
-        listaQuartos.add(room1);
-        listaQuartos.add(room2);
-
         gerenteRoberto = new our_Gerente("gerencia ue", "tarde", "4372837238-12", "Robertinho de Souza", "ro_berto@gmail.com", endereco1, telefone1);
 
         SimulaBD.listaFuncionarios.add(recep1);
         SimulaBD.listaFuncionarios.add(gerenteRoberto);
         SimulaBD.listaHospedes.add(hospede1);
         SimulaBD.listaQuartos.add(room1);
+        SimulaBD.listaQuartos.add(room2);
 
     }
 
@@ -171,6 +169,7 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
     @Override
     public boolean addHospede(TipoHospede newHospede) {
         listaHospedes.add(newHospede);
+        System.out.println("Adicionado Hospede " + newHospede.getNome() + " com sucesso");
         return true;
     }
 

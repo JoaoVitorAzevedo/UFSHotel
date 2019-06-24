@@ -19,6 +19,14 @@ public abstract class TipoStatusQuarto {
         this.limpeza = limp;
         this.disponibilidade = disp;
     }
+    
+    
+    @Override
+    public String toString() {
+        return "--Status do Quarto--\n "
+                + "Limpeza: " + this.limpeza
+                + "\nDisponível: " + this.disponibilidade;
+    }
 
     public boolean isLimpavel() {
         return this.limpeza;
@@ -36,11 +44,5 @@ public abstract class TipoStatusQuarto {
         this.limpeza = limpeza;
     }
 
-    @Override
-    public String toString() {
-        return "--Status do Quarto--\n "
-                + "Limpeza: " + this.limpeza
-                + "\nDisponível: " + this.disponibilidade;
-    }
 
 }

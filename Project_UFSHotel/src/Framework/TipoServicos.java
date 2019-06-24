@@ -7,7 +7,6 @@ package Framework;
 
 import Banco.SimulaBD;
 import Banco.iBancoGerente;
-import Banco.iBancoRecepcionista;
 import java.util.List;
 import java.util.Date;
 
@@ -28,6 +27,15 @@ public abstract class TipoServicos {
         this.nomeDoServico = nomeDoServico;
         this.responsaveis = responsaveis;
         this.precoDoServico = precoDoServico;
+    }
+    
+    @Override
+        public String toString() {
+        return ("\nNome: " + nomeDoServico
+                + "\nPreco: " + precoDoServico
+                + "\nData: " + dataServico
+                + "\nHorario: " + horario + "\n");
+
     }
 
     //getters

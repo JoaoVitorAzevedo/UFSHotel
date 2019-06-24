@@ -7,7 +7,6 @@ package Framework;
 
 import Banco.SimulaBD;
 import Banco.iBancoGerente;
-import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -19,7 +18,7 @@ public abstract class TipoHospede {
 
     static AtomicInteger idAuto = new AtomicInteger();
     int idHospede;
-    String setor, turno, cpf, nome, email;
+    String cpf, nome, email;
     TipoEndereco end;
     TipoTelefone tel;
 
@@ -40,6 +39,15 @@ public abstract class TipoHospede {
         this.end = null;
         this.tel = null;
         this.nome = nome;
+
+    }
+    
+    @Override
+        public String toString() {
+        return ("\n--Dados do Hospede--" +
+                "\nNome: " + nome
+                + "\nID: " + idHospede
+                + "\nCPF: " + cpf + "\n");
 
     }
 

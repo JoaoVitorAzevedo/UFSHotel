@@ -7,7 +7,6 @@ package Framework;
 
 import Banco.SimulaBD;
 import Banco.iBancoGerente;
-import Aplicacao.our_Gerente;
 
 /**
  * @author João Vitor Azevedo 743554
@@ -22,7 +21,7 @@ public abstract class TipoGerente extends TipoFuncionario {
 
     @Override
     public String toString() {
-        return "\n--Dados do Gerente-- \n" + super.toString();
+        return "\n--Dados do Gerente--" + super.toString();
     }
 
     //Métodos úteis

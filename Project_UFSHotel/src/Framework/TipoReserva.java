@@ -39,12 +39,12 @@ public abstract class TipoReserva {
 
     }
 
-    public TipoReserva(Date dataIn, int dias, TipoHospede cli, TipoQuarto quarto, TipoPagamento pag) {
+    public TipoReserva(Date dataIn, int dias, TipoHospede Hospede, TipoQuarto quarto, TipoPagamento pag) {
         this.consumidos = new HashMap<>();
         this.dataIn = dataIn;
         this.dataOut = incrementDays(dataIn, dias);
         this.idReserva = idGen.incrementAndGet();
-        this.hospedeReserva = cli;
+        this.hospedeReserva = Hospede;
         this.quarto = quarto;
         this.pagamento = pag;
         this.preco = CalcularPreco();
@@ -59,7 +59,8 @@ public abstract class TipoReserva {
 
     @Override
     public String toString() {
-        return "DataIn: " + dataIn + "\nDataOut: " + dataOut + "\nCliente: " + hospedeReserva + "\nQuarto: " + quarto;
+        return   "Cliente: " + hospedeReserva.getNome() 
+                + "\nID Quarto: " + this.quarto.getIdQuarto()+"\n";
     }
 
     //getters

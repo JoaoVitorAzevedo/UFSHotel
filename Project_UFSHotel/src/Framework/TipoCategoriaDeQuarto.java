@@ -10,7 +10,6 @@ package Framework;
  * @author Sabrina Miranda 743595
  * @author Vitor Sugaya 743605
  */
-
 public abstract class TipoCategoriaDeQuarto {
 
     String categoria;
@@ -22,7 +21,6 @@ public abstract class TipoCategoriaDeQuarto {
         this.capacidade = capacidade;
         this.preco = preco;
     }
-
 
     //getters
     public int getCapacidade() {

@@ -28,18 +28,17 @@ public class our_Quarto extends TipoQuarto {
         this.getTipo().printCat();
         System.out.println("");
     }
-    
-    
-    public our_Status getStatus(){
+
+    public our_Status getStatus() {
         return (our_Status) this.getWholeStatus();
     }
-    
+
     public void setLimpeza(boolean status) {
         this.setStatuslimpeza(status);
     }
-    
+
     public void setDisponibilidade(boolean disponibilidade) {
         this.setStatusDisponibilidade(disponibilidade);
     }
-    
+
 }

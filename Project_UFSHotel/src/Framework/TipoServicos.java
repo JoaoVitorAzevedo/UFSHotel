@@ -29,7 +29,7 @@ public abstract class TipoServicos {
         this.responsaveis = responsaveis;
         this.precoDoServico = precoDoServico;
     }
-    
+
     //getters
     public float getPrecoDoServico() {
         return precoDoServico;
@@ -59,10 +59,10 @@ public abstract class TipoServicos {
     public void setResponsaveis(List<TipoFuncionario> responsaveis) {
         this.responsaveis = responsaveis;
     }
-    
+
     public void cadastrarServico() {
         iBancoGerente BG = SimulaBD.getInstanceBD();
-        
+
         if (BG.addServico(this)) {
             System.out.println("Serviço cadastrado");
         }

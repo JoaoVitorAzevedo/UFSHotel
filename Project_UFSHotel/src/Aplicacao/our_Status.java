@@ -29,10 +29,10 @@ import Framework.TipoStatusQuarto;
  *
  * @author sugaya
  */
-public class our_Status extends TipoStatusQuarto{
-    
+public class our_Status extends TipoStatusQuarto {
+
     public our_Status(boolean limp, boolean disp) {
         super(limp, disp);
     }
-    
+
 }

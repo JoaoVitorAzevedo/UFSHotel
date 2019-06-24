@@ -36,18 +36,26 @@ import java.util.List;
  * @author Vitor Sugaya 743605
  */
 public interface iBancoRecepcionista {
-    
+
     //Métodos para adicionar no banco
     public boolean addHospede(TipoHospede newHospede);
+
     public boolean addReserva(TipoReserva newReserva);
-    
+
     //Métodos para resgatar do banco
     public TipoHospede getHospede(int id);
+
     public TipoReserva getReserva(int id);
+
     public TipoQuarto getQuartoDisp();
+
     public String getNomeHospede(int id);
+
     public void listarReservas();
+
     public void listarHospedes();
+
     public List getListaHospede();
+
     public List getListaQuarto();
 }

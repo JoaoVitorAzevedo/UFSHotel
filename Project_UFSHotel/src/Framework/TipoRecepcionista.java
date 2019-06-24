@@ -42,11 +42,11 @@ public abstract class TipoRecepcionista extends TipoFuncionario {
     public void setRamal(int ramal) {
         this.ramal = ramal;
     }
-        
+
     public void cadastrarRecepcionista() {
         iBancoGerente BG = SimulaBD.getInstanceBD();
-        
-        if (BG.addRecepcionista(this)){
+
+        if (BG.addRecepcionista(this)) {
             System.out.println("Recepcionista cadastrada com sucesso");
         }
     }

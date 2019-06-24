@@ -34,38 +34,39 @@ import java.util.List;
  *
  * @author sabrina
  */
-public class our_Camareira extends TipoFuncionario{
+public class our_Camareira extends TipoFuncionario {
+
     public our_Camareira(String setor, String turno, String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
         super(setor, turno, cpf, nome, email, end, tel);
     }
-    
-    public List<our_Quarto> getQuartosSujos(){
+
+    public List<our_Quarto> getQuartosSujos() {
         SimulaBD BC = SimulaBD.getInstanceBD();
-        
+
         List<our_Quarto> listaTodosQuartos = new ArrayList<>();
         List<our_Quarto> quartosSujos = new ArrayList<>();
-        
+
         listaTodosQuartos = BC.getListaQuarto();
-        
+
         for (our_Quarto or : listaTodosQuartos) {
             if (!or.getStatus().isLimpavel()) {
                 quartosSujos.add(or);
             }
         }
-        
-        return quartosSujos;    
+
+        return quartosSujos;
     }
-    
-    public void printQuartosSujos(){
+
+    public void printQuartosSujos() {
         List<our_Quarto> quartosSujos = getQuartosSujos();
-        
+
         quartosSujos.forEach((or) -> {
-            System.out.println("ID: "+or.getIdQuarto()+" Andar: "+or.getAndar());
+            System.out.println("ID: " + or.getIdQuarto() + " Andar: " + or.getAndar());
         });
     }
 }
 
-  /*//TESTE DA CAMAREIRA - colocar numa classe de "interface grafica" GUI_Camareira
+/*//TESTE DA CAMAREIRA - colocar numa classe de "interface grafica" GUI_Camareira
     our_Endereco end = new our_Endereco("13544323", "43", "Limoeiro", "São Caetano", "PA");
     our_Telefone fone = new our_Telefone("55", "11", "9964544471");
     our_Camareira Carmem = new our_Camareira("Limpeza", "Diurno","394.989.233-00", "Carmem", "Carmemlinda@gmail.com", end, fone);

@@ -23,14 +23,14 @@ public class our_Reserva extends TipoReserva {
     public our_Reserva(Date dataIn, Date dataOut, TipoHospede cli, TipoQuarto quarto, TipoPagamento pag) {
         super(dataIn, dataOut, cli, quarto, pag);
     }
-    
+
     public our_Reserva(Date dataIn, int dias, TipoHospede cli, TipoQuarto quarto, TipoPagamento pag) {
         super(dataIn, dias, cli, quarto, pag);
     }
-    
+
     @Override
     public String toString() {
         return super.toString();
     }
-    
+
 }

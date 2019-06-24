@@ -15,7 +15,6 @@ public abstract class TipoStatusQuarto {
     boolean limpeza = true;
     boolean disponibilidade = true;
 
-    
     public TipoStatusQuarto(boolean limp, boolean disp) {
         this.limpeza = limp;
         this.disponibilidade = disp;

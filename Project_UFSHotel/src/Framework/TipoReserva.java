@@ -37,7 +37,7 @@ public abstract class TipoReserva {
         this.pagamento = pag;
         this.preco = CalcularPreco();
 
-    }   
+    }
 
     public TipoReserva(Date dataIn, int dias, TipoHospede cli, TipoQuarto quarto, TipoPagamento pag) {
         this.consumidos = new HashMap<>();
@@ -50,25 +50,24 @@ public abstract class TipoReserva {
         this.preco = CalcularPreco();
 
     }
-    
-    private Date incrementDays(Date dataIn, int dias){
+
+    private Date incrementDays(Date dataIn, int dias) {
         int a_day = 86400000;
         Date new_dt = new Date(dataIn.getTime() + dias * a_day);
         return new_dt;
     }
-    
+
     @Override
     public String toString() {
-        return "DataIn: "+dataIn+"\nDataOut: "+dataOut+"\nCliente: "+hospedeReserva+"\nQuarto: "+quarto;
+        return "DataIn: " + dataIn + "\nDataOut: " + dataOut + "\nCliente: " + hospedeReserva + "\nQuarto: " + quarto;
     }
-    
-  
+
     //getters
     public Map getConsumido() {
         return consumidos;
     }
-    
-    public float getPrecoTotal(){
+
+    public float getPrecoTotal() {
         return preco;
     }
 
@@ -83,8 +82,8 @@ public abstract class TipoReserva {
     public TipoHospede getCliQueReservou() {
         return hospedeReserva;
     }
-    
-    public String getNomeCli(){
+
+    public String getNomeCli() {
         return hospedeReserva.getNome();
     }
 
@@ -124,26 +123,26 @@ public abstract class TipoReserva {
     public void setDataIn(Date dataIn) {
         this.dataIn = dataIn;
     }
-     
-    public void EfetuarReserva(){
-    iBancoGerente BG = new SimulaBD();
-        if(BG.addReserva(this)) {
+
+    public void EfetuarReserva() {
+        iBancoGerente BG = new SimulaBD();
+        if (BG.addReserva(this)) {
             System.out.println("Reserva cadastrada com sucesso");
         }
     }
-    
-    public void FazerCheckout(Date dataOut){
+
+    public void FazerCheckout(Date dataOut) {
         setDataOut(dataOut);
     }
-    
+
     public void addServico(TipoServicos serv) {
         this.servicos.add(serv);
     }
-    
+
     public void rmServico(TipoServicos servToRemove) {
         this.servicos.remove(servToRemove);
     }
-    
+
     public ArrayList<TipoServicos> getServicos() {
         return servicos;
     }
@@ -151,40 +150,39 @@ public abstract class TipoReserva {
     //Retorna o preco total de todos os serviços cadastrados para esse quarto
     public float getPrecoServicos() {
         Float Total = 0f;
-    
+
         for (TipoServicos or : servicos) {
             Total += or.getPrecoDoServico();
-                
+
         }
         return Total;
     }
 
-    
     public void printServicos() {
         servicos.forEach((serv) -> {
             System.out.println(serv.getNomeDoServico());
         });
     }
-    
-    public float getPrecoConsumidos(){
+
+    public float getPrecoConsumidos() {
         Float Total = 0f;
-        
-        for(Entry<String, Float> entry : consumidos.entrySet()) {
+
+        for (Entry<String, Float> entry : consumidos.entrySet()) {
             Total += entry.getValue();
         }
-        
+
         return Total;
     }
 
     private Float CalcularPreco() {
         Float PrecoTotal = 0f;
-       
+
         PrecoTotal += getPrecoConsumidos();
         PrecoTotal += getPrecoServicos();
         PrecoTotal += getQuarto().getTipo().getPreco();
-        
+
         pagamento.setValor(PrecoTotal);
-        
+
         return PrecoTotal;
     }
 }

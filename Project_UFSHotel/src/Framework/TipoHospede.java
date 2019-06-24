@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author Sabrina Miranda 743595
  * @author Vitor Sugaya 743605
  */
-public abstract class TipoHospede{
+public abstract class TipoHospede {
 
     static AtomicInteger idAuto = new AtomicInteger();
     int idHospede;
@@ -23,7 +23,7 @@ public abstract class TipoHospede{
     TipoEndereco end;
     TipoTelefone tel;
 
-    protected TipoHospede( String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
+    protected TipoHospede(String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
         this.idHospede = TipoHospede.idAuto.incrementAndGet();
         this.cpf = cpf;
         this.email = email;
@@ -32,7 +32,7 @@ public abstract class TipoHospede{
         this.nome = nome;
 
     }
-    
+
     protected TipoHospede(String nome) {
         this.idHospede = TipoHospede.idAuto.incrementAndGet();
         this.cpf = "999.999.999-99";
@@ -47,55 +47,55 @@ public abstract class TipoHospede{
     public int getID() {
         return this.idHospede;
     }
-    public String getCPF(){
+
+    public String getCPF() {
         return cpf;
     }
-    
-    public String getEmail(){
+
+    public String getEmail() {
         return email;
     }
-    
-    public TipoEndereco getEndereco(){
+
+    public TipoEndereco getEndereco() {
         return end;
     }
-    
-    public TipoTelefone getTelefone(){
+
+    public TipoTelefone getTelefone() {
         return tel;
     }
-    
-    public String getNome(){
+
+    public String getNome() {
         return nome;
     }
 
     //setters
-    public void setCPF(String cpf){
+    public void setCPF(String cpf) {
         this.cpf = cpf;
     }
-    
-    public void setEmail(String email){
+
+    public void setEmail(String email) {
         this.email = email;
     }
-    
-    public void setendereco(TipoEndereco end){
+
+    public void setendereco(TipoEndereco end) {
         this.end = end;
     }
-    
-    public void setTelefone(TipoTelefone tel){
+
+    public void setTelefone(TipoTelefone tel) {
         this.tel = tel;
     }
-    
-    public void setNome(String nome){
+
+    public void setNome(String nome) {
         this.nome = nome;
     }
-    
+
     //métodos úteis
     public void cadastrarHospede() {
-       iBancoGerente BG = SimulaBD.getInstanceBD();
-       
+        iBancoGerente BG = SimulaBD.getInstanceBD();
+
         if (BG.addHospede(this)) {
             System.out.println("Hospede cadastrado com sucesso");
         }
     }
-    
 
 }

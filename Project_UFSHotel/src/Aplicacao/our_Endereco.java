@@ -17,7 +17,5 @@ public class our_Endereco extends TipoEndereco {
     public our_Endereco(String cep, String numero, String bairro, String cidade, String estado) {
         super(cep, numero, bairro, cidade, estado);
     }
-    
-    
 
 }

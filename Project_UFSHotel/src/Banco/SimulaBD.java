@@ -49,7 +49,7 @@ import Aplicacao.our_Telefone;
 public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
 
     private static SimulaBD single_instance = null;
-    
+
     //Objetos hipotéticos para preencher banco inicialmente
     our_Recepcionista recep1;
     our_Hospede valter;
@@ -67,7 +67,7 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
     our_Pagamento pag1;
 
     Date data1;
-    Date data2;   
+    Date data2;
 
     //Listas para armazenamento do banco
     public static List<TipoHospede> listaHospedes;
@@ -90,7 +90,7 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
 
         telefone1 = new our_Telefone("+55", "15", "99768-4759");
 
-        this.recep1 = new our_Recepcionista(31,"Recepção", "Tarde", "432.343.222.41", "Juju Recepcionista", "my@email.com", endereco1, telefone1, "Tarde de novo");
+        this.recep1 = new our_Recepcionista(31, "Recepção", "Tarde", "432.343.222.41", "Juju Recepcionista", "my@email.com", endereco1, telefone1, "Tarde de novo");
 
         Casal = new our_TipoCategoriaDeQuarto("Casal", 2, 120.0f);
         this.suite = new our_TipoCategoriaDeQuarto("Suite", 3, 180.0f);
@@ -98,27 +98,26 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
         endereco1 = new our_Endereco("17523275", "252", "Jardim Guanabara", "Marília", "Ceará");
 
         hospede1 = new our_Hospede("432.883.228-81", "Joao Vitor", "fulanodetal@gmail.com", endereco1, telefone1);
-        
+
         serv = new our_Servicos("Comidinhas top", null, 22.0f);
         serv2 = new our_Servicos("Massagem", null, 22.0f);
         serv3 = new our_Servicos("Frigobar Liberado", null, 22.0f);
-        
-        
+
         room1 = new our_Quarto(7, suite);
         room1.setLimpeza(false);
-        
+
         room2 = new our_Quarto(7, Casal);
         room2.setDisponibilidade(true);
 
-        gerenteRoberto = new our_Gerente("gerencia ue","tarde", "4372837238-12", "Robertinho de Souza", "ro_berto@gmail.com", endereco1, telefone1);
-        
+        gerenteRoberto = new our_Gerente("gerencia ue", "tarde", "4372837238-12", "Robertinho de Souza", "ro_berto@gmail.com", endereco1, telefone1);
+
         SimulaBD.listaFuncionarios.add(recep1);
         SimulaBD.listaFuncionarios.add(gerenteRoberto);
         SimulaBD.listaHospedes.add(hospede1);
         SimulaBD.listaQuartos.add(room1);
 
     }
-    
+
     //Retorna o banco todo
     public static SimulaBD getInstanceBD() {
 
@@ -134,6 +133,7 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
         listaFuncionarios.add(newFuncionario);
         return true;
     }
+
     @Override
     public boolean addRecepcionista(TipoRecepcionista newRecepcionista) {
         listaFuncionarios.add(newRecepcionista);
@@ -157,12 +157,13 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
         listaServicos.add(newServico);
         return true;
     }
-     @Override
+
+    @Override
     public boolean addReserva(TipoReserva newReserva) {
         listaReservas.add(newReserva);
         return true;
-    }  
-    
+    }
+
     @Override
     public boolean addHospede(TipoHospede newHospede) {
         listaHospedes.add(newHospede);
@@ -207,10 +208,10 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
         }
         return null;
     }
-    
+
     @Override
-    public String getNomeFuncionario(int id){
-            for (TipoFuncionario func : listaFuncionarios) {
+    public String getNomeFuncionario(int id) {
+        for (TipoFuncionario func : listaFuncionarios) {
             int r_id = func.getID();
             if (id == r_id) {
                 return func.getNome();
@@ -218,20 +219,19 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
         }
         return null;
     }
-    
-     //Métodos para retornar um objeto especifico a partir de um id
+
+    //Métodos para retornar um objeto especifico a partir de um id
     @Override
-       public TipoHospede getHospede(int id_hospede) {
+    public TipoHospede getHospede(int id_hospede) {
         for (TipoHospede tipoHospede : listaHospedes) {
-                int id = tipoHospede.getID();
-                if (id == id_hospede) {
-                    return tipoHospede;
-                } 
+            int id = tipoHospede.getID();
+            if (id == id_hospede) {
+                return tipoHospede;
+            }
         }
         return null;
     }
 
-    
     @Override
     public TipoRecepcionista getRecepcionista(int id) {
         for (TipoFuncionario or : listaFuncionarios) {
@@ -244,37 +244,41 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
         }
         return null;
     }
-    
+
     @Override
     public TipoReserva getReserva(int id) {
-        for(TipoReserva res: listaReservas){
-            if(id == res.getIdReserva())
+        for (TipoReserva res : listaReservas) {
+            if (id == res.getIdReserva()) {
                 return res;
+            }
         }
         return null;
     }
-    
+
     //Retorna um quarto disponivel do banco
     @Override
     public TipoQuarto getQuartoDisp() {
-        for(TipoQuarto quarto: listaQuartos){
-            if(quarto.getStatusDisponibilidade()== true)
+        for (TipoQuarto quarto : listaQuartos) {
+            if (quarto.getStatusDisponibilidade() == true) {
                 return quarto;
+            }
         }
         return null;
     }
-    
+
     //Retorna as listas
     @Override
-    public List getListaHospede(){
+    public List getListaHospede() {
         return listaHospedes;
     }
+
     @Override
-    public List getListaFuncionario(){
+    public List getListaFuncionario() {
         return listaFuncionarios;
     }
+
     @Override
-    public List getListaQuarto(){
+    public List getListaQuarto() {
         return listaQuartos;
     }
 
@@ -282,18 +286,19 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
     @Override
     public void listarReservas() {
         SimulaBD.listaReservas.forEach((r) -> {
-            System.out.println("ID da reserva: "+r.getIdReserva()+" \nNome do Cliente: "+r.getNomeCli());       
+            System.out.println("ID da reserva: " + r.getIdReserva() + " \nNome do Cliente: " + r.getNomeCli());
         });
     }
-    
+
     @Override
     public void listarRecepcionistas() {
-    SimulaBD.listaFuncionarios.forEach((c) -> {
-        if (c instanceof TipoRecepcionista)
-            System.out.println(c.toString());   
+        SimulaBD.listaFuncionarios.forEach((c) -> {
+            if (c instanceof TipoRecepcionista) {
+                System.out.println(c.toString());
+            }
         });
     }
-        
+
     @Override
     public void listarFuncionarios() {
 
@@ -302,15 +307,12 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
         });
 
     }
+
     @Override
     public void listarHospedes() {
         SimulaBD.listaHospedes.forEach((c) -> {
             System.out.println(c.toString());
         });
     }
-
-    
-
-    
 
 }

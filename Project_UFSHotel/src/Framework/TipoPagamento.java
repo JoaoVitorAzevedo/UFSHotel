@@ -48,43 +48,40 @@ public abstract class TipoPagamento {
     public void setStatusPagamento(boolean status) {
         this.statusPagamento = status;
     }
-    
+
     public void setValor(float valor) {
         this.valor = valor;
     }
-    
-    
+
     public void receberPagamento(float valor) {
-        if(valor == this.valor){
+        if (valor == this.valor) {
             this.statusPagamento = true;
             this.valor = 0;
             System.out.println("Pagamento efetuado com sucesso");
-        }else{
+        } else {
             this.valor -= valor;
-            System.out.println("Ainda faltam pagar R$"+this.valor+" reais");
+            System.out.println("Ainda faltam pagar R$" + this.valor + " reais");
         }
     }
-    
-   
-    public void incrementarPagamento(float valor){
-        if(this.statusPagamento == true){
+
+    public void incrementarPagamento(float valor) {
+        if (this.statusPagamento == true) {
             this.statusPagamento = false;
         }
         this.valor += valor;
-        
-        System.out.println("\nValor após incremento: " +this.valor);
+
+        System.out.println("\nValor após incremento: " + this.valor);
     }
-    
-    
+
     public boolean addDesconto(float percentDisc) {
         float Desconto;
 
-        System.out.println("Valor Anterior: " +this.valor);
-         
+        System.out.println("Valor Anterior: " + this.valor);
+
         Desconto = this.valor * (1 - (percentDisc / 100));
         this.valor = this.valor - Desconto;
-        
-       System.out.println("\nValor com Desconto: " +this.valor);
+
+        System.out.println("\nValor com Desconto: " + this.valor);
 
         return true;
     }

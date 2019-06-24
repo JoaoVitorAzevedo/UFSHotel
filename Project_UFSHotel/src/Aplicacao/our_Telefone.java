@@ -25,10 +25,10 @@ package Aplicacao;
 
 import Framework.TipoTelefone;
 
-public class our_Telefone extends TipoTelefone{
-    
+public class our_Telefone extends TipoTelefone {
+
     public our_Telefone(String codigoPais, String ddd, String numero) {
         super(codigoPais, ddd, numero);
     }
-    
+
 }

@@ -34,15 +34,14 @@ public abstract class TipoQuarto {
         return andar;
     }
 
-    
-
     public int getIdQuarto() {
         return idQuarto;
     }
 
-    public TipoStatusQuarto getWholeStatus(){
+    public TipoStatusQuarto getWholeStatus() {
         return status;
-    }    
+    }
+
     public boolean getStatusLimpeza() {
         return status.isLimpavel();
     }

@@ -9,7 +9,6 @@ import Banco.SimulaBD;
 import Banco.iBancoGerente;
 import Aplicacao.our_Gerente;
 
-
 /**
  * @author João Vitor Azevedo 743554
  * @author Sabrina Miranda 743595
@@ -25,15 +24,15 @@ public abstract class TipoGerente extends TipoFuncionario {
     public String toString() {
         return "\n--Dados do Gerente-- \n" + super.toString();
     }
-    
+
     //Métodos úteis
     public void cadastrarGerente() {
         iBancoGerente BG = SimulaBD.getInstanceBD();
-        
+
         if (BG.addGerente(this)) {
             System.out.println("Cadastrado o gerente");
         }
 
     }
-    
+
 }

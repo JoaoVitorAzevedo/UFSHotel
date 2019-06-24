@@ -33,36 +33,56 @@ import Framework.TipoServicos;
 import java.util.Date;
 import java.util.List;
 
-
 /**
  * @author João Vitor Azevedo 743554
  * @author Sabrina Miranda 743595
  * @author Vitor Sugaya 743605
  */
 public interface iBancoGerente {
+
     //Métodos para adicionar no banco
     public boolean addGerente(TipoGerente newGerente);
+
     public boolean addHospede(TipoHospede newHospede);
+
     public boolean addQuarto(TipoQuarto newQuarto);
+
     public boolean addRecepcionista(TipoRecepcionista newRecep);
+
     public boolean addServico(TipoServicos newServico);
+
     public boolean addReserva(TipoReserva newReserva);
+
     public boolean addFuncionario(TipoFuncionario newFuncionario);
-    
+
     //Métodos para resgatar do banco
     public TipoHospede getHospede(int id_hospede);
+
     public String getNomeGerente(int id);
+
     public String getNomeRecepcionista(int id);
+
     public String getNomeHospede(int id);
+
     public String getNomeFuncionario(int id);
-    public TipoRecepcionista getRecepcionista(int id);    
+
+    public TipoRecepcionista getRecepcionista(int id);
+
     public TipoQuarto getQuartoDisp();
+
     public TipoReserva getReserva(int id);
+
     public List getListaHospede();
+
     public List getListaFuncionario();
+
     public List getListaQuarto();
+
     public void listarRecepcionistas();
+
     public void listarFuncionarios();
+
     public void listarReservas();
+
     public void listarHospedes();
 }

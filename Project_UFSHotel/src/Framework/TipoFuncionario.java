@@ -18,13 +18,12 @@ public abstract class TipoFuncionario {
     int idFuncionario;
     TipoEndereco end;
     TipoTelefone tel;
-   
-    
+
     static AtomicInteger idAuto = new AtomicInteger();
 
     @Override
     public String toString() {
-        return ("\nNome: " +nome
+        return ("\nNome: " + nome
                 + "\nSetor: " + setor
                 + "\nID: " + idFuncionario
                 + "\nTurno: " + turno + "\n");
@@ -43,26 +42,26 @@ public abstract class TipoFuncionario {
     }
 
     //getters
-    public String getCPF(){
+    public String getCPF() {
         return cpf;
     }
-    
-    public String getEmail(){
+
+    public String getEmail() {
         return email;
     }
-    
-    public TipoEndereco Getendereco(){
+
+    public TipoEndereco Getendereco() {
         return end;
     }
-    
-    public TipoTelefone getTelefone(){
+
+    public TipoTelefone getTelefone() {
         return tel;
     }
-    
-    public String getNome(){
+
+    public String getNome() {
         return nome;
     }
-    
+
     public int getID() {
         return idFuncionario;
     }
@@ -87,24 +86,24 @@ public abstract class TipoFuncionario {
     public void setTurno(String turno) {
         this.turno = turno;
     }
-    
-    public void setCPF(String cpf){
+
+    public void setCPF(String cpf) {
         this.cpf = cpf;
     }
-    
-    public void setEmail(String email){
+
+    public void setEmail(String email) {
         this.email = email;
     }
-    
-    public void setendereco(TipoEndereco end){
+
+    public void setendereco(TipoEndereco end) {
         this.end = end;
     }
-    
-    public void setTelefone(TipoTelefone tel){
+
+    public void setTelefone(TipoTelefone tel) {
         this.tel = tel;
     }
-    
-    public void setNome(String nome){
+
+    public void setNome(String nome) {
         this.nome = nome;
     }
 

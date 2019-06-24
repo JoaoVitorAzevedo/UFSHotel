@@ -29,11 +29,10 @@ import Framework.TipoPagamento;
  *
  * @author sugaya
  */
-public class our_Pagamento extends TipoPagamento{
-    
+public class our_Pagamento extends TipoPagamento {
+
     public our_Pagamento(String ModalidadePagamento, int qtdParcelas, boolean statusPagamento) {
         super(ModalidadePagamento, qtdParcelas, statusPagamento);
     }
 
-    
 }

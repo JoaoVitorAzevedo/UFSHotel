@@ -28,7 +28,7 @@ public abstract class TipoEndereco {
 
     @Override
     public String toString() {
-        return "Endereco: " 
+        return "Endereco: "
                 + ", nº" + numero + ", CEP: " + cep
                 + ", Bairro: " + bairro
                 + ", Cidade: " + cidade + ", Estado: " + estado + "\n";

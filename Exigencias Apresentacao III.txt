@@ -39,10 +39,10 @@ realizar a digita��o da nota de um aluno, realizar um dep�sito banc�rio
 - [ ] An�lise Sonar Graph
 
         Passar seu sistema pelo SonarGraph para mostrar:
-        - Depend�ncias in e out
-        - n�vel de abstra��o (abstractness)
-        - ciclos
-        - manutenibilidade (maintenability)
+        - [ ] Depend�ncias in e out
+        - [ ] n�vel de abstra��o (abstractness)
+        - [ ] ciclos
+        - [ ] manutenibilidade (maintenability)
 
 - [ ] mostrar os dados acima tanto para o frameworkr quanto para a aplica��o. (de forma separada)
 

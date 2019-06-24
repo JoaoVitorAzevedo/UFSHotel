@@ -50,6 +50,6 @@ public abstract class TipoCategoriaDeQuarto {
         this.preco = preco;
     }
 
-    public abstract void printData();
+    public abstract void printCat();
 
 }

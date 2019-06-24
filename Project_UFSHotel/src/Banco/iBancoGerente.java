@@ -23,6 +23,7 @@
  */
 package Banco;
 
+import Framework.TipoFuncionario;
 import Framework.TipoGerente;
 import Framework.TipoHospede;
 import Framework.TipoQuarto;
@@ -46,12 +47,14 @@ public interface iBancoGerente {
     public boolean addRecepcionista(TipoRecepcionista newRecep);
     public boolean addServico(TipoServicos newServico);
     public boolean addReserva(TipoReserva newReserva);
+    public boolean addFuncionario(TipoFuncionario newFuncionario);
     
     //Métodos para resgatar do banco
     public TipoHospede getHospede(int id_hospede);
     public String getNomeGerente(int id);
     public String getNomeRecepcionista(int id);
     public String getNomeHospede(int id);
+    public String getNomeFuncionario(int id);
     public TipoRecepcionista getRecepcionista(int id);    
     public TipoQuarto getQuartoDisp();
     public TipoReserva getReserva(int id);

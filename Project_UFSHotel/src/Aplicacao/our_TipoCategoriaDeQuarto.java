@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Sistema;
+package Aplicacao;
 
 import Framework.TipoCategoriaDeQuarto;
 
@@ -12,14 +12,14 @@ import Framework.TipoCategoriaDeQuarto;
  * @author Sabrina Miranda 743595
  * @author Vitor Sugaya 743605
  */
-public class our_CategoriaDeQuarto extends TipoCategoriaDeQuarto {
+public class our_TipoCategoriaDeQuarto extends TipoCategoriaDeQuarto {
 
-    public our_CategoriaDeQuarto(String categoria, int cap, float preco) {
+    public our_TipoCategoriaDeQuarto(String categoria, int cap, float preco) {
         super(categoria, cap, preco);
     }
 
     @Override
-    public void printData() {
+    public void printCat() {
         System.out.println("Nome da categoria: " + this.getCategoria());
         System.out.println("Comporta  " + this.getCapacidade() + " pessoas");
         System.out.println("Valor Diaria: " + this.getPreco());

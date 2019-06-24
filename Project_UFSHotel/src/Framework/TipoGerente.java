@@ -7,7 +7,7 @@ package Framework;
 
 import Banco.SimulaBD;
 import Banco.iBancoGerente;
-import Sistema.our_Gerente;
+import Aplicacao.our_Gerente;
 
 
 /**

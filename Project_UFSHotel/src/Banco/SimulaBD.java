@@ -32,19 +32,19 @@ import Framework.TipoServicos;
 import Framework.TipoTelefone;
 import Framework.TipoGerente;
 
-import Sistema.our_CategoriaDeQuarto;
-import Sistema.our_Endereco;
-import Sistema.our_Gerente;
-import Sistema.our_Hospede;
-import Sistema.our_Pagamento;
-import Sistema.our_Quarto;
-import Sistema.our_Recepcionista;
+import Aplicacao.our_TipoCategoriaDeQuarto;
+import Aplicacao.our_Endereco;
+import Aplicacao.our_Gerente;
+import Aplicacao.our_Hospede;
+import Aplicacao.our_Pagamento;
+import Aplicacao.our_Quarto;
+import Aplicacao.our_Recepcionista;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import Sistema.our_Servicos;
-import Sistema.our_Telefone;
+import Aplicacao.our_Servicos;
+import Aplicacao.our_Telefone;
 
 public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
 
@@ -54,13 +54,13 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
     our_Recepcionista recep1;
     our_Hospede valter;
     our_Hospede hospede1;
-    our_CategoriaDeQuarto Casal;
+    our_TipoCategoriaDeQuarto Casal;
     our_Endereco endereco1;
     TipoTelefone telefone1;
     TipoServicos serv;
     TipoServicos serv2;
     TipoServicos serv3;
-    our_CategoriaDeQuarto suite;
+    our_TipoCategoriaDeQuarto suite;
     our_Gerente gerenteRoberto;
     our_Quarto room1;
     our_Quarto room2;
@@ -92,8 +92,8 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
 
         this.recep1 = new our_Recepcionista(31,"Recepção", "Tarde", "432.343.222.41", "Juju Recepcionista", "my@email.com", endereco1, telefone1, "Tarde de novo");
 
-        Casal = new our_CategoriaDeQuarto("Casal", 2, 120.0f);
-        this.suite = new our_CategoriaDeQuarto("Suite", 3, 180.0f);
+        Casal = new our_TipoCategoriaDeQuarto("Casal", 2, 120.0f);
+        this.suite = new our_TipoCategoriaDeQuarto("Suite", 3, 180.0f);
 
         endereco1 = new our_Endereco("17523275", "252", "Jardim Guanabara", "Marília", "Ceará");
 
@@ -208,6 +208,17 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
         return null;
     }
     
+    @Override
+    public String getNomeFuncionario(int id){
+            for (TipoFuncionario func : listaFuncionarios) {
+            int r_id = func.getID();
+            if (id == r_id) {
+                return func.getNome();
+            }
+        }
+        return null;
+    }
+    
      //Métodos para retornar um objeto especifico a partir de um id
     @Override
        public TipoHospede getHospede(int id_hospede) {
@@ -221,6 +232,7 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
     }
 
     
+    @Override
     public TipoRecepcionista getRecepcionista(int id) {
         for (TipoFuncionario or : listaFuncionarios) {
             if (or instanceof TipoRecepcionista) {
@@ -233,6 +245,7 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
         return null;
     }
     
+    @Override
     public TipoReserva getReserva(int id) {
         for(TipoReserva res: listaReservas){
             if(id == res.getIdReserva())

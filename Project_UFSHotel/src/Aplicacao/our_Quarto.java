@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Sistema;
+package Aplicacao;
 
 import Framework.TipoQuarto;
 
@@ -14,7 +14,7 @@ import Framework.TipoQuarto;
  */
 public class our_Quarto extends TipoQuarto {
 
-    public our_Quarto(int andar, our_CategoriaDeQuarto tipo) {
+    public our_Quarto(int andar, our_TipoCategoriaDeQuarto tipo) {
         super(andar, tipo);
         this.status = new our_Status(true, true);
 
@@ -25,7 +25,7 @@ public class our_Quarto extends TipoQuarto {
         System.out.println("ID: " + this.getIdQuarto());
         System.out.println("Andar: " + this.getAndar());
         System.out.println("------CategoriaDoQuarto----- ");
-        this.getTipo().printData();
+        this.getTipo().printCat();
         System.out.println("");
     }
     

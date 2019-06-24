@@ -1,5 +1,5 @@
 
-package Sistema;
+package Aplicacao;
 
 import Banco.SimulaBD;
 import Banco.iBancoRecepcionista;
@@ -51,6 +51,7 @@ public class GUI_Recepcionista {
     System.out.println("~~Realizando pagamento de Reserva1~~");
     System.out.println("Valor a pagar: R$"+Reserva1.getPrecoTotal());
     Reserva1.getPag().receberPagamento(100);
+    
            
     
     }

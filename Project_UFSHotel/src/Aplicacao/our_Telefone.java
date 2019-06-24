@@ -21,14 +21,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package Sistema;
+package Aplicacao;
 
 import Framework.TipoTelefone;
 
-/**
- *
- * @author sugaya
- */
 public class our_Telefone extends TipoTelefone{
     
     public our_Telefone(String codigoPais, String ddd, String numero) {

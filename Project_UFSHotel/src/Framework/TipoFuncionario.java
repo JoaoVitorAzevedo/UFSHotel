@@ -24,9 +24,10 @@ public abstract class TipoFuncionario {
 
     @Override
     public String toString() {
-        return super.toString() + "\nSetor: " + setor
+        return ("\nNome: " +nome
+                + "\nSetor: " + setor
                 + "\nID: " + idFuncionario
-                + "\nTurno: " + turno + "\n";
+                + "\nTurno: " + turno + "\n");
 
     }
 

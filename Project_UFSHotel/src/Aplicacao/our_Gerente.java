@@ -1,4 +1,4 @@
-package Sistema;
+package Aplicacao;
 
 import Framework.TipoEndereco;
 import Framework.TipoTelefone;

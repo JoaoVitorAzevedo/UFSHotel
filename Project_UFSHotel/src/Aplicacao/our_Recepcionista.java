@@ -1,10 +1,8 @@
-package Sistema;
+package Aplicacao;
 
 import Framework.TipoEndereco;
 import Framework.TipoTelefone;
-import Framework.TipoHospede;
 import Framework.TipoRecepcionista;
-import java.util.Date;
 
 /**
  * @author João Vitor Azevedo 743554

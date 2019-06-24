@@ -23,17 +23,13 @@ public class our_Hospede extends TipoHospede {
         super(cpf, nome, email, end, tel);
         this.pais_de_origem = pais_de_origem;
     }
+   public String toString()  {
+       return super.toString() + "Pais de Origem: " + pais_de_origem +'\n';
+   }
     
     public our_Hospede(String cpf, String nome, String email, TipoEndereco end, TipoTelefone tel) {
         super(cpf, nome, email, end, tel);
     }
 
-    public static void listarOurHospede(List<our_Hospede> listaHospede) {
-        listaHospede.forEach((h) -> {
-            if (h instanceof our_Hospede) {
-                System.out.println(h.getNome() + " " + h.getID() + " " + ((our_Hospede) h).pais_de_origem);
-            }
-        });
-
-    }
+    
 }

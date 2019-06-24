@@ -13,7 +13,6 @@ public class GUI_Gerente {
         our_Telefone tel = new our_Telefone("+55", "14", "998987677");
         our_Recepcionista Marilda = new our_Recepcionista(23, "Recepção", "noturno", "345.543.345-55", "Marilda Garcia", "Marilda@gmail.com",  end, tel, "semestre");
 
-        //Marilda.cadastrarRecepcionista();
         BGerente.addRecepcionista(Marilda);
 
         System.out.println("\n");
@@ -24,8 +23,8 @@ public class GUI_Gerente {
         System.out.println("\n");
 
         //Buscando Funcionario pelo ID
-        System.out.println("~~~Buscando Funcionario de ID 0 ~~~");
-        System.out.println(BGerente.getNomeRecepcionista(1));
+        System.out.println("~~~Buscando Funcionario de ID 3 ~~~");
+        System.out.println(BGerente.getNomeRecepcionista(3));
 
     }
 }

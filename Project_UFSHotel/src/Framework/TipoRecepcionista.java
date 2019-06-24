@@ -30,7 +30,7 @@ public abstract class TipoRecepcionista extends TipoFuncionario {
 
     @Override
     public String toString() {
-        return "\n--Dados Recepcinosta--" + super.toString() + "Ramal: " + ramal;
+        return "\n--Dados Recepcionista--" + super.toString() + "Ramal: " + ramal;
     }
 
     // getters 
@@ -43,11 +43,4 @@ public abstract class TipoRecepcionista extends TipoFuncionario {
         this.ramal = ramal;
     }
 
-    public void cadastrarRecepcionista() {
-        iBancoGerente BG = SimulaBD.getInstanceBD();
-
-        if (BG.addRecepcionista(this)) {
-            System.out.println("Recepcionista cadastrada com sucesso");
-        }
-    }
 }

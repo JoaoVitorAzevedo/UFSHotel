@@ -59,8 +59,11 @@ public abstract class TipoReserva {
 
     @Override
     public String toString() {
-        return   "Cliente: " + hospedeReserva.getNome() 
-                + "\nID Quarto: " + this.quarto.getIdQuarto()+"\n";
+        return "Cliente: " + hospedeReserva.getNome()
+                + "\nID Quarto: " + this.quarto.getIdQuarto() + "\n"
+                + "Data Entrada: " + dataIn + "\n"
+                + "Data Saida: " + dataOut + "\n"
+                + "Preco Atual da reserva: " + getPrecoTotal() + "\n";
     }
 
     //getters
@@ -123,13 +126,6 @@ public abstract class TipoReserva {
 
     public void setDataIn(Date dataIn) {
         this.dataIn = dataIn;
-    }
-
-    public void EfetuarReserva() {
-        iBancoGerente BG = new SimulaBD();
-        if (BG.addReserva(this)) {
-            System.out.println("Reserva cadastrada com sucesso");
-        }
     }
 
     public void FazerCheckout(Date dataOut) {

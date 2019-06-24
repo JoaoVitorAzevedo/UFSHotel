@@ -115,7 +115,7 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
 
         gerenteRoberto = new our_Gerente("gerencia ue", "tarde", "4372837238-12", "Robertinho de Souza", "ro_berto@gmail.com", endereco1, telefone1);
 
-        SimulaBD.listaFuncionarios.add(recep1);
+        //SimulaBD.listaFuncionarios.add(recep1);
         SimulaBD.listaFuncionarios.add(gerenteRoberto);
         SimulaBD.listaHospedes.add(hospede1);
         SimulaBD.listaQuartos.add(room1);
@@ -166,12 +166,17 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
     @Override
     public boolean addReserva(TipoReserva newReserva) {
         listaReservas.add(newReserva);
+        System.out.println("Reserva para "+ newReserva.getNomeCli() +" cadastrada com sucesso");
         return true;
     }
+    
+        
+    
 
     @Override
     public boolean addHospede(TipoHospede newHospede) {
         listaHospedes.add(newHospede);
+        System.out.println("Hospede "+newHospede.getNome()+" cadastrado com sucesso!");
         return true;
     }
 
@@ -290,8 +295,9 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
     @Override
     public void listarReservas() {
         SimulaBD.listaReservas.forEach((r) -> {
-            if (r instanceof TipoReserva)
-            System.out.println(r.toString());
+            if (r instanceof TipoReserva) {
+                System.out.println(r.toString());
+            }
         });
     }
 

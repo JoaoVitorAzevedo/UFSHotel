@@ -41,11 +41,11 @@ public abstract class TipoHospede {
         this.nome = nome;
 
     }
-    
+
     @Override
-        public String toString() {
-        return ("\n--Dados do Hospede--" +
-                "\nNome: " + nome
+    public String toString() {
+        return ("\n--Dados do Hospede--"
+                + "\nNome: " + nome
                 + "\nID: " + idHospede
                 + "\nCPF: " + cpf + "\n");
 
@@ -95,15 +95,6 @@ public abstract class TipoHospede {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    //métodos úteis
-    public void cadastrarHospede() {
-        iBancoGerente BG = SimulaBD.getInstanceBD();
-
-        if (BG.addHospede(this)) {
-            System.out.println("Hospede cadastrado com sucesso");
-        }
     }
 
 }

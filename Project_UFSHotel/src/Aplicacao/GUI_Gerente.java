@@ -24,7 +24,7 @@ public class GUI_Gerente {
         System.out.println("\n");
 
         //Buscando Funcionario pelo ID
-        System.out.println("~~~Buscando Funcionario de ID 0~~~");
+        System.out.println("~~~Buscando Funcionario de ID 0 ~~~");
         System.out.println(BGerente.getNomeRecepcionista(1));
 
     }

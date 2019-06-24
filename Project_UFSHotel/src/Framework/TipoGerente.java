@@ -7,7 +7,6 @@ package Framework;
 
 import Banco.SimulaBD;
 import Banco.iBancoGerente;
-import Aplicacao.our_Gerente;
 
 /**
  * @author João Vitor Azevedo 743554

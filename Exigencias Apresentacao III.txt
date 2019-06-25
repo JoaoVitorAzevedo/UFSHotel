@@ -4,20 +4,20 @@ Para a prï¿½xima apresentaï¿½ï¿½o os grupos deverï¿½o entregar um relatï¿½rio tï
 
 - [x] Capa {tï¿½tulo do sistema, infos da disciplina, do grupo, data, etc}
 - [x] Descriï¿½ï¿½o do sistema {deixando claro se ï¿½ frameowrk ou nï¿½o}
-- [ ] Diagrama de classes
-- [ ] Diagrama de pacotes {mostrando a arquitetura}
-- [ ] Anï¿½lise SonarGraph {mostrar grï¿½ficos e as principais mï¿½tricas do seu sistema, principalmente a manutenibilidade}
+- [x] Diagrama de classes
+- [x] Diagrama de pacotes {mostrando a arquitetura}
+- [x] Anï¿½lise SonarGraph {mostrar grï¿½ficos e as principais mï¿½tricas do seu sistema, principalmente a manutenibilidade}
 - [ ] Evoluï¿½ï¿½es previstas
 
 
 * Diagrama de classe
 
-- [ ] O diagrama de classe deve estar corretamente elaborado. Tomem cuidado
+- [x] O diagrama de classe deve estar corretamente elaborado. Tomem cuidado
 para nï¿½o confundir associaï¿½ï¿½es com dependï¿½ncias.
-- [ ] Representem corretamente mï¿½todos estï¿½ticos, visibilidade de pacote, multiplicidades, classes abstratas,
+- [x] Representem corretamente mï¿½todos estï¿½ticos, visibilidade de pacote, multiplicidades, classes abstratas,
 nomes de relacionamentos, etc. Caso contrï¿½rio ficar difï¿½cil analisar se o projeto estï¿½ correto ou nï¿½o.
 
-- [ ] Se for framework, mostrar dois diagramas de classes, um do frameworkr e outro da app que foi instanciada.
+- [x] Se for framework, mostrar dois diagramas de classes, um do frameworkr e outro da app que foi instanciada.
 
 
 * Implementaï¿½ï¿½o
@@ -34,17 +34,17 @@ realizar a digitaï¿½ï¿½o da nota de um aluno, realizar um depï¿½sito bancï¿½rio
 - [ ] Dividir o sistema em mï¿½dulos e tambï¿½m na restriï¿½ï¿½o de visiblidade entre esses mï¿½dulos. 
 - [ ] Usar interfaces, padrï¿½o factory, padrï¿½o fachada.
 
-- [ ] Deixar evidente a diferenï¿½a entre as classes do framework e da aplicaï¿½ï¿½o (se for o caso)
+- [x] Deixar evidente a diferenï¿½a entre as classes do framework e da aplicaï¿½ï¿½o (se for o caso)
 
 - [ ] Anï¿½lise Sonar Graph
 
         Passar seu sistema pelo SonarGraph para mostrar:
         - [x] Dependï¿½ncias in e out
         - [x] nï¿½vel de abstraï¿½ï¿½o (abstractness)
-        - [ ] ciclos
+        - [x] ciclos
         - [x] manutenibilidade (maintenability)
 
-- [ ] mostrar os dados acima tanto para o frameworkr quanto para a aplicaï¿½ï¿½o. (de forma separada)
+- [] mostrar os dados acima tanto para o frameworkr quanto para a aplicaï¿½ï¿½o. (de forma separada)
 
 
 * Projeto avanï¿½ado

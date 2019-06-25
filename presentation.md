@@ -1,0 +1,61 @@
+Exig�ncias para a pr�xima apresenta��o
+
+Para a pr�xima apresenta��o os grupos dever�o entregar um relat�rio t�cnico contendo as seguintes se��es:
+
+- [x] Capa {t�tulo do sistema, infos da disciplina, do grupo, data, etc}
+- [x] Descri��o do sistema {deixando claro se � frameowrk ou n�o}
+- [x] Diagrama de classes
+- [x] Diagrama de pacotes {mostrando a arquitetura}
+- [x] An�lise SonarGraph {mostrar gr�ficos e as principais m�tricas do seu sistema, principalmente a manutenibilidade}
+- [ ] Evolu��es previstas
+
+
+* Diagrama de classe
+
+- [x] O diagrama de classe deve estar corretamente elaborado. Tomem cuidado
+para n�o confundir associa��es com depend�ncias.
+- [x] Representem corretamente m�todos est�ticos, visibilidade de pacote, multiplicidades, classes abstratas,
+nomes de relacionamentos, etc. Caso contr�rio ficar dif�cil analisar se o projeto est� correto ou n�o.
+
+- [x] Se for framework, mostrar dois diagramas de classes, um do frameworkr e outro da app que foi instanciada.
+
+
+* Implementa��o
+
+- [ ] N�o � necess�rio interfaces gr�ficas, mas � necess�rio que existam classes que simulem
+as interfaces gr�ficas. Tamb�m � importante que haja pelo menos 5 cen�rios implementados.
+- [ ] Um cen�rio � um fluxo commpleto de execu��o de um caso de uso. Por exemplo: realizar um agendamento m�dico, 
+realizar a digita��o da nota de um aluno, realizar um dep�sito banc�rio
+
+- [ ] Deixar evidente a diferen�a entre as classes do framework e da aplica��o (se for o caso)
+
+* Arquitetura
+
+- [ ] Dividir o sistema em m�dulos e tamb�m na restri��o de visiblidade entre esses m�dulos. 
+- [ ] Usar interfaces, padr�o factory, padr�o fachada.
+
+- [x] Deixar evidente a diferen�a entre as classes do framework e da aplica��o (se for o caso)
+
+- [ ] An�lise Sonar Graph
+
+        Passar seu sistema pelo SonarGraph para mostrar:
+        - [x] Depend�ncias in e out
+        - [x] n�vel de abstra��o (abstractness)
+        - [x] ciclos
+        - [x] manutenibilidade (maintenability)
+
+- [] mostrar os dados acima tanto para o frameworkr quanto para a aplica��o. (de forma separada)
+
+
+* Projeto avan�ado
+
+- [ ] Seu design e implementa��o precisa ser feito de forma a pensar em futuras evolu��ees do sistema. Ent�o, a implementa��o deve refletir isso.
+- [ ] Quero que voc�s pensem em 5 situa��es em que o sistema pode ser evolu�do e voc�s devem mostrar que essas evolu��ees podem ser 
+feitas de forma adequada no sistema. 
+- [ ] Voc�s devem "listar" essas evolu��es e mostrar como elas podem ser feitas no sistema. 
+Exemplo de evolu��es poss�veis: 
+      1 - A faculdade resolveu padronizar a forma de avalia��o para todas as disciplinas
+      2 - A taxa de juros dos clientes devedores seer� atualizada toda semana
+      3 - H� dois tipos de consultas m�dicas, consultas curtas e longas...
+      4 - O jogo agora permite jogar em duplas...
+      etc...

@@ -5,8 +5,6 @@
  */
 package Framework;
 
-import Banco.SimulaBD;
-import Banco.iBancoGerente;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**

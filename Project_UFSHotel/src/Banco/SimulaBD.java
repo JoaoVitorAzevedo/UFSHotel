@@ -23,11 +23,12 @@
  */
 package Banco;
 
-import Aplicacao.our_Endereco;
+//import Aplicacao.our_Endereco;
 import Aplicacao.our_Gerente;
 import Aplicacao.our_Hospede;
 import Aplicacao.our_Quarto;
 import Aplicacao.our_Recepcionista;
+
 import Framework.TipoHospede;
 import Framework.TipoRecepcionista;
 import Framework.TipoFuncionario;
@@ -62,7 +63,7 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
     TipoServicos serv2;
     TipoServicos serv3;
     TipoCategoriaDeQuarto suite;
-    TipoGerente gerenteRoberto;
+    our_Gerente gerenteRoberto;
     our_Quarto room1;
     our_Quarto room2;
     TipoPagamento pag1;
@@ -96,7 +97,7 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
         Casal = new our_TipoCategoriaDeQuarto("Casal", 2, 120.0f);
         this.suite = new our_TipoCategoriaDeQuarto("Suite", 3, 180.0f);
 
-        endereco1 = new our_Endereco("17523275", "252", "Jardim Guanabara", "Marília", "Ceará");
+        //endereco1 = new our_Endereco("17523275", "252", "Jardim Guanabara", "Marília", "Ceará");
 
         hospede1 = new our_Hospede("432.883.228-81", "Joao Vitor", "fulanodetal@gmail.com", endereco1, telefone1);
 
@@ -154,6 +155,7 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
     @Override
     public boolean addQuarto(TipoQuarto newQuarto) {
         listaQuartos.add(newQuarto);
+        System.out.println("Cadastrado Quarto");
         return true;
     }
 
@@ -166,17 +168,14 @@ public class SimulaBD implements iBancoGerente, iBancoRecepcionista {
     @Override
     public boolean addReserva(TipoReserva newReserva) {
         listaReservas.add(newReserva);
-        System.out.println("Reserva para "+ newReserva.getNomeCli() +" cadastrada com sucesso");
+        System.out.println("Reserva para " + newReserva.getNomeCli() + " cadastrada com sucesso");
         return true;
     }
-    
-        
-    
 
     @Override
     public boolean addHospede(TipoHospede newHospede) {
         listaHospedes.add(newHospede);
-        System.out.println("Hospede "+newHospede.getNome()+" cadastrado com sucesso!");
+        System.out.println("Hospede " + newHospede.getNome() + " cadastrado com sucesso!");
         return true;
     }
 

@@ -5,8 +5,6 @@
  */
 package Framework;
 
-import Banco.SimulaBD;
-import Banco.iBancoGerente;
 import java.util.List;
 import java.util.Date;
 
@@ -28,9 +26,9 @@ public abstract class TipoServicos {
         this.responsaveis = responsaveis;
         this.precoDoServico = precoDoServico;
     }
-    
+
     @Override
-        public String toString() {
+    public String toString() {
         return ("\nNome: " + nomeDoServico
                 + "\nPreco: " + precoDoServico
                 + "\nData: " + dataServico
@@ -66,14 +64,6 @@ public abstract class TipoServicos {
 
     public void setResponsaveis(List<TipoFuncionario> responsaveis) {
         this.responsaveis = responsaveis;
-    }
-
-    public void cadastrarServico() {
-        iBancoGerente BG = SimulaBD.getInstanceBD();
-
-        if (BG.addServico(this)) {
-            System.out.println("Serviço cadastrado");
-        }
     }
 
 }

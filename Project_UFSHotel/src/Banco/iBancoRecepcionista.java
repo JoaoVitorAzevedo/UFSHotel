@@ -23,8 +23,6 @@
  */
 package Banco;
 
-import Framework.TipoServicos;
-import Framework.TipoRecepcionista;
 import Framework.TipoHospede;
 import Framework.TipoQuarto;
 import Framework.TipoReserva;

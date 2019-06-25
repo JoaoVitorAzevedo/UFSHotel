@@ -13,7 +13,6 @@ package Aplicacao;
 import Framework.TipoEndereco;
 import Framework.TipoTelefone;
 import Framework.TipoHospede;
-import java.util.List;
 
 public class our_Hospede extends TipoHospede {
 
@@ -23,6 +22,7 @@ public class our_Hospede extends TipoHospede {
         super(cpf, nome, email, end, tel);
         this.pais_de_origem = pais_de_origem;
     }
+    @Override
    public String toString()  {
        return super.toString() + "Pais de Origem: " + pais_de_origem +'\n';
    }

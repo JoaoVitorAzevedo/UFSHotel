@@ -5,7 +5,6 @@
  */
 package Framework;
 
-import Banco.SimulaBD;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -28,11 +27,11 @@ public abstract class TipoQuarto {
         this.tipo = tipo;
 
     }
-    
+
     @Override
-        public String toString() {
+    public String toString() {
         return ("\nID: " + idQuarto
-                + "\nAndar: " + andar 
+                + "\nAndar: " + andar
                 + "\n");
 
     }
@@ -83,13 +82,4 @@ public abstract class TipoQuarto {
         this.status.disponibilidade = bol;
     }
 
-    //Métodos com lógica de framework
-    public void cadastrarQuarto() {
-        SimulaBD BG = SimulaBD.getInstanceBD();
-
-        if (BG.addQuarto(this)) {
-            System.out.println("Cadastrado Quarto");
-        }
-
-    }
 }

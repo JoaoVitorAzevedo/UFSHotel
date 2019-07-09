@@ -31,8 +31,7 @@ public class GUI_Recepcionista {
         System.out.println("~~Listando todos os hospedes~~");
         mRecepcionista.listarHospedes();
 
-        System.out.println("o do our agora");
-        List<our_Hospede> listaHospede = mRecepcionista.getListaHospede();
+        
         System.out.println("\n");
 
         System.out.println("~~Buscando Hospede de ID 1~~");
